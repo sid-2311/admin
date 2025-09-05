@@ -8,7 +8,8 @@ const SidebarLayout=()=>{
     const menu =[
         {name : "Dashboard", path: "/"},
         {name :"Users" , path:"/users"},
-        {name :"Setting", path:"/settings"}
+        {name :"Setting", path:"/settings"},
+        {name :"Pages", path:"/pages"}
     ]
 
 const handleLogout=()=>{
