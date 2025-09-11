@@ -10,7 +10,7 @@ const Settings = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">⚙️ Settings</h1>
+      {/* <h1 className="text-3xl font-bold mb-6">⚙️ Settings</h1> */}
 
       <div className="bg-white p-6 rounded-lg shadow w-96">
         <label className="block mb-2 font-semibold">Site Name</label>

@@ -10,7 +10,7 @@ const Users = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">👥 Users</h1>
+      {/* <h1 className="text-3xl font-bold mb-6">👥 Users</h1> */}
 
       <table className="w-full bg-white rounded-lg shadow overflow-hidden">
         <thead className="bg-gray-200">
