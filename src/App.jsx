@@ -8,6 +8,8 @@ import Settings from "./pages/Settings";
 import Pages from "./pages/page";
 import AboutusPagess from "./pages/page";
 import Whytochoose from "./pages/Whytochooseus";
+import BlogCategory from "./pages/BlogCategory";
+import BlogCategoryForm from "./pages/CreateBlog";
 
 
 function App(){
@@ -28,7 +30,8 @@ function App(){
               {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
             {/* </Route> */}
           {/* <Route index element={<Dashboard />} /> */}
-         
+         <Route path="/blogs/categories" element={<BlogCategory/>}/>
+         <Route path="/createBlog" element={<BlogCategoryForm/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />
