@@ -8,6 +8,8 @@ import Settings from "./pages/Settings";
 import Pages from "./pages/page";
 import AboutusPagess from "./pages/page";
 import Whytochoose from "./pages/Whytochooseus";
+import ContactUs from "./pages/ContactUs";
+
 
 
 function App(){
@@ -25,6 +27,7 @@ function App(){
             <Route path="settings" element={<Settings />}/>
             {/* <Route path="pages"> */}
               <Route path="pages/about-us" element={<AboutusPagess/>}/>
+              <Route path="pages/contact-us" element={<ContactUs/>}/>
               {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
             {/* </Route> */}
           {/* <Route index element={<Dashboard />} /> */}

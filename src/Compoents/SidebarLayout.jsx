@@ -28,7 +28,7 @@ const SidebarLayout = () => {
   const pagesMenu = [
     { id: 1, name: "Landing Page", path: "/pages/1" },
     { id: 2, name: "About Us Page", path: "/pages/about-us" },
-    { id: 3, name: "Contact Page", path: "/pages/3" },
+    { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
   const handleLogout = () => {
