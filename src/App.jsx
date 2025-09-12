@@ -7,9 +7,12 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Pages from "./pages/page";
 import AboutusPagess from "./pages/page";
-import Whytochoose from "./pages/Whytochooseus";
+// import Whytochoose from "./pages/Whytochooseus";
 import ContactUs from "./pages/ContactUs";
 
+import BlogCategory from "./pages/BlogCategory";
+import BlogCategoryForm from "./pages/CreateBlog";
+import BlogEditPage from "./pages/EditBlog";
 
 
 function App(){
@@ -31,7 +34,9 @@ function App(){
               {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
             {/* </Route> */}
           {/* <Route index element={<Dashboard />} /> */}
-         
+         <Route path="/blogs/categories" element={<BlogCategory/>}/>
+         <Route path="/createBlog" element={<BlogCategoryForm/>}/>
+         <Route path="/editblog" element={<BlogEditPage/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />

@@ -5,6 +5,7 @@ import {
   Users,
   Settings,
   FileText,
+  BookOpen,
   ChevronDown,
   ChevronRight,
   Menu,
@@ -17,6 +18,7 @@ const SidebarLayout = () => {
   const [openPages, setOpenPages] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+  const [openBlogs, setOpenBlogs] = useState(false);
 
   const menu = [
     { name: "Dashboard", path: "/", icon: <LayoutDashboard /> },
@@ -31,11 +33,19 @@ const SidebarLayout = () => {
     { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
-  const handleLogout = () => {
-    navigate("/login");
-    window.location.reload();
-  };
+  // Submenu for Blogs
+  const blogsMenu = [
+    { id: 1, name: "Categories", path: "/blogs/categories" },
+    { id: 2, name: "Blogs", path: "/blogs/create" },
+    { id: 3, name: "Popular Blogs", path: "/blogs/popular" },
+    { id: 3, name: "Comments", path: "/blogs/comments" },
+  ];
 
+const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    setIsAuthenticated(false); // ✅ update parent state
+    navigate("/login");
+  };
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -88,6 +98,43 @@ const SidebarLayout = () => {
                           }`}
                       >
                         {p.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
+            {/* Blogs with Dropdown */}
+            <li className="mb-3">
+              <button
+                onClick={() => setOpenBlogs(!openBlogs)}
+                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
+                  location.pathname.startsWith("/blogs")
+                    ? "bg-gray-200"
+                    : "hover:bg-gray-200"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <BookOpen size={18} />
+                  <span>Blogs</span>
+                </div>
+                {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+              </button>
+
+              {openBlogs && (
+                <ul className="ml-6 mt-2">
+                  {blogsMenu.map((b) => (
+                    <li key={b.id} className="mb-2">
+                      <Link
+                        to={b.path}
+                        className={`block px-3 py-1 rounded text-sm transition ${
+                          location.pathname === b.path
+                            ? "bg-gray-200"
+                            : "hover:bg-gray-100"
+                        }`}
+                      >
+                        {b.name}
                       </Link>
                     </li>
                   ))}

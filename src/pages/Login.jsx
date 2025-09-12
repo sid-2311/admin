@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setIsAuthenticated }) => {
@@ -7,12 +7,22 @@ const Login = ({ setIsAuthenticated }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // ✅ Check if already logged in (on refresh)
+  useEffect(() => {
+    const auth = localStorage.getItem("isAuthenticated");
+    if (auth === "true") {
+      setIsAuthenticated(true);
+      navigate("/"); // already logged in
+    }
+  }, [setIsAuthenticated, navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // ✅ Hardcoded values
     if (email === "admin@example.com" && password === "123456") {
       setIsAuthenticated(true);
+      localStorage.setItem("isAuthenticated", "true"); // save state
       navigate("/");
     } else {
       setError("Invalid email or password");
