@@ -60,7 +60,7 @@ const AboutusPagess = () => {
   };
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full mt-10">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow p-4">
         <h2 className="text-lg font-bold mb-4">About Us Sections</h2>
