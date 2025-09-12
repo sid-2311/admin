@@ -89,6 +89,13 @@ const BlogCategory = () => {
     
     return pages;
   };
+
+const handleEdit = (item) => {
+  navigate("/editblog", {
+    state: { editData: item }
+  });
+};
+
 const handleNew=()=>{
     navigate("/createBlog")
 }
@@ -150,7 +157,7 @@ const handleNew=()=>{
                   <StatusToggle initialStatus={item.status} />
                 </td>
                 <td className="px-4 py-2 flex gap-2">
-                  <button className="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
+                  <button onClick={() => handleEdit(item)}  className="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
                     <FaEdit size={14} />
                   </button>
                   <button className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">

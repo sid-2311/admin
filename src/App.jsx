@@ -10,6 +10,7 @@ import AboutusPagess from "./pages/page";
 import Whytochoose from "./pages/Whytochooseus";
 import BlogCategory from "./pages/BlogCategory";
 import BlogCategoryForm from "./pages/CreateBlog";
+import BlogEditPage from "./pages/EditBlog";
 
 
 function App(){
@@ -32,6 +33,7 @@ function App(){
           {/* <Route index element={<Dashboard />} /> */}
          <Route path="/blogs/categories" element={<BlogCategory/>}/>
          <Route path="/createBlog" element={<BlogCategoryForm/>}/>
+         <Route path="/editblog" element={<BlogEditPage/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />
