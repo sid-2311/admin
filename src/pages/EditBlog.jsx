@@ -48,7 +48,7 @@ export default function BlogEditPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-[#F4F6F9] p-6">
       <div className="mx-auto">
         {/* Header */}
         <div className="mb-8">

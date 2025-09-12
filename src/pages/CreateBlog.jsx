@@ -23,7 +23,7 @@ const handleBack=()=>{
     navigate("/blogs/categories")
 }
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-[#F4F6F9] p-6">
       <div className="mx-auto">
         {/* Header Button */}
         <div className="mb-8">
@@ -36,7 +36,7 @@ const handleBack=()=>{
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <div className="bg-white  shadow-sm border border-gray-200 p-8">
           <div className="space-y-6">
             {/* Name Field */}
             <div>
@@ -49,7 +49,7 @@ const handleBack=()=>{
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+                className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
               />
             </div>
 
@@ -64,7 +64,7 @@ const handleBack=()=>{
                 name="slug"
                 value={formData.slug}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+                className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
               />
             </div>
 
@@ -78,7 +78,7 @@ const handleBack=()=>{
                 name="status"
                 value={formData.status}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm bg-white transition-colors appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
                   backgroundPosition: 'right 0.5rem center',

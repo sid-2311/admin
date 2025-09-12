@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const StatusToggle = ({ initialStatus = "Active" }) => {
   const [status, setStatus] = useState(initialStatus);
@@ -10,24 +11,40 @@ const StatusToggle = ({ initialStatus = "Active" }) => {
   return (
     <button
       onClick={toggleStatus}
-      className="relative flex items-center w-32 h-10 rounded-lg overflow-hidden cursor-pointer shadow-md transition-all duration-300 hover:shadow-lg"
+      className="relative flex items-center w-32 h-10 rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg"
     >
-      {/* Background */}
-      <div className={`absolute inset-0 transition-colors duration-300 ${
-        status === "Active" ? "bg-green-500" : "bg-red-500"
-      }`}></div>
-      
-      {/* White slider with smooth animation */}
-      <div className={`absolute top-1 w-8 h-8 bg-white rounded-md shadow-sm transition-all duration-300 ease-in-out ${
-        status === "Active" ? "right-1" : "left-1"
-      }`}></div>
-      
-      {/* Text */}
-      <div className={`relative flex items-center w-full h-full transition-all duration-300 ${
-        status === "Active" ? "justify-start pl-3" : "justify-end pr-3"
-      }`}>
+      {/* Background with smooth fade */}
+      <motion.div
+        animate={{ backgroundColor: status === "Active" ? "#22c55e" : "#ef4444" }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="absolute inset-0"
+      />
+
+      {/* White slider with spring bounce effect */}
+      <motion.div
+        animate={{
+          x: status === "Active" ? 84 : 4, // move left ↔ right
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 250, // spring tightness
+          damping: 18, // bounce control
+        }}
+        className="absolute top-1 w-8 h-8 bg-white rounded-md shadow-sm"
+      />
+
+      {/* Text with smooth fade/slide */}
+      <motion.div
+        key={status} // re-render on status change
+        initial={{ opacity: 0, x: status === "Active" ? -10 : 10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+        className={`relative flex items-center w-full h-full ${
+          status === "Active" ? "justify-start pl-3" : "justify-end pr-3"
+        }`}
+      >
         <span className="text-white text-sm font-medium">{status}</span>
-      </div>
+      </motion.div>
     </button>
   );
 };
