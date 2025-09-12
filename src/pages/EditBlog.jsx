@@ -65,7 +65,7 @@ export default function BlogEditPage() {
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-lg shadow-sm p-8">
+        <div className="bg-white  shadow-sm p-8">
           <div className="space-y-6">
             {/* ID Field (Hidden/Display Only) */}
             {/* {formData.id && (
@@ -93,7 +93,7 @@ export default function BlogEditPage() {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
                 placeholder="Enter category name"
                 required
               />
@@ -110,7 +110,7 @@ export default function BlogEditPage() {
                 name="slug"
                 value={formData.slug}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
                 placeholder="enter-slug-here"
                 required
               />
@@ -127,7 +127,7 @@ export default function BlogEditPage() {
                   name="status"
                   value={formData.status}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white appearance-none pr-8"
+                  className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900 appearance-none pr-8"
                   required
                 >
                   <option value="Active">Active</option>

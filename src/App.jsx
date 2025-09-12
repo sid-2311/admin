@@ -7,7 +7,7 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Pages from "./pages/page";
 import AboutusPagess from "./pages/page";
-import Whytochoose from "./pages/Whytochooseus";
+// import Whytochoose from "./pages/Whytochooseus";
 import BlogCategory from "./pages/BlogCategory";
 import BlogCategoryForm from "./pages/CreateBlog";
 import BlogEditPage from "./pages/EditBlog";
