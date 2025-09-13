@@ -111,7 +111,7 @@ const handleLogout = () => {
                 onClick={() => setOpenBlogs(!openBlogs)}
                 className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
                   location.pathname.startsWith("/blogs")
-                    ? "bg-gray-200"
+                    ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
                 }`}
               >
@@ -130,7 +130,7 @@ const handleLogout = () => {
                         to={b.path}
                         className={`block px-3 py-1 rounded text-sm transition ${
                           location.pathname === b.path
-                            ? "bg-gray-200"
+                            ? "bg-gray-200 text-[#6777EF]"
                             : "hover:bg-gray-100"
                         }`}
                       >
@@ -156,7 +156,7 @@ const handleLogout = () => {
               ? "Dashboard"
               : location.pathname.replace("/", "")}
           </h1> */}
-          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%]">
+          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-50">
             <Title />
           </div>
           <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />
