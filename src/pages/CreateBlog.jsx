@@ -50,7 +50,7 @@ const handleBack=()=>{
                 value={formData.name}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-sm transition-colors"
-                className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+                // className="w-full px-4 py-3 bg-[#FDFDFF] border border-gray-300 rounded-md  focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
               />
             </div>
 
