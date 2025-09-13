@@ -47,8 +47,8 @@ const Title = () => {
     const pathnames = location.pathname.split("/").filter(Boolean);
 
     return (
-        <div className="w-full p-5 shadow-xl rounded bg-white flex justify-between items-center">
-            <h1 className="text-2xl text-[#34395E] font-semibold capitalize">
+        <div className="w-full p-5 rounded bg-white flex justify-between items-center">
+            <h1 className="text-2xl text-[#34395E] font-bold capitalize">
                 {location.pathname === "/"
                     ? "Dashboard"
                     : pathnames[pathnames.length - 1]}

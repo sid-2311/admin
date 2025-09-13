@@ -100,7 +100,7 @@ const handleNew=()=>{
     navigate("/createBlog")
 }
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50 min-h-screen mt-10">
       {/* Top Actions */}
       <div className="flex justify-between items-center mb-4">
         <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700" onClick={handleNew}>

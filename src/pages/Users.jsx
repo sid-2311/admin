@@ -9,7 +9,7 @@ const Users = () => {
   ]);
 
   return (
-    <div>
+    <div className="mt-10">
       {/* <h1 className="text-3xl font-bold mb-6">👥 Users</h1> */}
 
       <table className="w-full bg-white rounded-lg shadow overflow-hidden">
