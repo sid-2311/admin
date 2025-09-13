@@ -133,7 +133,7 @@ const handleNew=()=>{
       </div>
 
       {/* Table */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
+      <div className="bg-white  overflow-hidden">
         <table className="w-full table-fixed">
           <thead>
             <tr className="bg-gray-100 text-left text-sm font-semibold">

@@ -156,7 +156,7 @@ const handleLogout = () => {
               ? "Dashboard"
               : location.pathname.replace("/", "")}
           </h1> */}
-          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%]">
+          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-10">
             <Title />
           </div>
           <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />

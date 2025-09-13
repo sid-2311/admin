@@ -13,6 +13,9 @@ import ContactUs from "./pages/ContactUs";
 import BlogCategory from "./pages/BlogCategory";
 import BlogCategoryForm from "./pages/CreateBlog";
 import BlogEditPage from "./pages/EditBlog";
+import Blogs from "./pages/Blogs";
+import BlogForm from "./pages/BlogCreate";
+import BlogEditForm from "./pages/BlogEdit";
 
 
 function App(){
@@ -37,6 +40,9 @@ function App(){
          <Route path="/blogs/categories" element={<BlogCategory/>}/>
          <Route path="/createBlog" element={<BlogCategoryForm/>}/>
          <Route path="/editblog" element={<BlogEditPage/>}/>
+         <Route path="/blogs/create" element={<Blogs/>}/>
+          <Route path="/BlogCreate" element={<BlogForm/>}/>
+          <Route path="/BlogEdit" element={<BlogEditForm/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />
