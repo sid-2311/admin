@@ -11,6 +11,9 @@ import {
   Menu,
 } from "lucide-react";
 import Title from "./Title";
+import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { RiFilePaper2Fill } from "react-icons/ri";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -21,9 +24,9 @@ const SidebarLayout = () => {
   const [openBlogs, setOpenBlogs] = useState(false);
 
   const menu = [
-    { name: "Dashboard", path: "/", icon: <LayoutDashboard /> },
-    { name: "Users", path: "/users", icon: <Users /> },
-    { name: "Setting", path: "/settings", icon: <Settings /> },
+    { name: "Dashboard", path: "/", icon: <FaHome /> },
+    { name: "Users", path: "/users", icon: <FaUserAlt /> },
+    { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
   ];
 
   // Submenu for Pages
@@ -71,16 +74,16 @@ const handleLogout = () => {
             ))}
 
             {/* Pages with Dropdown */}
-            <li className="mb-3">
+            <li className="mb-3 text-4xl">
               <button
                 onClick={() => setOpenPages(!openPages)}
-                className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
                   ? "bg-gray-200 text-[#6777EF]"
                   : "hover:bg-gray-200"
                   }`}
               >
                 <div className="flex items-center gap-2">
-                  <FileText />
+                  <RiFilePaper2Fill />
                   <span>{sidebarOpen && 'Pages'}</span>
                 </div>
                 {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
@@ -116,7 +119,7 @@ const handleLogout = () => {
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <BookOpen size={18} />
+                  <FaBlog />
                   <span>Blogs</span>
                 </div>
                 {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}

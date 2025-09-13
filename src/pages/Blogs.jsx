@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import StatusToggle from "../ui/ToggleButton";
 import { useNavigate } from "react-router-dom";
+
 const data = [
   {
     id: 1,
@@ -11,8 +12,8 @@ const data = [
     homepage: "No",
     status: "Active",
     description: "This is a dummy description for Massage Service.",
-    seoTitle: "Massage Service - Car Care Experts", // 👈 added
-    seoDesc: "Get the best massage service for your car with our expert team.", // 👈 added
+    seoTitle: "Massage Service - Car Care Experts",
+    seoDesc: "Get the best massage service for your car with our expert team.",
   },
   {
     id: 2,
@@ -22,8 +23,8 @@ const data = [
     homepage: "No",
     status: "Active",
     description: "This is a dummy description for Home Move Service.",
-    seoTitle: "Home Moving Services - Relocation Made Easy", // 👈 added
-    seoDesc: "Reliable home moving service from one city to another city.", // 👈 added
+    seoTitle: "Home Moving Services - Relocation Made Easy",
+    seoDesc: "Reliable home moving service from one city to another city.",
   },
   {
     id: 3,
@@ -33,8 +34,8 @@ const data = [
     homepage: "Yes",
     status: "Active",
     description: "This is a dummy description for Electric & Plumbing service.",
-    seoTitle: "Electric & Plumbing Services - Switchboard & Wiring", // 👈 added
-    seoDesc: "Professional electric and plumbing solutions with safe connections.", // 👈 added
+    seoTitle: "Electric & Plumbing Services - Switchboard & Wiring",
+    seoDesc: "Professional electric and plumbing solutions with safe connections.",
   },
   {
     id: 4,
@@ -44,10 +45,10 @@ const data = [
     homepage: "Yes",
     status: "Active",
     description: "This is a dummy description for Home Cleaning service.",
-    seoTitle: "Home & Office Cleaning Services", // 👈 added
-    seoDesc: "Effective spray and disinfection services for homes and offices.", // 👈 added
+    seoTitle: "Home & Office Cleaning Services",
+    seoDesc: "Effective spray and disinfection services for homes and offices.",
   },
-  // Extra dummy records with description + SEO
+  // Extra dummy records
   ...Array.from({ length: 21 }, (_, i) => ({
     id: i + 5,
     title: `Dummy Service Title ${i + 5}`,
@@ -56,17 +57,17 @@ const data = [
     homepage: i % 2 === 0 ? "Yes" : "No",
     status: "Active",
     description: `This is a dummy description for Dummy Service Title ${i + 5}.`,
-    seoTitle: `SEO Title for Dummy Service Title ${i + 5}`, // 👈 added
-    seoDesc: `This is a dummy SEO description for Dummy Service Title ${i + 5}.`, // 👈 added
+    seoTitle: `SEO Title for Dummy Service Title ${i + 5}`,
+    seoDesc: `This is a dummy SEO description for Dummy Service Title ${i + 5}.`,
   })),
 ];
-
-
 
 const Blogs = () => {
   const [entries, setEntries] = useState(10);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
+  const navigate = useNavigate();
 
   // Filtered Data
   const filteredData = data.filter((item) =>
@@ -83,54 +84,60 @@ const Blogs = () => {
       setCurrentPage(page);
     }
   };
-  const navigate=useNavigate()
 
-  const handleNew=()=>{
-    navigate("/BlogCreate")
-  }
-const handleEdit = (item) => {
-  navigate("/BlogEdit", {
-    state: { editData: item }
-  });
-};
+  const handleNew = () => {
+    navigate("/BlogCreate");
+  };
+
+  const handleEdit = (item) => {
+    navigate("/BlogEdit", {
+      state: { editData: item },
+    });
+  };
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       {/* Top Section */}
       <div className="flex justify-between items-center mb-4">
-        <button className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700" onClick={handleNew}>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700"
+          onClick={handleNew}
+        >
           + Add New
         </button>
-        <input
-          type="text"
-          placeholder="Search:"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setCurrentPage(1); // reset to first page when searching
-          }}
-          className="border rounded px-3 py-2"
-        />
       </div>
 
       {/* Table Card */}
-      <div className="bg-white p-4 rounded shadow">
-        {/* Show entries */}
-        <div className="flex items-center gap-2 mb-4">
-          <span>Show</span>
-          <select
-            value={entries}
-            onChange={(e) => {
-              setEntries(Number(e.target.value));
-              setCurrentPage(1);
-            }}
-            className="border rounded px-2 py-1"
-          >
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-            <option value={50}>50</option>
-          </select>
-          <span>entries</span>
+      <div className="bg-white p-4 ">
+        {/* Show entries + Search bar row */}
+        <div className="flex justify-between items-center mb-4">
+          {/* Left side - Show entries */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">Show</span>
+            <input
+              type="number"
+              min="1"
+              value={entries}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                setEntries(val > 0 ? val : 1);
+                setCurrentPage(1);
+              }}
+              className="border text-gray-400 border-gray-400 rounded bg-[#FDFDFF] p-1 w-16 text-center focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+            />
+            <span className="text-sm text-gray-600">entries</span>
+          </div>
+
+          {/* Right side - Search */}
+          <div className="text-sm text-gray-600 flex items-center gap-2">
+            <span>Search:</span>
+            <input
+              type="text"
+              className="border border-gray-400 rounded focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </div>
 
         {/* Table */}
@@ -179,7 +186,10 @@ const handleEdit = (item) => {
                   <StatusToggle initialStatus={item.status} />
                 </td>
                 <td className="p-3 flex gap-2">
-                  <button className="bg-blue-600 p-2 rounded text-white hover:bg-blue-700" onClick={() => handleEdit(item)}>
+                  <button
+                    className="bg-blue-600 p-2 rounded text-white hover:bg-blue-700"
+                    onClick={() => handleEdit(item)}
+                  >
                     <FaEdit />
                   </button>
                   <button className="bg-red-600 p-2 rounded text-white hover:bg-red-700">
