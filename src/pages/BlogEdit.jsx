@@ -39,7 +39,9 @@ const BlogEditForm = () => {
   }, [editData]);
 
   const handleThumbnail = (e) => {
-    setThumbnail(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files[0]) {
+      setThumbnail(URL.createObjectURL(e.target.files[0]));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -68,12 +70,25 @@ const BlogEditForm = () => {
     <div className="bg-gray-100 min-h-screen p-6">
       {/* Back Button OUTSIDE */}
       <div className="w-full mb-4">
-        <div className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-md font-medium text-sm cursor-pointer" onClick={handleCancel}>
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              Blogs 
-            </div>
+        <div
+          className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-md font-medium text-sm cursor-pointer"
+          onClick={handleCancel}
+        >
+          <svg
+            className="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          Blogs
+        </div>
       </div>
 
       {/* Form Card */}
@@ -85,20 +100,19 @@ const BlogEditForm = () => {
               Thumbnail Image Preview
             </label>
             <div className="flex items-center space-x-4">
-              {thumbnail ? (
-                <img
-                  src={thumbnail}
-                  alt="preview"
-                  className="w-32 h-32 object-cover border rounded-md"
-                />
-              ) : (
-                <div className="w-32 h-32 border rounded-md flex items-center justify-center text-gray-400">
-                  <span>No Image</span>
-                </div>
-              )}
+              <img
+                src={
+                  thumbnail
+                    ? thumbnail
+                    : "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                }
+                alt="preview"
+                className="w-32 h-32 object-cover border rounded-md"
+              />
               <div>
                 <input
                   type="file"
+                  accept="image/*"
                   onChange={handleThumbnail}
                   className="block w-full text-sm text-gray-700"
                 />
@@ -173,6 +187,7 @@ const BlogEditForm = () => {
                   "undo redo | formatselect | bold italic backcolor | \
                    alignleft aligncenter alignright alignjustify | \
                    bullist numlist outdent indent | removeformat | help",
+                placeholder: "Write your blog description here...",
               }}
               value={description}
               onEditorChange={(newValue) => setDescription(newValue)}
