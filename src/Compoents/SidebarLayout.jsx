@@ -8,25 +8,32 @@ import {
   BookOpen,
   ChevronDown,
   ChevronRight,
+  Menu,
 } from "lucide-react";
+import Title from "./Title";
+import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { RiFilePaper2Fill } from "react-icons/ri";
 
 const SidebarLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [openPages, setOpenPages] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   const [openBlogs, setOpenBlogs] = useState(false);
 
   const menu = [
-    { name: "Dashboard", path: "/", icon: <LayoutDashboard size={18} /> },
-    { name: "Users", path: "/users", icon: <Users size={18} /> },
-    { name: "Setting", path: "/settings", icon: <Settings size={18} /> },
+    { name: "Dashboard", path: "/", icon: <FaHome /> },
+    { name: "Users", path: "/users", icon: <FaUserAlt /> },
+    { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
   ];
 
   // Submenu for Pages
   const pagesMenu = [
     { id: 1, name: "Landing Page", path: "/pages/1" },
     { id: 2, name: "About Us Page", path: "/pages/about-us" },
-    { id: 3, name: "Contact Page", path: "/pages/3" },
+    { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
   // Submenu for Blogs
@@ -45,8 +52,8 @@ const handleLogout = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="w-64 bg-white text-black p-5 flex flex-col border-r">
-        <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
+      <aside className={`max-md:hidden ${sidebarOpen ? 'w-64' : 'w-16'} bg-white text-black p-2.5 flex flex-col transition-all duration-400`}>
+        <h2 className="text-2xl font-bold mb-6 mx-auto">{sidebarOpen ? 'Admin Panel' : 'AP'}</h2>
         <nav className="flex-1">
           <ul>
             {/* Normal Menu */}
@@ -54,31 +61,30 @@ const handleLogout = () => {
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  className={`flex items-center gap-2 px-4 py-2 rounded transition ${
-                    location.pathname === item.path
-                      ? "bg-gray-200"
-                      : "hover:bg-gray-200"
-                  }`}
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200 text-black"
+                    }`}
                 >
-                  {item.icon}
-                  <span>{item.name}</span>
+                  <span className="">{item.icon}</span>
+                  {/* <span>{item.name}</span> */}
+                  <span>{sidebarOpen && item.name}</span>
                 </Link>
               </li>
             ))}
 
             {/* Pages with Dropdown */}
-            <li className="mb-3">
+            <li className="mb-3 text-4xl">
               <button
                 onClick={() => setOpenPages(!openPages)}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
-                  location.pathname.startsWith("/pages")
-                    ? "bg-gray-200"
-                    : "hover:bg-gray-200"
-                }`}
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
+                  ? "bg-gray-200 text-[#6777EF]"
+                  : "hover:bg-gray-200"
+                  }`}
               >
                 <div className="flex items-center gap-2">
-                  <FileText size={18} />
-                  <span>Pages</span>
+                  <RiFilePaper2Fill />
+                  <span>{sidebarOpen && 'Pages'}</span>
                 </div>
                 {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
@@ -89,11 +95,10 @@ const handleLogout = () => {
                     <li key={p.id} className="mb-2">
                       <Link
                         to={p.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${
-                          location.pathname === p.path
-                            ? "bg-gray-200"
-                            : "hover:bg-gray-100"
-                        }`}
+                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
+                          ? "bg-gray-200 text-[#6777EF]"
+                          : "hover:bg-gray-100"
+                          }`}
                       >
                         {p.name}
                       </Link>
@@ -114,7 +119,7 @@ const handleLogout = () => {
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <BookOpen size={18} />
+                  <FaBlog />
                   <span>Blogs</span>
                 </div>
                 {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
@@ -141,22 +146,29 @@ const handleLogout = () => {
             </li>
           </ul>
         </nav>
+
+
       </aside>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <header className="bg-[#6777EF] shadow px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl text-white font-semibold capitalize">
+        <header className="h-28 bg-[#6777EF] shadow px-1 md:px-6 py-5 flex justify-between relative">
+          {/* <h1 className="text-xl text-white font-semibold capitalize">
             {location.pathname === "/"
               ? "Dashboard"
               : location.pathname.replace("/", "")}
-          </h1>
-          <div className="flex items-center gap-4">
+          </h1> */}
+          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-10">
+            <Title />
+          </div>
+          <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />
+
+          <div className="flex gap-4">
             <span className="text-white">Welcome, Admin</span>
             <button
               onClick={handleLogout}
-              className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+              className="bg-red-500 text-white h-10 px-3 py-1 rounded hover:bg-red-600"
             >
               Logout
             </button>

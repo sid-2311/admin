@@ -8,9 +8,17 @@ import Settings from "./pages/Settings";
 import Pages from "./pages/page";
 import AboutusPagess from "./pages/page";
 // import Whytochoose from "./pages/Whytochooseus";
+import ContactUs from "./pages/ContactUs";
+
+// import Whytochoose from "./pages/Whytochooseus";
 import BlogCategory from "./pages/BlogCategory";
 import BlogCategoryForm from "./pages/CreateBlog";
 import BlogEditPage from "./pages/EditBlog";
+import Blogs from "./pages/Blogs";
+import BlogForm from "./pages/BlogCreate";
+import BlogEditForm from "./pages/BlogEdit";
+import PopularBlog from "./pages/PopularBlog";
+import BlogComment from "./pages/BlogComment";
 
 
 function App(){
@@ -28,12 +36,18 @@ function App(){
             <Route path="settings" element={<Settings />}/>
             {/* <Route path="pages"> */}
               <Route path="pages/about-us" element={<AboutusPagess/>}/>
+              <Route path="pages/contact-us" element={<ContactUs/>}/>
               {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
             {/* </Route> */}
           {/* <Route index element={<Dashboard />} /> */}
          <Route path="/blogs/categories" element={<BlogCategory/>}/>
          <Route path="/createBlog" element={<BlogCategoryForm/>}/>
          <Route path="/editblog" element={<BlogEditPage/>}/>
+         <Route path="/blogs/create" element={<Blogs/>}/>
+          <Route path="/BlogCreate" element={<BlogForm/>}/>
+          <Route path="/BlogEdit" element={<BlogEditForm/>}/>
+          <Route path="/blogs/popular" element={<PopularBlog/>}/>
+          <Route path="/blogs/comments" element={<BlogComment/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />
