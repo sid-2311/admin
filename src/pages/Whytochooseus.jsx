@@ -57,55 +57,61 @@ const Whytochoose = () => {
       {/* Description */}
       <div className="mb-4">
         <label className="block font-semibold mb-1">Description</label>
-       <Editor
-      apiKey='acjhcofsnudxw7zfd6fkotrfg8uh0mhxfzzgrhfxyop95vll'
-      init={{
-        plugins: [
-          // Core editing features
-          'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-          // Your account includes a free trial of TinyMCE premium features
-          // Try the most popular premium features until Sep 25, 2025:
-          'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'advtemplate', 'ai', 'uploadcare', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
-        ],
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name',
-        mergetags_list: [
-          { value: 'First.Name', title: 'First Name' },
-          { value: 'Email', title: 'Email' },
-        ],
-        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-        uploadcare_public_key: 'b981648c6e382093adad',
-      }}
-      initialValue="Welcome to TinyMCE!"
-    />
+        <Editor
+          apiKey='acjhcofsnudxw7zfd6fkotrfg8uh0mhxfzzgrhfxyop95vll'
+          init={{
+            plugins: [
+              // Core editing features
+              'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+              // Your account includes a free trial of TinyMCE premium features
+              // Try the most popular premium features until Sep 25, 2025:
+              'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'advtemplate', 'ai', 'uploadcare', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
+            ],
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+              { value: 'First.Name', title: 'First Name' },
+              { value: 'Email', title: 'Email' },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+            uploadcare_public_key: 'b981648c6e382093adad',
+          }}
+          initialValue="Welcome to TinyMCE!"
+        />
       </div>
+
 
       {/* Background Image */}
       <div className="mb-4">
         <label className="block font-semibold mb-1">Background Image</label>
-        {formData.backgroundImage && (
-          <img
-            src={URL.createObjectURL(formData.backgroundImage)}
-            alt="Background Preview"
-            className="h-28 w-auto mb-2 rounded"
-          />
-        )}
+        <img
+          src={
+            formData.backgroundImage
+              ? URL.createObjectURL(formData.backgroundImage)
+              : "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          }
+          alt="Background Preview"
+          className="h-28 w-auto mb-2 rounded"
+        />
         <input type="file" name="backgroundImage" onChange={handleChange} />
       </div>
 
       {/* Foreground Image */}
       <div className="mb-4">
         <label className="block font-semibold mb-1">Foreground Image</label>
-        {formData.foregroundImage && (
-          <img
-            src={URL.createObjectURL(formData.foregroundImage)}
-            alt="Foreground Preview"
-            className="h-28 w-auto mb-2 rounded"
-          />
-        )}
+        <img
+          src={
+            formData.foregroundImage
+              ? URL.createObjectURL(formData.foregroundImage)
+              : "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          }
+          alt="Foreground Preview"
+          className="h-28 w-auto mb-2 rounded"
+        />
         <input type="file" name="foregroundImage" onChange={handleChange} />
       </div>
+
 
       {/* Item One */}
       <div className="mb-4">
