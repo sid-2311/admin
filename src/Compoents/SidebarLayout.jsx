@@ -162,7 +162,7 @@ const SidebarLayout = () => {
       {/* Mobile Sidebar Overlay */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-[45] bg-black bg-opacity-40"
+          className="md:hidden fixed inset-0 z-[45] bg-transparent bg-opacity-40"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
