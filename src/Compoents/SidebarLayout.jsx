@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Title from "./Title";
 import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
+import { IoGrid, IoSettingsSharp } from "react-icons/io5";
 import { RiFilePaper2Fill } from "react-icons/ri";
 import { path } from "framer-motion/client";
 
@@ -28,10 +28,10 @@ const SidebarLayout = () => {
   const [openProfile, setOpenProfile] = useState(false);
 
   const menu = [
-    { name: "Dashboard", path: "/", icon: <FaHome /> },
-    { name: "Users", path: "/users", icon: <FaUserAlt /> },
-    { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
-    {name: "Categories" ,path:"/Categories",icon: <LayoutGrid /> }
+    { name: "Dashboard", path: "/", icon: <FaHome className="text-gray-600" /> },
+    { name: "Users", path: "/users", icon: <FaUserAlt size={12} className="text-gray-600" /> },
+    { name: "Setting", path: "/settings", icon: <IoSettingsSharp className="text-gray-600" /> },
+    {name: "Categories" ,path:"/Categories",icon: <IoGrid className="text-gray-600" /> }
   ];
 
   const pagesMenu = [
@@ -60,7 +60,7 @@ const SidebarLayout = () => {
       <aside
         className={`max-md:hidden ${
           sidebarOpen ? "w-64" : "w-16"
-        } bg-white text-black p-2.5 flex flex-col transition-all duration-400`}
+        } bg-white text-gray-500 p-2.5 flex flex-col transition-all duration-400`}
       >
         <h2 className="text-2xl font-bold mb-6 mx-auto">
           {sidebarOpen ? "Admin Panel" : "AP"}
