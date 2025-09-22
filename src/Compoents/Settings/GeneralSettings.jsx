@@ -185,7 +185,7 @@ const GeneralSettings = () => {
     };
 
     const commonInputClass =
-        "w-full border border-[#E4E6FC] text-[#495057] rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-violet-600";
+        "w-full border border-[#E4E6FC] bg-[#FDFDFF] text-[#495057] rounded p-2 focus:outline-none focus:ring-1 focus:ring-violet-600";
 
     return (
         <form
@@ -308,7 +308,7 @@ const GeneralSettings = () => {
             <div>
                 <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer"
                 >
                     Update
                 </button>
