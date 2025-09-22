@@ -22,10 +22,10 @@ const SidebarLayout = () => {
   const [openProfile, setOpenProfile] = useState(false);
 
   const menu = [
-    { name: "Dashboard", path: "/", icon: <FaHome /> },
-    { name: "Users", path: "/users", icon: <FaUserAlt /> },
-    { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
-    { name: "Categories", path: "/categories", icon: <LayoutGrid /> },
+    { name: "Dashboard", path: "/", icon: <FaHome size={18} /> },
+    { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
+    { name: "Setting", path: "/settings", icon: <IoSettingsSharp size={18} /> },
+    { name: "Categories", path: "/categories", icon: <LayoutGrid size={18} /> },
   ];
 
   const pagesMenu = [
@@ -86,13 +86,13 @@ const SidebarLayout = () => {
                   }`}
               >
                 <div className="flex items-center gap-2">
-                  <RiFilePaper2Fill />
+                  <RiFilePaper2Fill size={18} />
                   <span>{sidebarOpen && "Pages"}</span>
                 </div>
                 {openPages ? (
-                  <ChevronDown size={16} />
+                  <ChevronDown className={`${!sidebarOpen && 'hidden'}`} size={16} />
                 ) : (
-                  <ChevronRight size={16} />
+                  <ChevronRight className={`${!sidebarOpen && 'hidden'}`} size={16} />
                 )}
               </button>
 
@@ -121,19 +121,19 @@ const SidebarLayout = () => {
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!sidebarOpen}
                 title={!sidebarOpen ? "Blogs" : ""}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${location.pathname.startsWith("/blogs")
+                className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
                   }`}
               >
                 <div className="flex items-center gap-2">
-                  <FaBlog />
+                  <FaBlog size={18}/>
                   <span>{sidebarOpen && "Blogs"}</span>
                 </div>
                 {openBlogs ? (
-                  <ChevronDown size={16} />
+                  <ChevronDown className={`${!sidebarOpen && 'hidden'}`} size={16} />
                 ) : (
-                  <ChevronRight size={16} />
+                  <ChevronRight className={`${!sidebarOpen && 'hidden'}`} size={16} />
                 )}
               </button>
 
@@ -252,7 +252,7 @@ const SidebarLayout = () => {
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!mobileMenuOpen}
                 title={!mobileMenuOpen ? "Blogs" : ""}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${location.pathname.startsWith("/blogs")
+                className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
                   }`}
