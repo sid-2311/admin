@@ -40,7 +40,7 @@ const CookieConsent = () => {
                         name="allowConsent"
                         value={formData.allowConsent}
                         onChange={handleChange}
-                        className="w-full border rounded-md p-2"
+                        className="w-full border bg-[#FDFDFF] rounded-md p-2"
                     >
                         <option>Enable</option>
                         <option>Disable</option>

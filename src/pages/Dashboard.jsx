@@ -54,49 +54,49 @@ const Dashboard = () => {
           title="Total Booking"
           value={todayStats.totalBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Awaiting Booking"
           value={todayStats.awaitingBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Active Booking"
           value={todayStats.activeBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Complete Booking"
           value={todayStats.completeBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Total Earnings"
           value={`$${todayStats.totalEarnings}`}
           color="bg-green-500 text-white"
-          icon={<DollarSign size={28} />}
+          icon={<DollarSign size={32} />}
         />
         <Card
           title="Withdraw Request"
           value={`$${todayStats.withdrawRequest}`}
           color="bg-green-500 text-white"
-          icon={<DollarSign size={28} />}
+          icon={<DollarSign size={32} />}
         />
         <Card
           title="Refund Request"
           value={`$${todayStats.refundRequest}`}
           color="bg-green-500 text-white"
-          icon={<RotateCcw size={28} />}
+          icon={<RotateCcw size={32} />}
         />
         <Card
           title="New Client/Provider"
           value={todayStats.newClient}
           color="bg-green-500 text-white"
-          icon={<Users size={28} />}
+          icon={<Users size={32} />}
         />
       </div>
 
@@ -107,43 +107,43 @@ const Dashboard = () => {
           title="Total Booking"
           value={monthStats.totalBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Awaiting Booking"
           value={monthStats.awaitingBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Active Booking"
           value={monthStats.activeBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Complete Booking"
           value={monthStats.completeBooking}
           color="bg-indigo-500 text-white"
-          icon={<ShoppingCart size={28} />}
+          icon={<ShoppingCart size={32} />}
         />
         <Card
           title="Total Earnings"
           value={`$${monthStats.totalEarnings}`}
           color="bg-orange-400 text-white"
-          icon={<DollarSign size={28} />}
+          icon={<DollarSign size={32} />}
         />
         <Card
           title="Withdraw Request"
           value={`$${monthStats.withdrawRequest}`}
           color="bg-orange-400 text-white"
-          icon={<DollarSign size={28} />}
+          icon={<DollarSign size={32} />}
         />
         <Card
           title="Refund Request"
           value={`$${monthStats.refundRequest}`}
           color="bg-orange-400 text-white"
-          icon={<RotateCcw size={28} />}
+          icon={<RotateCcw size={32} />}
         />
         <Card
           title="New Client/Provider"

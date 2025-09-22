@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { FaEdit, FaTrash, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import StatusToggle from "../ui/ToggleButton";
 import { useNavigate } from "react-router-dom";
-
-// StatusToggle component
 
 const BlogCategory = () => {
   const [entries, setEntries] = useState(10);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const navigate =useNavigate()
+  const navigate = useNavigate();
 
   const data = [
     { id: 1, name: "Home Cleaning", slug: "home-cleaning", status: "Active" },
@@ -47,101 +45,83 @@ const BlogCategory = () => {
       item.slug.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Pagination
   const totalPages = Math.ceil(filteredData.length / entries);
-  const startIdx = (currentPage - 1) * entries;
-  const endIdx = startIdx + entries;
-  const paginatedData = filteredData.slice(startIdx, endIdx);
+  const startIndex = (currentPage - 1) * entries;
+  const paginatedData = filteredData.slice(startIndex, startIndex + entries);
 
-  // Handle page change
   const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  // Reset page to 1 when search or entries change
-  React.useEffect(() => {
-    setCurrentPage(1);
-  }, [search, entries]);
-
-  // Generate page numbers for pagination
-  const getPageNumbers = () => {
-    const pages = [];
-    const maxVisiblePages = 5;
-    
-    if (totalPages <= maxVisiblePages) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      if (currentPage <= 3) {
-        for (let i = 1; i <= 5; i++) {
-          pages.push(i);
-        }
-      } else if (currentPage >= totalPages - 2) {
-        for (let i = totalPages - 4; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        for (let i = currentPage - 2; i <= currentPage + 2; i++) {
-          pages.push(i);
-        }
-      }
+    if (page > 0 && page <= totalPages) {
+      setCurrentPage(page);
     }
-    
-    return pages;
   };
 
-const handleEdit = (item) => {
-  navigate("/editblog", {
-    state: { editData: item }
-  });
-};
+  const handleEdit = (item) => {
+    navigate("/editblog", { state: { editData: item } });
+  };
 
-const handleNew=()=>{
-    navigate("/createBlog")
-}
+  const handleNew = () => {
+    navigate("/createBlog");
+  };
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [entries, search]);
+
   return (
-    <div className="p-6 bg-gray-50 min-h-screen mt-10">
-      {/* Top Actions */}
+    <div className="p-6 bg-gray-100">
+      {/* Top Section */}
       <div className="flex justify-between items-center mb-4">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700" onClick={handleNew}>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700"
+          onClick={handleNew}
+        >
           + Add New
         </button>
-
-        <div className="flex items-center gap-2">
-          <label className="text-sm">Show</label>
-          <select
-            value={entries}
-            onChange={(e) => setEntries(Number(e.target.value))}
-            className="border rounded px-2 py-1 text-sm"
-          >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-          </select>
-          <span className="text-sm">entries</span>
-        </div>
-
-        <div>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="border px-3 py-1 rounded text-sm"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-white  overflow-hidden">
+      {/* Table Card */}
+      <div className="bg-white p-4  ">
+        {/* Show entries + Search bar row */}
+        <div className="flex justify-between items-center mb-4">
+          {/* Left side - Show entries */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">Show</span>
+            <input
+              type="number"
+              min="1"
+              value={entries}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                setEntries(val > 0 ? val : 1);
+                setCurrentPage(1);
+              }}
+              className="border text-gray-400 border-gray-400 rounded bg-[#FDFDFF] p-1 w-16 text-center focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+            />
+            <span className="text-sm text-gray-600">entries</span>
+          </div>
+
+          {/* Right side - Search */}
+          <div className="text-sm text-gray-600 flex items-center gap-2">
+            <span>Search:</span>
+            <input
+              type="text"
+              className="border border-gray-400 rounded focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Table */}
         <table className="w-full table-fixed">
           <thead>
-            <tr className="bg-gray-100 text-left text-sm font-semibold">
-              <th className="px-4 py-2">SN</th>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Slug</th>
-              <th className="px-4 py-2">Status</th>
-              <th className="px-4 py-2">Action</th>
+            <tr className="bg-gray-100 text-left">
+              <th className="p-3">SN</th>
+              <th className="p-3">Name</th>
+              <th className="p-3">Slug</th>
+              <th className="p-3">Status</th>
+              <th className="p-3">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -150,18 +130,23 @@ const handleNew=()=>{
                 key={item.id}
                 className="odd:bg-white even:bg-gray-50 hover:bg-gray-100 text-sm"
               >
-                <td className="px-4 py-2">{startIdx + index + 1}</td>
-                <td className="px-4 py-2">{item.name}</td>
-                <td className="px-4 py-2 text-gray-500">{item.slug}</td>
-                <td className="px-4 py-2">
+                <td className="p-3">{startIndex + index + 1}</td>
+                <td className="p-3 text-blue-600 cursor-pointer">
+                  {item.name}
+                </td>
+                <td className="p-3">{item.slug}</td>
+                <td className="p-3">
                   <StatusToggle initialStatus={item.status} />
                 </td>
-                <td className="px-4 py-2 flex gap-2">
-                  <button onClick={() => handleEdit(item)}  className="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                    <FaEdit size={14} />
+                <td className="p-3 flex gap-2">
+                  <button
+                    className="bg-blue-600 p-2 rounded text-white hover:bg-blue-700"
+                    onClick={() => handleEdit(item)}
+                  >
+                    <FaEdit />
                   </button>
-                  <button className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">
-                    <FaTrash size={14} />
+                  <button className="bg-red-600 p-2 rounded text-white hover:bg-red-700">
+                    <FaTrash />
                   </button>
                 </td>
               </tr>
@@ -177,57 +162,48 @@ const handleNew=()=>{
           </tbody>
         </table>
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="px-4 py-3 border-t border-gray-200 bg-gray-50 flex items-center justify-between">
-            <div className="text-sm text-gray-700">
-              Showing {startIdx + 1} to {Math.min(endIdx, filteredData.length)} of {filteredData.length} entries
-            </div>
-            
-            <div className="flex items-center gap-2">
-              {/* Previous Button */}
+        {/* Pagination Controls */}
+        <div className="flex justify-end mt-4">
+          <nav className="flex items-center space-x-1">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`px-3 py-1 border rounded ${
+                currentPage === 1
+                  ? "text-gray-400 border-gray-300"
+                  : "text-blue-600 border-blue-400 hover:bg-blue-50"
+              }`}
+            >
+              Previous
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => (
               <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className={`px-3 py-1 rounded text-sm ${
-                  currentPage === 1
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-white border text-gray-700 hover:bg-gray-50"
+                key={i + 1}
+                onClick={() => handlePageChange(i + 1)}
+                className={`px-3 py-1 border rounded ${
+                  currentPage === i + 1
+                    ? "bg-blue-600 text-white border-blue-600"
+                    : "text-blue-600 border-blue-400 hover:bg-blue-50"
                 }`}
               >
-                <FaChevronLeft size={12} />
+                {i + 1}
               </button>
+            ))}
 
-              {/* Page Numbers */}
-              {getPageNumbers().map((page) => (
-                <button
-                  key={page}
-                  onClick={() => handlePageChange(page)}
-                  className={`px-3 py-1 rounded text-sm ${
-                    currentPage === page
-                      ? "bg-blue-600 text-white"
-                      : "bg-white border text-gray-700 hover:bg-gray-50"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-
-              {/* Next Button */}
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className={`px-3 py-1 rounded text-sm ${
-                  currentPage === totalPages
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-white border text-gray-700 hover:bg-gray-50"
-                }`}
-              >
-                <FaChevronRight size={12} />
-              </button>
-            </div>
-          </div>
-        )}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`px-3 py-1 border rounded ${
+                currentPage === totalPages
+                  ? "text-gray-400 border-gray-300"
+                  : "text-blue-600 border-blue-400 hover:bg-blue-50"
+              }`}
+            >
+              Next
+            </button>
+          </nav>
+        </div>
       </div>
     </div>
   );
