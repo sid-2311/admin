@@ -9,65 +9,74 @@ import {
   ChevronDown,
   ChevronRight,
   Menu,
+  LayoutGrid,
+  
 } from "lucide-react";
 import Title from "./Title";
 import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiFilePaper2Fill } from "react-icons/ri";
+import { path } from "framer-motion/client";
 
 const SidebarLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [openPages, setOpenPages] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
   const [openBlogs, setOpenBlogs] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome /> },
     { name: "Users", path: "/users", icon: <FaUserAlt /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
+    {name: "Categories" ,path:"/Categories",icon: <LayoutGrid /> }
   ];
 
-  // Submenu for Pages
   const pagesMenu = [
     { id: 1, name: "Landing Page", path: "/pages/1" },
     { id: 2, name: "About Us Page", path: "/pages/about-us" },
     { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
-  // Submenu for Blogs
   const blogsMenu = [
     { id: 1, name: "Categories", path: "/blogs/categories" },
     { id: 2, name: "Blogs", path: "/blogs/create" },
     { id: 3, name: "Popular Blogs", path: "/blogs/popular" },
-    { id: 3, name: "Comments", path: "/blogs/comments" },
+    { id: 4, name: "Comments", path: "/blogs/comments" },
   ];
 
-const handleLogout = () => {
+  const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    setIsAuthenticated(false); // ✅ update parent state
+    // agar parent state me authentication ho to update karna padega
+    // setIsAuthenticated(false);
     navigate("/login");
   };
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className={`max-md:hidden ${sidebarOpen ? 'w-64' : 'w-16'} bg-white text-black p-2.5 flex flex-col transition-all duration-400`}>
-        <h2 className="text-2xl font-bold mb-6 mx-auto">{sidebarOpen ? 'Admin Panel' : 'AP'}</h2>
+      <aside
+        className={`max-md:hidden ${
+          sidebarOpen ? "w-64" : "w-16"
+        } bg-white text-black p-2.5 flex flex-col transition-all duration-400`}
+      >
+        <h2 className="text-2xl font-bold mb-6 mx-auto">
+          {sidebarOpen ? "Admin Panel" : "AP"}
+        </h2>
         <nav className="flex-1">
           <ul>
-            {/* Normal Menu */}
             {menu.map((item) => (
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-200 text-black"
-                    }`}
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
+                    location.pathname === item.path
+                      ? "bg-gray-200 text-[#6777EF]"
+                      : "hover:bg-gray-200 text-black"
+                  }`}
                 >
-                  <span className="">{item.icon}</span>
-                  {/* <span>{item.name}</span> */}
+                  <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
                 </Link>
               </li>
@@ -77,14 +86,15 @@ const handleLogout = () => {
             <li className="mb-3 text-4xl">
               <button
                 onClick={() => setOpenPages(!openPages)}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
-                  }`}
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
+                  location.pathname.startsWith("/pages")
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
+                }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
-                  <span>{sidebarOpen && 'Pages'}</span>
+                  <span>{sidebarOpen && "Pages"}</span>
                 </div>
                 {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
@@ -95,10 +105,11 @@ const handleLogout = () => {
                     <li key={p.id} className="mb-2">
                       <Link
                         to={p.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
-                          ? "bg-gray-200 text-[#6777EF]"
-                          : "hover:bg-gray-100"
-                          }`}
+                        className={`block px-3 py-1 rounded text-sm transition ${
+                          location.pathname === p.path
+                            ? "bg-gray-200 text-[#6777EF]"
+                            : "hover:bg-gray-100"
+                        }`}
                       >
                         {p.name}
                       </Link>
@@ -146,32 +157,54 @@ const handleLogout = () => {
             </li>
           </ul>
         </nav>
-
-
       </aside>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
         <header className="h-28 bg-[#6777EF] shadow px-1 md:px-6 py-5 flex justify-between relative">
-          {/* <h1 className="text-xl text-white font-semibold capitalize">
-            {location.pathname === "/"
-              ? "Dashboard"
-              : location.pathname.replace("/", "")}
-          </h1> */}
           <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-50">
             <Title />
           </div>
-          <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />
+          <Menu
+            className="text-white cursor-pointer"
+            size={28}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          />
 
-          <div className="flex gap-4">
-            <span className="text-white">Welcome, Admin</span>
-            <button
-              onClick={handleLogout}
-              className="bg-red-500 text-white h-10 px-3 py-1 rounded hover:bg-red-600"
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setOpenProfile(!openProfile)}
             >
-              Logout
-            </button>
+              <img
+                src="https://via.placeholder.com/40"
+                alt="profile"
+                className="w-10 h-10 rounded-full object-cover border-2 border-white"
+              />
+              <span className="text-white">Admin</span>
+              <ChevronDown className="text-white" size={18} />
+            </div>
+
+            {openProfile && (
+              <div className="absolute right-0 mt-2 z-50 bg-white rounded shadow-md w-40">
+                <ul className="flex flex-col">
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => navigate("/profile")}
+                  >
+                    View Profile
+                  </li>
+                  <li
+                    className="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
 

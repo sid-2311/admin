@@ -19,6 +19,8 @@ import BlogForm from "./pages/BlogCreate";
 import BlogEditForm from "./pages/BlogEdit";
 import PopularBlog from "./pages/PopularBlog";
 import BlogComment from "./pages/BlogComment";
+import ProfileForm from "./pages/Profile";
+import Category from "./pages/Category";
 
 
 function App(){
@@ -48,6 +50,8 @@ function App(){
           <Route path="/BlogEdit" element={<BlogEditForm/>}/>
           <Route path="/blogs/popular" element={<PopularBlog/>}/>
           <Route path="/blogs/comments" element={<BlogComment/>}/>
+          <Route path="/profile" element={<ProfileForm/>}/>
+          <Route path ="/Categories" element={<Category/>}/>
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />
