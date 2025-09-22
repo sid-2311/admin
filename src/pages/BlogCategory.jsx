@@ -69,11 +69,11 @@ const BlogCategory = () => {
   }, [entries, search]);
 
   return (
-    <div className="p-6 bg-gray-100">
+    <div className="p-4 sm:p-6 bg-gray-100">
       {/* Top Section */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
         <button
-          className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700"
+          className="px-4 py-2 w-full sm:w-auto bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700"
           onClick={handleNew}
         >
           + Add New
@@ -81,9 +81,9 @@ const BlogCategory = () => {
       </div>
 
       {/* Table Card */}
-      <div className="bg-white p-4  ">
+      <div className="bg-white p-4 rounded-lg shadow-sm">
         {/* Show entries + Search bar row */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
           {/* Left side - Show entries */}
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600">Show</span>
@@ -96,17 +96,17 @@ const BlogCategory = () => {
                 setEntries(val > 0 ? val : 1);
                 setCurrentPage(1);
               }}
-              className="border text-gray-400 border-gray-400 rounded bg-[#FDFDFF] p-1 w-16 text-center focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+              className="border text-gray-600 border-gray-400 rounded bg-[#FDFDFF] p-1 w-16 text-center focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
             />
             <span className="text-sm text-gray-600">entries</span>
           </div>
 
           {/* Right side - Search */}
-          <div className="text-sm text-gray-600 flex items-center gap-2">
+          <div className="text-sm text-gray-600 flex items-center gap-2 w-full sm:w-auto">
             <span>Search:</span>
             <input
               type="text"
-              className="border border-gray-400 rounded focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
+              className="border border-gray-400 rounded px-2 py-1 w-full sm:w-auto focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -114,61 +114,61 @@ const BlogCategory = () => {
         </div>
 
         {/* Table */}
-        <table className="w-full table-fixed">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-3">SN</th>
-              <th className="p-3">Name</th>
-              <th className="p-3">Slug</th>
-              <th className="p-3">Status</th>
-              <th className="p-3">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedData.map((item, index) => (
-              <tr
-                key={item.id}
-                className="odd:bg-white even:bg-gray-50 hover:bg-gray-100 text-sm"
-              >
-                <td className="p-3">{startIndex + index + 1}</td>
-                <td className="p-3 text-blue-600 cursor-pointer">
-                  {item.name}
-                </td>
-                <td className="p-3">{item.slug}</td>
-                <td className="p-3">
-                  <StatusToggle initialStatus={item.status} />
-                </td>
-                <td className="p-3 flex gap-2">
-                  <button
-                    className="bg-blue-600 p-2 rounded text-white hover:bg-blue-700"
-                    onClick={() => handleEdit(item)}
-                  >
-                    <FaEdit />
-                  </button>
-                  <button className="bg-red-600 p-2 rounded text-white hover:bg-red-700">
-                    <FaTrash />
-                  </button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100 text-left text-gray-700">
+                <th className="p-3">SN</th>
+                <th className="p-3">Name</th>
+                <th className="p-3">Slug</th>
+                <th className="p-3">Status</th>
+                <th className="p-3">Action</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {paginatedData.map((item, index) => (
+                <tr
+                  key={item.id}
+                  className="odd:bg-white even:bg-gray-50 hover:bg-gray-100"
+                >
+                  <td className="p-3">{startIndex + index + 1}</td>
+                  <td className="p-3 text-blue-600 cursor-pointer">{item.name}</td>
+                  <td className="p-3">{item.slug}</td>
+                  <td className="p-3">
+                    <StatusToggle initialStatus={item.status} />
+                  </td>
+                  <td className="p-3 flex gap-2">
+                    <button
+                      className="bg-blue-600 p-2 rounded text-white hover:bg-blue-700"
+                      onClick={() => handleEdit(item)}
+                    >
+                      <FaEdit />
+                    </button>
+                    <button className="bg-red-600 p-2 rounded text-white hover:bg-red-700">
+                      <FaTrash />
+                    </button>
+                  </td>
+                </tr>
+              ))}
 
-            {filteredData.length === 0 && (
-              <tr>
-                <td colSpan="5" className="text-center py-4 text-gray-500">
-                  No records found
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              {filteredData.length === 0 && (
+                <tr>
+                  <td colSpan="5" className="text-center py-4 text-gray-500">
+                    No records found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
 
         {/* Pagination Controls */}
-        <div className="flex justify-end mt-4">
-          <nav className="flex items-center space-x-1">
+        <div className="flex justify-center sm:justify-end mt-4">
+          <nav className="flex flex-wrap items-center space-x-1">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`px-3 py-1 border rounded ${
+              className={`px-3 py-1 border rounded text-sm ${
                 currentPage === 1
                   ? "text-gray-400 border-gray-300"
                   : "text-blue-600 border-blue-400 hover:bg-blue-50"
@@ -181,7 +181,7 @@ const BlogCategory = () => {
               <button
                 key={i + 1}
                 onClick={() => handlePageChange(i + 1)}
-                className={`px-3 py-1 border rounded ${
+                className={`px-3 py-1 border rounded text-sm ${
                   currentPage === i + 1
                     ? "bg-blue-600 text-white border-blue-600"
                     : "text-blue-600 border-blue-400 hover:bg-blue-50"
@@ -194,7 +194,7 @@ const BlogCategory = () => {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`px-3 py-1 border rounded ${
+              className={`px-3 py-1 border rounded text-sm ${
                 currentPage === totalPages
                   ? "text-gray-400 border-gray-300"
                   : "text-blue-600 border-blue-400 hover:bg-blue-50"

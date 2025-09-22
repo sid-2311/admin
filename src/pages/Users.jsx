@@ -83,7 +83,7 @@ const Users = () => {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto bg-white shadow rounded">
+      <div className="overflow-x-auto bg-white ">
         <table className="w-full table-fixed text-sm text-left text-gray-600">
           <thead className="bg-gray-100 text-gray-700 text-sm uppercase">
             <tr>

@@ -92,7 +92,7 @@ export default function Category() {
                 </td>
                 <td className="px-4 py-3 text-2xl">{service.icon}</td>
                 <td className="px-4 py-3">
-                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded">
+                  <span className="">
                     <StatusToggle  initialStatus={service.status}/>
                   </span>
                 </td>

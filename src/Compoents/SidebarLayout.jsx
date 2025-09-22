@@ -26,7 +26,7 @@ const SidebarLayout = () => {
     { name: "Dashboard", path: "/", icon: <FaHome className="text-gray-600" /> },
     { name: "Users", path: "/users", icon: <FaUserAlt className="text-gray-600" /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp className="text-gray-600" /> },
-    { name: "Categories", path: "/categories", icon: <LayoutGrid className="text-gray-600" /> },
+    { name: "Categories", path: "/categories", icon: <IoGrid className="text-gray-600" /> },
   ];
 
   const pagesMenu = [
