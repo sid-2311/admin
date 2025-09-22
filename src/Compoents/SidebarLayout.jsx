@@ -1,24 +1,16 @@
-
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
-  LayoutDashboard,
-  Users,
-  Settings,
-  FileText,
-  BookOpen,
   ChevronDown,
   ChevronRight,
   Menu,
   X,
   LayoutGrid,
-  
 } from "lucide-react";
 import Title from "./Title";
 import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiFilePaper2Fill } from "react-icons/ri";
-import { path } from "framer-motion/client";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -33,7 +25,7 @@ const SidebarLayout = () => {
     { name: "Dashboard", path: "/", icon: <FaHome /> },
     { name: "Users", path: "/users", icon: <FaUserAlt /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
-    {name: "Categories" ,path:"/Categories",icon: <LayoutGrid /> }
+    { name: "Categories", path: "/categories", icon: <LayoutGrid /> },
   ];
 
   const pagesMenu = [
@@ -51,14 +43,12 @@ const SidebarLayout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    // agar parent state me authentication ho to update karna padega
-    // setIsAuthenticated(false);
     navigate("/login");
   };
 
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
+      {/* Desktop Sidebar */}
       <aside
         className={`max-md:hidden ${sidebarOpen ? "w-64" : "w-16"
           } bg-white text-black p-2.5 flex flex-col transition-all duration-400`}
@@ -72,16 +62,11 @@ const SidebarLayout = () => {
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  title={!sidebarOpen ? item.name : ""} // tooltip jab collapse
+                  title={!sidebarOpen ? item.name : ""}
                   className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-200 text-black"
-                    }`}
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
-                    location.pathname === item.path
                       ? "bg-gray-200 text-[#6777EF]"
                       : "hover:bg-gray-200 text-black"
-                  }`}
+                    }`}
                 >
                   <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
@@ -89,27 +74,26 @@ const SidebarLayout = () => {
               </li>
             ))}
 
-            {/* Pages with Dropdown */}
-            <li className="mb-3 text-4xl">
+            {/* Pages Dropdown */}
+            <li className="mb-3">
               <button
                 onClick={() => setOpenPages(!openPages)}
                 disabled={!sidebarOpen}
                 title={!sidebarOpen ? "Pages" : ""}
                 className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
-                  }`}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
-                  location.pathname.startsWith("/pages")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
                   <span>{sidebarOpen && "Pages"}</span>
                 </div>
-                {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {openPages ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
 
               {openPages && (
@@ -119,8 +103,8 @@ const SidebarLayout = () => {
                       <Link
                         to={p.path}
                         className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
-                          ? "bg-gray-200 text-[#6777EF]"
-                          : "hover:bg-gray-100"
+                            ? "bg-gray-200 text-[#6777EF]"
+                            : "hover:bg-gray-100"
                           }`}
                       >
                         {p.name}
@@ -131,27 +115,26 @@ const SidebarLayout = () => {
               )}
             </li>
 
-            {/* Blogs with Dropdown */}
+            {/* Blogs Dropdown */}
             <li className="mb-3">
               <button
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!sidebarOpen}
                 title={!sidebarOpen ? "Blogs" : ""}
                 className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${location.pathname.startsWith("/blogs")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
-                  }`}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
-                  location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <FaBlog />
-                  <span>Blogs</span>
+                  <span>{sidebarOpen && "Blogs"}</span>
                 </div>
-                {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {openBlogs ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
 
               {openBlogs && (
@@ -161,8 +144,8 @@ const SidebarLayout = () => {
                       <Link
                         to={b.path}
                         className={`block px-3 py-1 rounded text-sm transition ${location.pathname === b.path
-                          ? "bg-gray-200 text-[#6777EF]"
-                          : "hover:bg-gray-100"
+                            ? "bg-gray-200 text-[#6777EF]"
+                            : "hover:bg-gray-100"
                           }`}
                       >
                         {b.name}
@@ -176,22 +159,24 @@ const SidebarLayout = () => {
         </nav>
       </aside>
 
-      {/* Mobile Sidebar Overlay & Sidebar */}
+      {/* Mobile Sidebar Overlay */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-[45] bg-transparent bg-opacity-40"
+          className="md:hidden fixed inset-0 z-[45] bg-black bg-opacity-40"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
+
+      {/* Mobile Sidebar */}
       <aside
-        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black p-0 flex flex-col transition-all duration-400 ${mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"}`}
-        onClick={e => e.stopPropagation()} // Prevent sidebar clicks from closing
+        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
+          }`}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold mx-auto">
             {mobileMenuOpen ? "Admin Panel" : "AP"}
           </h2>
-          {/* Mobile Menu Close Icon */}
           {mobileMenuOpen && (
             <X
               className="text-black cursor-pointer"
@@ -200,17 +185,17 @@ const SidebarLayout = () => {
             />
           )}
         </div>
+
         <nav className="flex-1">
           <ul>
-            {/* Normal Menu */}
             {menu.map((item) => (
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  title={!mobileMenuOpen ? item.name : ""} // tooltip jab collapse
+                  title={!mobileMenuOpen ? item.name : ""}
                   className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-200 text-black"
+                      ? "bg-gray-200 text-[#6777EF]"
+                      : "hover:bg-gray-200 text-black"
                     }`}
                 >
                   <span>{item.icon}</span>
@@ -219,22 +204,22 @@ const SidebarLayout = () => {
               </li>
             ))}
 
-            {/* Pages with Dropdown */}
+            {/* Mobile Pages Dropdown */}
             <li className="mb-3">
               <button
                 onClick={() => setOpenPages(!openPages)}
                 disabled={!mobileMenuOpen}
                 title={!mobileMenuOpen ? "Pages" : ""}
                 className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
                   }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
                   <span>{mobileMenuOpen && "Pages"}</span>
                 </div>
-                {sidebarOpen &&
+                {mobileMenuOpen &&
                   (openPages ? (
                     <ChevronDown size={16} />
                   ) : (
@@ -249,8 +234,8 @@ const SidebarLayout = () => {
                       <Link
                         to={p.path}
                         className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
-                          ? "bg-gray-200 text-[#6777EF]"
-                          : "hover:bg-gray-100"
+                            ? "bg-gray-200 text-[#6777EF]"
+                            : "hover:bg-gray-100"
                           }`}
                       >
                         {p.name}
@@ -261,15 +246,15 @@ const SidebarLayout = () => {
               )}
             </li>
 
-            {/* Blogs with Dropdown */}
+            {/* Mobile Blogs Dropdown */}
             <li className="mb-3">
               <button
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!mobileMenuOpen}
                 title={!mobileMenuOpen ? "Blogs" : ""}
                 className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${location.pathname.startsWith("/blogs")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
                   }`}
               >
                 <div className="flex items-center gap-2">
@@ -291,8 +276,8 @@ const SidebarLayout = () => {
                       <Link
                         to={b.path}
                         className={`block px-3 py-1 rounded text-sm transition ${location.pathname === b.path
-                          ? "bg-gray-200 text-[#6777EF]"
-                          : "hover:bg-gray-100"
+                            ? "bg-gray-200 text-[#6777EF]"
+                            : "hover:bg-gray-100"
                           }`}
                       >
                         {b.name}
@@ -313,6 +298,7 @@ const SidebarLayout = () => {
           <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-40">
             <Title />
           </div>
+
           {/* Desktop Sidebar Toggle */}
           <Menu
             className="max-md:hidden text-white cursor-pointer"
@@ -329,44 +315,43 @@ const SidebarLayout = () => {
             />
           )}
 
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <span className="text-white">Welcome, Admin</span>
-            <button
-              onClick={handleLogout}
-              className="bg-red-500 text-white h-10 px-3 py-1 rounded hover:bg-red-600"
-          {/* Profile Dropdown */}
-          <div className="relative">
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setOpenProfile(!openProfile)}
-            >
-              <img
-                src="https://via.placeholder.com/40"
-                alt="profile"
-                className="w-10 h-10 rounded-full object-cover border-2 border-white"
-              />
-              <span className="text-white">Admin</span>
-              <ChevronDown className="text-white" size={18} />
-            </div>
 
-            {openProfile && (
-              <div className="absolute right-0 mt-2 z-50 bg-white rounded shadow-md w-40">
-                <ul className="flex flex-col">
-                  <li
-                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                    onClick={() => navigate("/profile")}
-                  >
-                    View Profile
-                  </li>
-                  <li
-                    className="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </li>
-                </ul>
+            {/* Profile Dropdown */}
+            <div className="relative">
+              <div
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setOpenProfile(!openProfile)}
+              >
+                <img
+                  src="https://via.placeholder.com/40"
+                  alt="profile"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-white"
+                />
+                <span className="text-white">Admin</span>
+                <ChevronDown className="text-white" size={18} />
               </div>
-            )}
+
+              {openProfile && (
+                <div className="absolute right-0 mt-2 z-50 bg-white rounded shadow-md w-40">
+                  <ul className="flex flex-col">
+                    <li
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => navigate("/profile")}
+                    >
+                      View Profile
+                    </li>
+                    <li
+                      className="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
