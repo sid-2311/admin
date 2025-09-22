@@ -4,11 +4,14 @@ import {
   ChevronDown,
   ChevronRight,
   Menu,
+  LayoutGrid,
+  
 } from "lucide-react";
 import Title from "./Title";
 import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiFilePaper2Fill } from "react-icons/ri";
+import { path } from "framer-motion/client";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -16,21 +19,21 @@ const SidebarLayout = () => {
   const [openPages, setOpenPages] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [openBlogs, setOpenBlogs] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome /> },
     { name: "Users", path: "/users", icon: <FaUserAlt /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
+    {name: "Categories" ,path:"/Categories",icon: <LayoutGrid /> }
   ];
 
-  // Submenu for Pages
   const pagesMenu = [
     { id: 1, name: "Landing Page", path: "/pages/1" },
     { id: 2, name: "About Us Page", path: "/pages/about-us" },
     { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
-  // Submenu for Blogs
   const blogsMenu = [
     { id: 1, name: "Categories", path: "/blogs/categories" },
     { id: 2, name: "Blogs", path: "/blogs/create" },
@@ -40,18 +43,9 @@ const SidebarLayout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    // agar parent mein isAuthenticated state ho to yaha update karna padega
+    setIsAuthenticated(false); // ✅ update parent state
     navigate("/login");
   };
-
-  // 👇 sidebar collapse hone par submenu close ho jaye
-  useEffect(() => {
-    if (!sidebarOpen) {
-      setOpenPages(false);
-      setOpenBlogs(false);
-    }
-  }, [sidebarOpen]);
-
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -65,17 +59,14 @@ const SidebarLayout = () => {
         </h2>
         <nav className="flex-1">
           <ul>
-            {/* Normal Menu */}
             {menu.map((item) => (
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  title={!sidebarOpen ? item.name : ""} // tooltip jab collapse
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
-                    location.pathname === item.path
-                      ? "bg-gray-200 text-[#6777EF]"
-                      : "hover:bg-gray-200 text-black"
-                  }`}
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200 text-black"
+                    }`}
                 >
                   <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
@@ -87,13 +78,10 @@ const SidebarLayout = () => {
             <li className="mb-3">
               <button
                 onClick={() => setOpenPages(!openPages)}
-                disabled={!sidebarOpen}
-                title={!sidebarOpen ? "Pages" : ""}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
-                  location.pathname.startsWith("/pages")
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-200"
-                }`}
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
+                  ? "bg-gray-200 text-[#6777EF]"
+                  : "hover:bg-gray-200"
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
@@ -181,11 +169,7 @@ const SidebarLayout = () => {
           <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-50">
             <Title />
           </div>
-          <Menu
-            className="text-white cursor-pointer"
-            size={28}
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          />
+          <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />
 
           <div className="flex gap-4">
             <span className="text-white">Welcome, Admin</span>
