@@ -1,6 +1,12 @@
+
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
+  LayoutDashboard,
+  Users,
+  Settings,
+  FileText,
+  BookOpen,
   ChevronDown,
   ChevronRight,
   Menu,
@@ -43,9 +49,11 @@ const SidebarLayout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    setIsAuthenticated(false); // ✅ update parent state
+    // agar parent state me authentication ho to update karna padega
+    // setIsAuthenticated(false);
     navigate("/login");
   };
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -63,10 +71,11 @@ const SidebarLayout = () => {
               <li key={item.path} className="mb-3">
                 <Link
                   to={item.path}
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-200 text-black"
-                    }`}
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
+                    location.pathname === item.path
+                      ? "bg-gray-200 text-[#6777EF]"
+                      : "hover:bg-gray-200 text-black"
+                  }`}
                 >
                   <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
@@ -75,27 +84,23 @@ const SidebarLayout = () => {
             ))}
 
             {/* Pages with Dropdown */}
-            <li className="mb-3">
+            <li className="mb-3 text-4xl">
               <button
                 onClick={() => setOpenPages(!openPages)}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
-                  ? "bg-gray-200 text-[#6777EF]"
-                  : "hover:bg-gray-200"
-                  }`}
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
+                  location.pathname.startsWith("/pages")
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
+                }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
                   <span>{sidebarOpen && "Pages"}</span>
                 </div>
-                {sidebarOpen &&
-                  (openPages ? (
-                    <ChevronDown size={16} />
-                  ) : (
-                    <ChevronRight size={16} />
-                  ))}
+                {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
 
-              {openPages && sidebarOpen && (
+              {openPages && (
                 <ul className="ml-6 mt-2">
                   {pagesMenu.map((p) => (
                     <li key={p.id} className="mb-2">
@@ -119,8 +124,6 @@ const SidebarLayout = () => {
             <li className="mb-3">
               <button
                 onClick={() => setOpenBlogs(!openBlogs)}
-                disabled={!sidebarOpen}
-                title={!sidebarOpen ? "Blogs" : ""}
                 className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
                   location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
@@ -129,17 +132,12 @@ const SidebarLayout = () => {
               >
                 <div className="flex items-center gap-2">
                   <FaBlog />
-                  <span>{sidebarOpen && "Blogs"}</span>
+                  <span>Blogs</span>
                 </div>
-                {sidebarOpen &&
-                  (openBlogs ? (
-                    <ChevronDown size={16} />
-                  ) : (
-                    <ChevronRight size={16} />
-                  ))}
+                {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
 
-              {openBlogs && sidebarOpen && (
+              {openBlogs && (
                 <ul className="ml-6 mt-2">
                   {blogsMenu.map((b) => (
                     <li key={b.id} className="mb-2">
@@ -169,16 +167,45 @@ const SidebarLayout = () => {
           <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[95%] z-50">
             <Title />
           </div>
-          <Menu className="text-white cursor-pointer" size={28} onClick={() => setSidebarOpen(!sidebarOpen)} />
+          <Menu
+            className="text-white cursor-pointer"
+            size={28}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          />
 
-          <div className="flex gap-4">
-            <span className="text-white">Welcome, Admin</span>
-            <button
-              onClick={handleLogout}
-              className="bg-red-500 text-white h-10 px-3 py-1 rounded hover:bg-red-600"
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setOpenProfile(!openProfile)}
             >
-              Logout
-            </button>
+              <img
+                src="https://via.placeholder.com/40"
+                alt="profile"
+                className="w-10 h-10 rounded-full object-cover border-2 border-white"
+              />
+              <span className="text-white">Admin</span>
+              <ChevronDown className="text-white" size={18} />
+            </div>
+
+            {openProfile && (
+              <div className="absolute right-0 mt-2 z-50 bg-white rounded shadow-md w-40">
+                <ul className="flex flex-col">
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => navigate("/profile")}
+                  >
+                    View Profile
+                  </li>
+                  <li
+                    className="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
 
