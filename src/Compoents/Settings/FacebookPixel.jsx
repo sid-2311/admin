@@ -12,9 +12,9 @@ const FacebookPixel = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow">
+        <div className="mx-auto p-6  text-[#34395E]">
             <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-2">Allow Facebook Pixel</label>
+                <label className="block font-semibold mb-2">Allow Facebook Pixel</label>
 
                 {/* Use StatusToggle component */}
                 <StatusToggle
@@ -25,18 +25,18 @@ const FacebookPixel = () => {
             </div>
 
             <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-2">Facebook App Id</label>
+                <label className="block font-semibold mb-2">Facebook App Id</label>
                 <input
                     type="text"
                     value={appId}
                     onChange={(e) => setAppId(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-2 text-[#495057] border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#95A0F4]"
                 />
             </div>
 
             <button
                 onClick={handleUpdate}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer"
             >
                 Update
             </button>

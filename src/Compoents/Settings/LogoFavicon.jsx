@@ -93,7 +93,7 @@ const LogoFavicon = () => {
             <div>
                 <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer"
                 >
                     Update
                 </button>
