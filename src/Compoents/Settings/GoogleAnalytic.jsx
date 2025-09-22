@@ -20,7 +20,7 @@ const GoogleAnalyticsForm = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="p-6 bg-white rounded-lg shadow-md space-y-4"
+            className="p-6 space-y-4 text-[#34395E]"
         >
             {/* Allow Google Analytic */}
             <div>
@@ -29,7 +29,7 @@ const GoogleAnalyticsForm = () => {
                     name="allowAnalytics"
                     value={formData.allowAnalytics}
                     onChange={handleChange}
-                    className="w-full border rounded-md p-2"
+                    className="w-full  border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                 >
                     <option>Enable</option>
                     <option>Disable</option>
@@ -44,7 +44,7 @@ const GoogleAnalyticsForm = () => {
                     name="trackingId"
                     value={formData.trackingId}
                     onChange={handleChange}
-                    className="w-full border rounded-md p-2"
+                    className="w-full  border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                 />
             </div>
 
@@ -52,7 +52,7 @@ const GoogleAnalyticsForm = () => {
             <div>
                 <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer"
                 >
                     Update
                 </button>

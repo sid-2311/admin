@@ -30,7 +30,7 @@ const CookieConsent = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="p-6 bg-white rounded-lg shadow-md space-y-4"
+            className="p-6 bg-white text-[#34395E] rounded-lg shadow-md space-y-4"
         >
             {/* Top Row */}
             <div className="grid grid-cols-2 gap-4">
@@ -40,7 +40,7 @@ const CookieConsent = () => {
                         name="allowConsent"
                         value={formData.allowConsent}
                         onChange={handleChange}
-                        className="w-full border bg-[#FDFDFF] rounded-md p-2"
+                        className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                     >
                         <option>Enable</option>
                         <option>Disable</option>
@@ -53,7 +53,7 @@ const CookieConsent = () => {
                         name="border"
                         value={formData.border}
                         onChange={handleChange}
-                        className="w-full border rounded-md p-2"
+                        className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                     >
                         <option>Thin</option>
                         <option>Thick</option>
@@ -70,7 +70,7 @@ const CookieConsent = () => {
                         name="corner"
                         value={formData.corner}
                         onChange={handleChange}
-                        className="w-full border rounded-md p-2"
+                        className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                     >
                         <option>Normal</option>
                         <option>Rounded</option>
@@ -85,7 +85,7 @@ const CookieConsent = () => {
                         name="backgroundColor"
                         value={formData.backgroundColor}
                         onChange={handleChange}
-                        className="w-full h-10 border rounded-md p-1"
+                        className="w-full h-10 border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 px-2.5 outline-none"
                     />
                 </div>
             </div>
@@ -99,7 +99,7 @@ const CookieConsent = () => {
                         name="textColor"
                         value={formData.textColor}
                         onChange={handleChange}
-                        className="w-full h-10 border rounded-md p-1"
+                        className="w-full h-10 border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 px-2.5 outline-none"
                     />
                 </div>
 
@@ -110,7 +110,7 @@ const CookieConsent = () => {
                         name="borderColor"
                         value={formData.borderColor}
                         onChange={handleChange}
-                        className="w-full h-10 border rounded-md p-1"
+                        className="w-full h-10 border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 px-2.5 outline-none"
                     />
                 </div>
             </div>
@@ -124,7 +124,7 @@ const CookieConsent = () => {
                         name="buttonColor"
                         value={formData.buttonColor}
                         onChange={handleChange}
-                        className="w-full h-10 border rounded-md p-1"
+                        className="w-full h-10 border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 px-2.5 outline-none"
                     />
                 </div>
 
@@ -135,7 +135,7 @@ const CookieConsent = () => {
                         name="buttonTextColor"
                         value={formData.buttonTextColor}
                         onChange={handleChange}
-                        className="w-full h-10 border rounded-md p-1"
+                        className="w-full h-10 border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 px-2.5 outline-none"
                     />
                 </div>
             </div>
@@ -149,7 +149,7 @@ const CookieConsent = () => {
                         name="linkText"
                         value={formData.linkText}
                         onChange={handleChange}
-                        className="w-full border rounded-md p-2"
+                        className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                     />
                 </div>
 
@@ -160,7 +160,7 @@ const CookieConsent = () => {
                         name="buttonText"
                         value={formData.buttonText}
                         onChange={handleChange}
-                        className="w-full border rounded-md p-2"
+                        className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                     />
                 </div>
             </div>
@@ -173,7 +173,7 @@ const CookieConsent = () => {
                     rows="3"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full border rounded-md p-2"
+                    className="w-full border border-[#95A0F4] bg-[#FDFDFF] text-[#495057] rounded p-2 outline-none"
                 ></textarea>
             </div>
 
@@ -181,7 +181,7 @@ const CookieConsent = () => {
             <div>
                 <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer"
                 >
                     Update
                 </button>

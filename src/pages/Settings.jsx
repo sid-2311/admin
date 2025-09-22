@@ -29,7 +29,7 @@ const Settings = () => {
 
   return (
 
-    <div className="flex max-md:flex-col min-h-screen bg-white mt-10 rounded p-6 gap-4">
+    <div className="flex max-md:flex-col bg-white mt-10 rounded p-6 gap-4">
       {/* Sidebar */}
       <div className="w-full md:w-60">
         {/* <h2 className="text-xl font-bold p-4 border-b">⚙️ Settings</h2> */}
