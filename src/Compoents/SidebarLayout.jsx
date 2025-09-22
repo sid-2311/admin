@@ -1,15 +1,24 @@
+
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
+  LayoutDashboard,
+  Users,
+  Settings,
+  FileText,
+  BookOpen,
   ChevronDown,
   ChevronRight,
   Menu,
   X,
+  LayoutGrid,
+  
 } from "lucide-react";
 import Title from "./Title";
 import { FaBlog, FaHome, FaUserAlt } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiFilePaper2Fill } from "react-icons/ri";
+import { path } from "framer-motion/client";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -18,21 +27,21 @@ const SidebarLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openBlogs, setOpenBlogs] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome /> },
     { name: "Users", path: "/users", icon: <FaUserAlt /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp /> },
+    {name: "Categories" ,path:"/Categories",icon: <LayoutGrid /> }
   ];
 
-  // Submenu for Pages
   const pagesMenu = [
     { id: 1, name: "Landing Page", path: "/pages/1" },
     { id: 2, name: "About Us Page", path: "/pages/about-us" },
     { id: 3, name: "Contact Page", path: "/pages/contact-us" },
   ];
 
-  // Submenu for Blogs
   const blogsMenu = [
     { id: 1, name: "Categories", path: "/blogs/categories" },
     { id: 2, name: "Blogs", path: "/blogs/create" },
@@ -42,17 +51,10 @@ const SidebarLayout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    // agar parent mein isAuthenticated state ho to yaha update karna padega
+    // agar parent state me authentication ho to update karna padega
+    // setIsAuthenticated(false);
     navigate("/login");
   };
-
-  // 👇 sidebar collapse hone par submenu close ho jaye
-  useEffect(() => {
-    if (!sidebarOpen) {
-      setOpenPages(false);
-      setOpenBlogs(false);
-    }
-  }, [sidebarOpen]);
 
   return (
     <div className="flex h-screen">
@@ -66,7 +68,6 @@ const SidebarLayout = () => {
         </h2>
         <nav className="flex-1">
           <ul>
-            {/* Normal Menu */}
             {menu.map((item) => (
               <li key={item.path} className="mb-3">
                 <Link
@@ -76,6 +77,11 @@ const SidebarLayout = () => {
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200 text-black"
                     }`}
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
+                    location.pathname === item.path
+                      ? "bg-gray-200 text-[#6777EF]"
+                      : "hover:bg-gray-200 text-black"
+                  }`}
                 >
                   <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
@@ -84,7 +90,7 @@ const SidebarLayout = () => {
             ))}
 
             {/* Pages with Dropdown */}
-            <li className="mb-3">
+            <li className="mb-3 text-4xl">
               <button
                 onClick={() => setOpenPages(!openPages)}
                 disabled={!sidebarOpen}
@@ -93,20 +99,20 @@ const SidebarLayout = () => {
                   ? "bg-gray-200 text-[#6777EF]"
                   : "hover:bg-gray-200"
                   }`}
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
+                  location.pathname.startsWith("/pages")
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
+                }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
                   <span>{sidebarOpen && "Pages"}</span>
                 </div>
-                {sidebarOpen &&
-                  (openPages ? (
-                    <ChevronDown size={16} />
-                  ) : (
-                    <ChevronRight size={16} />
-                  ))}
+                {openPages ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
 
-              {openPages && sidebarOpen && (
+              {openPages && (
                 <ul className="ml-6 mt-2">
                   {pagesMenu.map((p) => (
                     <li key={p.id} className="mb-2">
@@ -135,20 +141,20 @@ const SidebarLayout = () => {
                   ? "bg-gray-200 text-[#6777EF]"
                   : "hover:bg-gray-200"
                   }`}
+                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
+                  location.pathname.startsWith("/blogs")
+                    ? "bg-gray-200 text-[#6777EF]"
+                    : "hover:bg-gray-200"
+                }`}
               >
                 <div className="flex items-center gap-2">
                   <FaBlog />
-                  <span>{sidebarOpen && "Blogs"}</span>
+                  <span>Blogs</span>
                 </div>
-                {sidebarOpen &&
-                  (openBlogs ? (
-                    <ChevronDown size={16} />
-                  ) : (
-                    <ChevronRight size={16} />
-                  ))}
+                {openBlogs ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
 
-              {openBlogs && sidebarOpen && (
+              {openBlogs && (
                 <ul className="ml-6 mt-2">
                   {blogsMenu.map((b) => (
                     <li key={b.id} className="mb-2">
@@ -328,9 +334,39 @@ const SidebarLayout = () => {
             <button
               onClick={handleLogout}
               className="bg-red-500 text-white h-10 px-3 py-1 rounded hover:bg-red-600"
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setOpenProfile(!openProfile)}
             >
-              Logout
-            </button>
+              <img
+                src="https://via.placeholder.com/40"
+                alt="profile"
+                className="w-10 h-10 rounded-full object-cover border-2 border-white"
+              />
+              <span className="text-white">Admin</span>
+              <ChevronDown className="text-white" size={18} />
+            </div>
+
+            {openProfile && (
+              <div className="absolute right-0 mt-2 z-50 bg-white rounded shadow-md w-40">
+                <ul className="flex flex-col">
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => navigate("/profile")}
+                  >
+                    View Profile
+                  </li>
+                  <li
+                    className="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
 
