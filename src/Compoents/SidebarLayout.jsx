@@ -27,10 +27,7 @@ const SidebarLayout = () => {
     { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp size={18} /> },
     { name: "Categories", path: "/categories", icon: <LayoutGrid size={18} /> },
-    { name: "Dashboard", path: "/", icon: <FaHome className="text-gray-600" /> },
-    { name: "Users", path: "/users", icon: <FaUserAlt className="text-gray-600" /> },
-    { name: "Setting", path: "/settings", icon: <IoSettingsSharp className="text-gray-600" /> },
-    { name: "Categories", path: "/categories", icon: <LayoutGrid className="text-gray-600" /> },
+    
   ];
 
   const pagesMenu = [
@@ -68,11 +65,10 @@ const SidebarLayout = () => {
                 <Link
                   to={item.path}
                   title={!sidebarOpen ? item.name : ""}
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
-                    location.pathname === item.path
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
                       ? "bg-gray-200 text-[#6777EF]"
-                      : "hover:bg-gray-200 text-black"
-                  }`}
+                      : "hover:bg-gray-200 text-gray-600"
+                    }`}
                 >
                   <span>{item.icon}</span>
                   <span>{sidebarOpen && item.name}</span>
@@ -86,14 +82,13 @@ const SidebarLayout = () => {
                 onClick={() => setOpenPages(!openPages)}
                 disabled={!sidebarOpen}
                 title={!sidebarOpen ? "Pages" : ""}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
-                  location.pathname.startsWith("/pages")
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
-                  <RiFilePaper2Fill size={18} />
+                  <RiFilePaper2Fill className="text-gray-600" size={18} />
                   <span>{sidebarOpen && "Pages"}</span>
                 </div>
                 {openPages ? (
@@ -109,11 +104,10 @@ const SidebarLayout = () => {
                     <li key={p.id} className="mb-2">
                       <Link
                         to={p.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${
-                          location.pathname === p.path
+                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
                             ? "bg-gray-200 text-[#6777EF]"
                             : "hover:bg-gray-100"
-                        }`}
+                          }`}
                       >
                         {p.name}
                       </Link>
@@ -129,14 +123,13 @@ const SidebarLayout = () => {
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!sidebarOpen}
                 title={!sidebarOpen ? "Blogs" : ""}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
-                  location.pathname.startsWith("/blogs")
+                className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
-                  <FaBlog size={18}/>
+                  <FaBlog className="text-gray-600" size={18} />
                   <span>{sidebarOpen && "Blogs"}</span>
                 </div>
                 {openBlogs ? (
@@ -152,11 +145,10 @@ const SidebarLayout = () => {
                     <li key={b.id} className="mb-2">
                       <Link
                         to={b.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${
-                          location.pathname === b.path
+                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === b.path
                             ? "bg-gray-200 text-[#6777EF]"
                             : "hover:bg-gray-100"
-                        }`}
+                          }`}
                       >
                         {b.name}
                       </Link>
@@ -179,9 +171,8 @@ const SidebarLayout = () => {
 
       {/* Mobile Sidebar */}
       <aside
-        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${
-          mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
-        }`}
+        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
+          }`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
@@ -204,11 +195,10 @@ const SidebarLayout = () => {
                 <Link
                   to={item.path}
                   title={!mobileMenuOpen ? item.name : ""}
-                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${
-                    location.pathname === item.path
+                  className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
                       ? "bg-gray-200 text-[#6777EF]"
                       : "hover:bg-gray-200 text-black"
-                  }`}
+                    }`}
                 >
                   <span>{item.icon}</span>
                   <span>{mobileMenuOpen && item.name}</span>
@@ -222,11 +212,10 @@ const SidebarLayout = () => {
                 onClick={() => setOpenPages(!openPages)}
                 disabled={!mobileMenuOpen}
                 title={!mobileMenuOpen ? "Pages" : ""}
-                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${
-                  location.pathname.startsWith("/pages")
+                className={`flex items-center justify-between text-sm w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <RiFilePaper2Fill />
@@ -246,11 +235,10 @@ const SidebarLayout = () => {
                     <li key={p.id} className="mb-2">
                       <Link
                         to={p.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${
-                          location.pathname === p.path
+                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === p.path
                             ? "bg-gray-200 text-[#6777EF]"
                             : "hover:bg-gray-100"
-                        }`}
+                          }`}
                       >
                         {p.name}
                       </Link>
@@ -266,11 +254,10 @@ const SidebarLayout = () => {
                 onClick={() => setOpenBlogs(!openBlogs)}
                 disabled={!mobileMenuOpen}
                 title={!mobileMenuOpen ? "Blogs" : ""}
-                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${
-                  location.pathname.startsWith("/blogs")
+                className={`flex items-center justify-between w-full px-4 py-2 rounded transition ${location.pathname.startsWith("/blogs")
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <FaBlog />
@@ -290,11 +277,10 @@ const SidebarLayout = () => {
                     <li key={b.id} className="mb-2">
                       <Link
                         to={b.path}
-                        className={`block px-3 py-1 rounded text-sm transition ${
-                          location.pathname === b.path
+                        className={`block px-3 py-1 rounded text-sm transition ${location.pathname === b.path
                             ? "bg-gray-200 text-[#6777EF]"
                             : "hover:bg-gray-100"
-                        }`}
+                          }`}
                       >
                         {b.name}
                       </Link>
