@@ -28,7 +28,7 @@ const SidebarLayout = () => {
       icon: <RiFilePaper2Fill size={18} className="text-gray-600" />,
       basePath: "/pages",
       children: [
-        { id: 1, name: "Software", path: "/pages/software" },
+        { id: 1, name: "Software", path: "/pages/software",},
         { id: 2, name: "About Us Page", path: "/pages/about-us" },
         { id: 3, name: "Contact Page", path: "/pages/contact-us" },
       ],
