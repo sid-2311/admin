@@ -31,6 +31,7 @@ const SidebarLayout = () => {
         { id: 1, name: "Software", path: "/pages/software",},
         { id: 2, name: "About Us Page", path: "/pages/about-us" },
         { id: 3, name: "Contact Page", path: "/pages/contact-us" },
+        {id: 4, name: "Blockchain", path: "/pages/blockchain" },
       ],
     },
     {
