@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import SidebarLayout from "./Compoents/SidebarLayout"
 import Login from "./pages/Login";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
-// import Pages from "./pages/page";
+import Pages from "./pages/Pages";
 // import AboutusPagess from "./pages/page";
 // import Whytochoose from "./pages/Whytochooseus";
 // import ContactUs from "./pages/ContactUs";
@@ -25,7 +25,14 @@ import Category from "./pages/Category";
 
 
 function App(){
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isAuthenticated") === "true"
+  );
+
+  useEffect(() => {
+    // Update localStorage when authentication changes
+    localStorage.setItem("isAuthenticated", isAuthenticated ? "true" : "false");
+  }, [isAuthenticated]);
 
   return(
     <Routes>
@@ -37,8 +44,8 @@ function App(){
           <Route index element={<Dashboard/>}/>
            <Route path="users" element={<Users />} />
             <Route path="settings" element={<Settings />}/>
-            {/* <Route path="pages"> */}
-              {/* <Route path="pages/about-us" element={<AboutusPagess/>}/> */}
+            <Route path="pages" element={<Pages />} />
+            {/* <Route path="pages/about-us" element={<AboutusPagess/>}/> */}
               {/* <Route path="/pages/software" element={<SoftwarePage/>}/> */}
 
               {/* <Route path="pages/contact-us" element={<ContactUs/>}/> */}
