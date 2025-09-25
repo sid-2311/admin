@@ -1,12 +1,12 @@
-import navbarData from "../data/Metablock-Website.navbars-23-9-25.json";
+import { useEffect, useState } from "react";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { ChevronDown, ChevronRight, X } from "lucide-react";
 import { RiFilePaper2Fill } from "react-icons/ri";
 import { FaHome, FaUserAlt, FaBlog } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { LayoutGrid } from "lucide-react";
 import Header from "./Header";
+import { fetchNavbarData } from "../api/api";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -14,6 +14,16 @@ const SidebarLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState(null);
+  const [navbarData, setNavbarData] = useState([]);
+
+  useEffect(() => {
+    const getNavbar = async () => {
+      const data = await fetchNavbarData();
+      console.log(data)
+      setNavbarData(data);
+    };
+    getNavbar();
+  }, []);
 
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome size={18} /> },
@@ -34,10 +44,11 @@ const SidebarLayout = () => {
       <Link
         to={item.path}
         title={item.name}
-        className={`flex items-center gap-2 px-2 py-2 rounded transition ${location.pathname === item.path
+        className={`flex items-center gap-2 px-2 py-2 rounded transition ${
+          location.pathname === item.path
             ? "bg-gray-200 text-[#6777EF]"
             : "hover:bg-gray-200 text-gray-600"
-          }`}
+        }`}
       >
         <span>{item.icon}</span>
         <span>{sidebarOpen && item.name}</span>
@@ -50,10 +61,11 @@ const SidebarLayout = () => {
     <li className="mb-3">
       <button
         onClick={() => setOpenCategory(openCategory === "Pages" ? null : "Pages")}
-        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/pages")
+        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${
+          location.pathname.startsWith("/pages")
             ? "bg-gray-200 text-[#6777EF]"
             : "hover:bg-gray-200"
-          }`}
+        }`}
       >
         <span className="flex items-center gap-2">
           <RiFilePaper2Fill size={18} className="text-gray-600" />
@@ -66,10 +78,11 @@ const SidebarLayout = () => {
           {navbarData.map((cat) => (
             <li key={cat._id.$oid} className="mb-2">
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === "/pages"
+                className={`w-full text-left px-2 py-1 rounded transition ${
+                  location.pathname === "/pages"
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-100"
-                  }`}
+                }`}
                 onClick={() => {
                   // Pass selected category via state
                   navigate("/pages", { state: { selectedCategory: cat._id.$oid } });
@@ -90,10 +103,11 @@ const SidebarLayout = () => {
     <li className="mb-3">
       <button
         onClick={() => setOpenCategory(openCategory === "Blogs" ? null : "Blogs")}
-        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${location.pathname.startsWith("/blogs")
+        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${
+          location.pathname.startsWith("/blogs")
             ? "bg-gray-200 text-[#6777EF]"
             : "hover:bg-gray-200"
-          }`}
+        }`}
       >
         <span className="flex items-center gap-2">
           <FaBlog size={18} className="text-gray-600" />
@@ -106,10 +120,11 @@ const SidebarLayout = () => {
           {blogsMenu.map((blog) => (
             <li key={blog.path} className="mb-2">
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === blog.path
+                className={`w-full text-left px-2 py-1 rounded transition ${
+                  location.pathname === blog.path
                     ? "bg-gray-200 text-[#6777EF]"
                     : "hover:bg-gray-100"
-                  }`}
+                }`}
                 onClick={() => {
                   navigate(blog.path);
                   setOpenCategory(null);
@@ -156,8 +171,9 @@ const SidebarLayout = () => {
 
       {/* Mobile Sidebar */}
       <aside
-        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
-          }`}
+        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${
+          mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">

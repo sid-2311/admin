@@ -5,6 +5,7 @@ import websiteServices from "../data/Metablock-Website.websiteservices-23-9-25.j
 import ServiceInputForm from "../Compoents/ServiceInputForm";
 
 const getServiceData = (categoryId, subcategoryId, itemSlug) => {
+    console.log(categoryId, subcategoryId, itemSlug);
     // Normalize slug for matching
     const normalizedSlug = itemSlug ? itemSlug.replace("/", "").toLowerCase() : "";
 
@@ -30,12 +31,10 @@ const Pages = () => {
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
 
-    // Sync with navigation state
+    // Sync with navigation state from sidebar
     useEffect(() => {
         if (location.state?.selectedCategory) {
             setSelectedCategory(location.state.selectedCategory);
-            setSelectedSubcategory(null);
-            setSelectedItem(null);
         }
     }, [location.state?.selectedCategory]);
 
