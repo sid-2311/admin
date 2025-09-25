@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ChevronDown,
   ChevronRight,
@@ -18,6 +18,140 @@ const SidebarLayout = () => {
   const [openMenu, setOpenMenu] = useState(null);
 
   // SINGLE MENU ARRAY WITH SUBMENUS
+  const [pagesChildren, setPagesChildren] = useState(null);
+  // Structured navbar data from API for later edit/delete operations
+  const [navbarData, setNavbarData] = useState(null);
+  const [menuError, setMenuError] = useState(null);
+
+  useEffect(() => {
+    // Purpose: fetch navbar documents from backend and prepare two things:
+    // 1) `navbarData` -> full structured data for edit/delete operations
+    // 2) `pagesChildren` -> flattened array used by the sidebar menu
+    //
+    // उद्देश्य: बैकएंड से navbar डॉक्यूमेंट लाना और दो चीजें तैयार करना:
+    // 1) `navbarData` -> सम्पूर्ण संरचित डेटा (edit/delete के लिए)
+    // 2) `pagesChildren` -> साइडबार मेनू में उपयोग के लिए समतल सूची
+
+    // Read base URL from Vite's import.meta.env when available.
+    // Use try/catch so referencing `import.meta` doesn't throw in environments
+    // that don't support it. As a fallback check `process.env` (node tests).
+    //
+    // Vite/Browser में `import.meta.env` उपलब्ध है — इसलिए पहले वहीं देखें।
+    // अगर संदर्भ नहीं मिलता तो try/catch में फंसने से बचने के लिए fallback है।
+    let base = "";
+    try {
+      base = (import.meta && import.meta.env && import.meta.env.NEXT_PUBLIC_BASE_URL) || "";
+    } catch (e) {
+      // In some test/node environments `import.meta` may not exist; use process.env.
+      // कुछ node/test वातावरण में `import.meta` नहीं होता; तब `process.env` देखें।
+      if (typeof process !== "undefined" && process.env && process.env.NEXT_PUBLIC_BASE_URL) {
+        base = process.env.NEXT_PUBLIC_BASE_URL;
+      }
+    }
+
+    // Normalize base (remove trailing slash) and build API URL.
+    // Trailing slash हटाकर URL में दो बार स्लैश बनने से बचाते हैं।
+    const url = `${base.replace(/\/$/, '')}/api/navbar`;
+    console.log("Fetching navbar from", url);
+
+    // Cancellation flag for cleanup to avoid setting state on unmounted component.
+    // Cleanup पर fetch पूरा होने के बाद state सेट न हो, इसके लिए flag रखते हैं।
+    let cancelled = false;
+
+    // Fetch navbar documents. Standard fetch + ok-check + json parsing.
+    // अगर HTTP status ठीक नहीं है तो error फेंक देते हैं ताकि catch ब्लॉक हैंडल करे।
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        if (cancelled) return;
+
+        // Backend may return a single document or an array. Normalize to array.
+        // Backend एक डॉक्यूमेंट या array दोनों दे सकता है — हमेशा array बना लें।
+        const docs = Array.isArray(data) ? data : [data];
+
+        // Map backend documents to a simpler, predictable structure used in UI.
+        // ID extraction handles both { _id: { $oid: '...' } } and plain values.
+        // Hindi: _id में अलग-अलग ढांचे आ सकते हैं, इसलिए दोनों cases संभालते हैं।
+        const mapped = docs.map((doc) => {
+          const id = doc._id && (doc._id.$oid || doc._id) ? (doc._id.$oid || doc._id) : doc._id;
+          const name = doc.name || '';
+          const slug = doc.slug || '';
+          const index = doc.index || null;
+          const status = typeof doc.status === 'boolean' ? doc.status : true;
+
+          // Normalize subcategories and their inner items into consistent arrays
+          // so the frontend doesn't need to handle many shapes.
+          // Hindi: subcategories और items को हमेशा array में बदल दें।
+          const subcategories = Array.isArray(doc.subcategories)
+            ? doc.subcategories.map((sub) => {
+                const subId = sub._id && (sub._id.$oid || sub._id) ? (sub._id.$oid || sub._id) : sub._id;
+                const items = Array.isArray(sub.items)
+                  ? sub.items.map((it) => ({
+                      id: it._id && (it._id.$oid || it._id) ? (it._id.$oid || it._id) : it._id,
+                      name: it.name || '',
+                      slug: it.slug || '',
+                    }))
+                  : [];
+                return {
+                  id: subId,
+                  name: sub.name || '',
+                  slug: sub.slug || '',
+                  items,
+                };
+              })
+            : [];
+
+          return { id, name, slug, index, status, subcategories };
+        });
+
+        // Save the full structured data for admin operations (edit/delete etc.).
+        // ध्यान दें: setState asynchronous है — तुरंत `navbarData` लॉग करने पर पुराना मान दिख सकता है।
+        setNavbarData(mapped);
+        console.log("Navbar Data (state variable, may be stale immediately):", navbarData);
+        console.log('Mapped navbarData (computed):', mapped);
+
+        // Build `pagesChildren` from top-level navbar documents (Website, Software, Metaverse etc.).
+        // Requirement: use the main document's `name` and, if it has a `slug`, expose that
+        // as the route path. This avoids using deep subcategory arrays for the sidebar list.
+        //
+        // Hindi: pagesChildren को subcategories के बजाय top-level डॉक्यूमेंट्स से बनाएं
+        // (जैसे Website, Software, Metaverse). अगर top-level डॉक्यूमेंट में `slug` है
+        // तो वही path में भेजें, वरना path खाली ना रहें — हम `/pages/<slug>` नहीं बनायेंगे
+        // जब slug मौजूद न हो।
+        // Include all top-level docs. Keep `path` null if slug missing so UI can
+        // show them as non-clickable labels.
+        // Hindi: slug न होने पर भी डॉक्यूमेंट दिखाने के लिए path null रखें —
+        // UI बाद में इसे non-clickable label के रूप में रेंडर करेगा।
+        const pages = mapped.map((doc, idx) => {
+          const id = doc.id || (doc._id ? doc._id : idx + 1);
+          const name = doc.name || `Page ${idx + 1}`;
+          const path = `${doc.name}`;
+          return { id, name, path };
+        });
+
+        setPagesChildren(pages.length ? pages : []);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        // On error clear derived states and expose a friendly message.
+        // Hindi: त्रुटि पर UI को साफ रखें और उपयोगकर्ता को संदेश दें।
+        console.error('Failed to load navbar:', err);
+        setMenuError(err.message || 'Failed to load');
+        setPagesChildren([]);
+        setNavbarData(null);
+      });
+
+    // Cleanup: mark cancelled so pending promises don't call setState.
+    // Cleanup: unmounted होने पर state अपडेट रोकने के लिए flag true करें।
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+console.log("Pages Children:", pagesChildren);
+
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome size={18} /> },
     { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
@@ -26,12 +160,8 @@ const SidebarLayout = () => {
     {
       name: "Pages",
       icon: <RiFilePaper2Fill size={18} className="text-gray-600" />,
-      basePath: "/pages",
-      children: [
-        { id: 1, name: "Software", path: "/pages/software",},
-        { id: 2, name: "About Us Page", path: "/pages/about-us" },
-        { id: 3, name: "Contact Page", path: "/pages/contact-us" },
-      ],
+      basePath: "/serviceType",
+      children: pagesChildren 
     },
     {
       name: "Blogs",
@@ -74,16 +204,22 @@ const SidebarLayout = () => {
             <ul className="ml-6 mt-2">
               {item.children.map((child) => (
                 <li key={child.id} className="mb-2">
-                  <Link
-                    to={child.path}
-                    className={`block px-3 py-1 rounded text-sm transition ${
-                      location.pathname === child.path
-                        ? "bg-gray-200 text-[#6777EF]"
-                        : "hover:bg-gray-100"
-                    }`}
-                  >
-                    {child.name}
-                  </Link>
+                  {child.path ? (
+                    <Link
+                      to={child.path}
+                      className={`block px-3 py-1 rounded text-sm transition ${
+                        location.pathname === child.path
+                          ? "bg-gray-200 text-[#6777EF]"
+                          : "hover:bg-gray-100"
+                      }`}
+                    >
+                      {child.name}
+                    </Link>
+                  ) : (
+                    <div className="block px-3 py-1 rounded text-sm text-gray-500">
+                      {child.name}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
