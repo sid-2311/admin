@@ -4,6 +4,11 @@ import navbarData from "../data/Metablock-Website.navbars-23-9-25.json";
 import websiteServices from "../data/Metablock-Website.websiteservices-23-9-25.json";
 import ServiceInputForm from "../Compoents/ServiceInputForm";
 
+
+
+
+
+// Function to get service data based on selected category, subcategory, and item
 const getServiceData = (categoryId, subcategoryId, itemSlug) => {
     console.log(categoryId, subcategoryId, itemSlug);
     // Normalize slug for matching
@@ -25,11 +30,18 @@ const getServiceData = (categoryId, subcategoryId, itemSlug) => {
     );
 };
 
+
+
+
+// Main Pages component
 const Pages = () => {
     const location = useLocation();
+    // State to track selected category, subcategory, and item
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
+
+
 
     // Sync with navigation state from sidebar
     useEffect(() => {
@@ -38,16 +50,26 @@ const Pages = () => {
         }
     }, [location.state?.selectedCategory]);
 
-    // Get selected category object
+
+
+    
+
+    //  Get objects for selected category, subcategory, and item
     const categoryObj = navbarData.find(cat => cat._id.$oid === selectedCategory);
     const subcategoryObj = categoryObj?.subcategories?.find(sub => (sub._id?.$oid || sub.name) === selectedSubcategory);
     const itemObj = subcategoryObj?.items?.find(item => item.slug === selectedItem);
+
+
 
     // Get service data for input fields (works for all categories)
     const serviceData = selectedCategory && selectedSubcategory
         ? getServiceData(selectedCategory, selectedSubcategory, selectedItem)
         : null;
 
+
+
+
+        // Render the component
     return (
         <div className="flex flex-col gap-6 p-6">
             {/* Top Level Dropdowns */}
@@ -72,6 +94,10 @@ const Pages = () => {
                     </select>
                 </div>
 
+
+
+
+
                 {/* Subcategory Dropdown */}
                 {categoryObj?.subcategories?.length > 0 && (
                     <div>
@@ -94,6 +120,9 @@ const Pages = () => {
                     </div>
                 )}
 
+
+
+
                 {/* Item Dropdown */}
                 {subcategoryObj?.items?.length > 0 && (
                     <div>
@@ -114,6 +143,10 @@ const Pages = () => {
                 )}
             </div>
 
+
+
+
+
             {/* Show selected category/subcategory/item */}
             <div className="flex gap-8 mt-4">
                 <div className="flex flex-col gap-2">
@@ -128,6 +161,9 @@ const Pages = () => {
                     </div>
                 </div>
             </div>
+
+
+            
 
             {/* Input Fields based on websiteServices JSON */}
             <ServiceInputForm serviceData={serviceData} />
