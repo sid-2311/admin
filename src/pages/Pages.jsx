@@ -59,9 +59,9 @@ const Pages = () => {
     }, [serviceData]);
 
     return (
-        <div className="flex max-md:flex-col bg-white mt-10 rounded p-6 gap-4">
+        <div className="flex max-md:flex-col bg-white mt-10 rounded max-md:p-2 p-6 gap-4 overflow-hidden">
             {/* Sidebar Tabs for service sections */}
-            <div className="w-full md:w-1/4 border border-gray-200 p-4 rounded-lg h-fit max-md:flex max-md:overflow-x-auto max-md:w-full">
+            <div className="w-full md:w-60">
                 <ul>
                     {serviceTabs.map(tab => (
                         <li key={tab}>
@@ -80,7 +80,7 @@ const Pages = () => {
             {/* Content for selected tab */}
             <div className="flex-1 border border-gray-200 m-2 rounded-lg">
                 {/* Top Level Dropdowns */}
-                <div className="flex gap-4 items-start mb-6">
+                <div className="flex max-md:flex-col gap-4 items-start mb-6">
                     <div>
                         <label className="font-semibold block mb-2">Main Category</label>
                         <select
