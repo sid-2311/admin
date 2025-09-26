@@ -1,21 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+
+const isImageUrl = (url) =>
+  typeof url === "string" &&
+  /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(url);
+
+const placeholder = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+
+const fileUploadStyle =
+  "w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer";
 
 const ServiceInputForm = ({ serviceData }) => {
-  if (!serviceData)
-    return <div className="text-red-500">No service data found.</div>;
+  const [imageFiles, setImageFiles] = useState({});
 
-  // Flatten all keys in serviceData.data for display
+  if (!serviceData)
+    return <div className="text-red-500 p-4">No service data found.</div>;
+
+  const handleFileChange = (e, key) => {
+    const file = e.target.files[0];
+    setImageFiles((prev) => ({
+      ...prev,
+      [key]: file,
+    }));
+  };
+
   const renderFields = (data) => {
     if (!data) return null;
     return Object.entries(data).map(([key, value]) => {
-      if (typeof value === "string") {
+      if (typeof value === "string" && isImageUrl(value)) {
+        // Image preview with file input
         return (
-          <div key={key} className="mb-2">
-            <label className="font-semibold capitalize">{key}:</label>
+          <div key={key} className="mb-4">
+            <label className="block font-semibold capitalize mb-1 text-gray-700">
+              {key.replace(/([A-Z])/g, " $1")}:
+            </label>
+            <img
+              src={
+                imageFiles[key]
+                  ? URL.createObjectURL(imageFiles[key])
+                  : (value && isImageUrl(value))
+                    ? value
+                    : placeholder
+              }
+              alt={key}
+              className="h-16 mb-2 border rounded shadow"
+              style={{ maxWidth: 120, objectFit: "contain" }}
+            />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => handleFileChange(e, key)}
+              className={fileUploadStyle}
+            />
+          </div>
+        );
+      }
+      if (typeof value === "string") {
+        // Normal text field
+        return (
+          <div key={key} className="mb-4">
+            <label className="block font-semibold capitalize mb-1 text-gray-700">
+              {key.replace(/([A-Z])/g, " $1")}:
+            </label>
             <input
               type="text"
               value={value}
-              className="border rounded px-2 py-1 ml-2 w-full"
+              className="border border-gray-300 rounded px-3 py-2 w-full bg-gray-50 text-gray-900"
               readOnly
             />
           </div>
@@ -23,13 +72,72 @@ const ServiceInputForm = ({ serviceData }) => {
       }
       if (Array.isArray(value)) {
         return (
-          <div key={key} className="mb-2">
-            <label className="font-semibold capitalize">{key}:</label>
-            <ul className="list-disc ml-6">
+          <div key={key} className="mb-4">
+            <label className="block font-semibold capitalize mb-1 text-gray-700">
+              {key.replace(/([A-Z])/g, " $1")}:
+            </label>
+            <ul className="list-disc ml-6 bg-gray-50 p-2 rounded">
               {value.map((item, idx) => (
-                <li key={idx}>
+                <li key={idx} className="mb-1">
                   {typeof item === "string"
-                    ? item
+                    ? isImageUrl(item)
+                      ? (
+                        <div>
+                          <img
+                            src={
+                              imageFiles[`${key}_${idx}`]
+                                ? URL.createObjectURL(imageFiles[`${key}_${idx}`])
+                                : item || placeholder
+                            }
+                            alt={key + idx}
+                            className="h-16 mb-2 border rounded shadow"
+                            style={{ maxWidth: 120, objectFit: "contain" }}
+                          />
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleFileChange(e, `${key}_${idx}`)}
+                            className={fileUploadStyle}
+                          />
+                        </div>
+                      )
+                      : item
+                    : typeof item === "object"
+                    ? (
+                      <div className="pl-2">
+                        {Object.entries(item).map(([subKey, subVal]) => (
+                          <div key={subKey}>
+                            <span className="font-medium">
+                              {subKey.replace(/([A-Z])/g, " $1")}:{" "}
+                            </span>
+                            <span>
+                              {typeof subVal === "string" && isImageUrl(subVal) ? (
+                                <span>
+                                  <img
+                                    src={
+                                      imageFiles[`${key}_${idx}_${subKey}`]
+                                        ? URL.createObjectURL(imageFiles[`${key}_${idx}_${subKey}`])
+                                        : subVal || placeholder
+                                    }
+                                    alt={subKey}
+                                    className="h-16 mb-2 border rounded shadow"
+                                    style={{ maxWidth: 120, objectFit: "contain" }}
+                                  />
+                                  <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(e) => handleFileChange(e, `${key}_${idx}_${subKey}`)}
+                                    className={fileUploadStyle}
+                                  />
+                                </span>
+                              ) : typeof subVal === "string"
+                                ? subVal
+                                : JSON.stringify(subVal)}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )
                     : JSON.stringify(item)}
                 </li>
               ))}
@@ -39,9 +147,13 @@ const ServiceInputForm = ({ serviceData }) => {
       }
       if (typeof value === "object" && value !== null) {
         return (
-          <div key={key} className="mb-2">
-            <label className="font-semibold capitalize">{key}:</label>
-            <div className="ml-4">{renderFields(value)}</div>
+          <div key={key} className="mb-4">
+            <label className="block font-semibold capitalize mb-1 text-gray-700">
+              {key.replace(/([A-Z])/g, " $1")}:
+            </label>
+            <div className="ml-4 border-l-2 border-gray-200 pl-4">
+              {renderFields(value)}
+            </div>
           </div>
         );
       }
@@ -50,9 +162,11 @@ const ServiceInputForm = ({ serviceData }) => {
   };
 
   return (
-    <div className="mt-6 p-4 border rounded bg-white shadow">
-      <h2 className="text-xl font-bold mb-4">Service Data</h2>
-      {renderFields(serviceData.data)}
+    <div className="p-6">
+      <h2 className="text-xl font-bold mb-4 text-[#6777EF]">Service Data</h2>
+      <div className="grid grid-cols-1 gap-6">
+        {renderFields(serviceData.data)}
+      </div>
     </div>
   );
 };
