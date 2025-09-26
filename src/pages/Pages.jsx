@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import navbarData from "../data/Metablock-Website.navbars-23-9-25.json";
-import websiteServices from "../data/Metablock-Website.websiteservices-23-9-25.json";
+import { useDispatch, useSelector } from 'react-redux';
+import { loadNavbars } from '../store/navbarSlice';
+// import { loadServicesByCategory, loadServiceBySlug} from '../store/serviceSlice';
+import {  loadServiceByAnySlug } from '../store/serviceSlice';
 import ServiceInputForm from "../Compoents/ServiceInputForm";
 
 
 
 
 
+
+
 // Function to get service data based on selected category, subcategory, and item
-const getServiceData = (categoryId, subcategoryId, itemSlug) => {
-    console.log(categoryId, subcategoryId, itemSlug);
+const getServiceData = (categoryId, subcategorySlug, itemSlug) => {
+    console.log(categoryId, subcategorySlug, itemSlug);
     // Normalize slug for matching
     const normalizedSlug = itemSlug ? itemSlug.replace("/", "").toLowerCase() : "";
 
     // Try to match with all possible combinations
     return websiteServices.find(service =>
         service.navbarCategory?.$oid === categoryId &&
-        service.navbarSubCategory?.$oid === subcategoryId &&
+        service.navbarSubCategory?.$oid === subcategorySlug &&
         (
             // Match by item slug
             (itemSlug && (
@@ -37,9 +41,20 @@ const getServiceData = (categoryId, subcategoryId, itemSlug) => {
 const Pages = () => {
     const location = useLocation();
     // State to track selected category, subcategory, and item
-    const [selectedCategory, setSelectedCategory] = useState(null);
-    const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-    const [selectedItem, setSelectedItem] = useState(null);
+        const [selectedCategory, setSelectedCategory] = useState(null);
+        const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+        const [selectedItem, setSelectedItem] = useState(null);
+        console.log(selectedCategory, selectedSubcategory, selectedItem);
+        
+        const dispatch = useDispatch();
+        const navbarState = useSelector(s => s.navbar);
+        // console.log(navbarState);
+        
+        const serviceState = useSelector(s => s.service);
+        // console.log(serviceState);
+        
+
+
 
 
 
@@ -50,21 +65,56 @@ const Pages = () => {
         }
     }, [location.state?.selectedCategory]);
 
+    // load navbars once
+    useEffect(() => {
+      if (!navbarState.data?.length && !navbarState.loading) {
+        dispatch(loadNavbars());
+      }
+    }, []);
+
 
 
     
 
     //  Get objects for selected category, subcategory, and item
-    const categoryObj = navbarData.find(cat => cat._id.$oid === selectedCategory);
-    const subcategoryObj = categoryObj?.subcategories?.find(sub => (sub._id?.$oid || sub.name) === selectedSubcategory);
+    const categoryObj = navbarState.data.find(cat => cat._id === selectedCategory || cat._id?.$oid === selectedCategory);
+    console.log("CategoryObj Subcategories", categoryObj?.subcategories);
+    
+    const subcategoryObj = categoryObj?.subcategories?.find(sub => (sub.slug === selectedSubcategory || sub.name.toLowerCase() === selectedSubcategory));
     const itemObj = subcategoryObj?.items?.find(item => item.slug === selectedItem);
 
 
 
-    // Get service data for input fields (works for all categories)
-    const serviceData = selectedCategory && selectedSubcategory
-        ? getServiceData(selectedCategory, selectedSubcategory, selectedItem)
-        : null;
+
+    // // When category changes, load all services for that category (optional, keep if you want the list)
+    // useEffect(() => {
+    //     if (categoryObj?.slug) {
+    //         dispatch(loadServicesByCategory(categoryObj.slug));
+    //     }
+    // }, [categoryObj?.slug]);
+
+
+
+
+
+
+    // When subcategory or item changes, load the WebsiteService by the most specific slug
+    useEffect(() => {
+        // Priority: item slug > subcategory slug
+        if (selectedItem) {
+            dispatch(loadServiceByAnySlug(selectedItem));
+        } else if (selectedSubcategory) {
+            dispatch(loadServiceByAnySlug(selectedSubcategory));
+        } else {
+            // Optionally clear selected service if nothing is selected
+            dispatch(loadServiceByAnySlug(null));
+        }
+    }, [selectedSubcategory, selectedItem]);
+
+    const serviceData = serviceState.selected;
+
+    console.log("Service Data:", serviceData);
+    
 
 
 
@@ -86,8 +136,8 @@ const Pages = () => {
                         }}
                     >
                         <option value="">Select Category</option>
-                        {navbarData.map(cat => (
-                            <option key={cat._id.$oid} value={cat._id.$oid}>
+                        {navbarState.data.map(cat => (
+                            <option key={cat._id} value={cat._id}>
                                 {cat.name}
                             </option>
                         ))}
@@ -112,7 +162,7 @@ const Pages = () => {
                         >
                             <option value="">Select Subcategory</option>
                             {categoryObj.subcategories.map(sub => (
-                                <option key={sub._id?.$oid || sub.name} value={sub._id?.$oid || sub.name}>
+                                <option key={sub._id } value={sub.slug || sub.name.toLowerCase() }>
                                     {sub.name}
                                 </option>
                             ))}
@@ -134,7 +184,7 @@ const Pages = () => {
                         >
                             <option value="">Select Item</option>
                             {subcategoryObj.items.map(item => (
-                                <option key={item._id?.$oid || item.slug} value={item.slug}>
+                                <option key={item._id} value={item.slug.replace("/", "")}>
                                     {item.name}
                                 </option>
                             ))}

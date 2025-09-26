@@ -6,7 +6,8 @@ import { FaHome, FaUserAlt, FaBlog } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { LayoutGrid } from "lucide-react";
 import Header from "./Header";
-import { fetchNavbarData } from "../api/api";
+import { useDispatch, useSelector } from 'react-redux';
+import { loadNavbars } from '../store/navbarSlice';
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -14,20 +15,18 @@ const SidebarLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState(null);
-  const [navbarData, setNavbarData] = useState([]);
+  const dispatch = useDispatch();
+  const navbarState = useSelector(s => s.navbar);
 
 
 
 
 
-  // Fetch navbar categories on mount
+  // Fetch navbar categories on mount (redux)
   useEffect(() => {
-    const getNavbar = async () => {
-      const data = await fetchNavbarData();
-      console.log(data)
-      setNavbarData(data);
-    };
-    getNavbar();
+    if (!navbarState.data.length && !navbarState.loading) {
+      dispatch(loadNavbars());
+    }
   }, []);
 
 
@@ -101,8 +100,8 @@ const SidebarLayout = () => {
       
       {openCategory === "Pages" && (
         <ul className="ml-6 mt-2">
-          {navbarData.map((cat) => (
-            <li key={cat._id.$oid} className="mb-2">
+          {navbarState.data.map((cat) => (
+            <li key={cat._id} className="mb-2">
               <button
                 className={`w-full text-left px-2 py-1 rounded transition ${
                   location.pathname === "/pages"
@@ -111,7 +110,7 @@ const SidebarLayout = () => {
                 }`}
                 onClick={() => {
                   // Pass selected category via state
-                  navigate("/pages", { state: { selectedCategory: cat._id.$oid } });
+                  navigate("/pages", { state: { selectedCategory: cat._id } });
                   setOpenCategory(null);
                   setMobileMenuOpen(false);
                 }}
