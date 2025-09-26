@@ -16,6 +16,11 @@ const SidebarLayout = () => {
   const [openCategory, setOpenCategory] = useState(null);
   const [navbarData, setNavbarData] = useState([]);
 
+
+
+
+
+  // Fetch navbar categories on mount
   useEffect(() => {
     const getNavbar = async () => {
       const data = await fetchNavbarData();
@@ -25,6 +30,11 @@ const SidebarLayout = () => {
     getNavbar();
   }, []);
 
+
+
+
+
+// Sidebar menu items
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome size={18} /> },
     { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
@@ -39,6 +49,11 @@ const SidebarLayout = () => {
     { name: "Comments", path: "/blogs/comments" },
   ];
 
+
+
+
+
+// Single sidebar item component
   const SidebarItem = ({ item }) => (
     <li className="mb-3">
       <Link
@@ -56,10 +71,18 @@ const SidebarLayout = () => {
     </li>
   );
 
+
+
+
+
+
+
+
   // Only Pages dropdown, no nested dropdowns
   const PagesDropdown = () => (
     <li className="mb-3">
       <button
+      // open and close pages dropdown
         onClick={() => setOpenCategory(openCategory === "Pages" ? null : "Pages")}
         className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${
           location.pathname.startsWith("/pages")
@@ -73,6 +96,9 @@ const SidebarLayout = () => {
         </span>
         {openCategory === "Pages" ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
       </button>
+
+
+      
       {openCategory === "Pages" && (
         <ul className="ml-6 mt-2">
           {navbarData.map((cat) => (
@@ -99,6 +125,11 @@ const SidebarLayout = () => {
     </li>
   );
 
+
+
+
+
+// Only Blogs dropdown, no nested dropdowns
   const BlogsDropdown = () => (
     <li className="mb-3">
       <button
@@ -140,8 +171,18 @@ const SidebarLayout = () => {
     </li>
   );
 
+
+
+
+
+  // Main return
+
   return (
     <div className="flex h-screen">
+
+
+
+
       {/* Desktop Sidebar */}
       <aside
         className={`max-md:hidden overflow-y-auto ${sidebarOpen ? "w-64" : "w-16"} 
@@ -161,6 +202,11 @@ const SidebarLayout = () => {
         </nav>
       </aside>
 
+
+
+
+
+
       {/* Mobile Sidebar Overlay */}
       {mobileMenuOpen && (
         <div
@@ -168,6 +214,8 @@ const SidebarLayout = () => {
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
+
+
 
       {/* Mobile Sidebar */}
       <aside
@@ -194,6 +242,11 @@ const SidebarLayout = () => {
           </ul>
         </nav>
       </aside>
+
+
+
+
+
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">

@@ -5,6 +5,11 @@ import websiteServices from "../data/Metablock-Website.websiteservices-23-9-25.j
 import ServiceInputForm from "../Compoents/ServiceInputForm";
 import ServiceTabs from "../Compoents/ServiceTabs";
 
+
+
+
+
+// Function to get service data based on selected category, subcategory, and item
 const getServiceData = (categoryId, subcategoryId, itemSlug) => {
     const normalizedSlug = itemSlug ? itemSlug.replace("/", "").toLowerCase() : "";
     return websiteServices.find(service =>
@@ -20,11 +25,18 @@ const getServiceData = (categoryId, subcategoryId, itemSlug) => {
     );
 };
 
+
+
+
+// Main Pages component
 const Pages = () => {
     const location = useLocation();
+    // State to track selected category, subcategory, and item
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
+
+
 
     // Sync with navigation state from sidebar
     useEffect(() => {
@@ -35,10 +47,16 @@ const Pages = () => {
         }
     }, [location.state?.selectedCategory]);
 
-    // Get selected category object
+
+
+    
+
+    //  Get objects for selected category, subcategory, and item
     const categoryObj = navbarData.find(cat => cat._id.$oid === selectedCategory);
     const subcategoryObj = categoryObj?.subcategories?.find(sub => (sub._id?.$oid || sub.name) === selectedSubcategory);
     const itemObj = subcategoryObj?.items?.find(item => item.slug === selectedItem);
+
+
 
     // Get service data for input fields (works for all categories)
     const serviceData = selectedCategory && selectedSubcategory
