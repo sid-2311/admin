@@ -11,6 +11,8 @@ const Pages = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
+    // console.log("selectedItem", selectedItem);
+    
 
     const dispatch = useDispatch();
     const navbarState = useSelector(s => s.navbar);
@@ -35,7 +37,12 @@ const Pages = () => {
     //  Get objects for selected category, subcategory, and item
     const categoryObj = navbarState.data.find(cat => cat._id === selectedCategory || cat._id?.$oid === selectedCategory);
     const subcategoryObj = categoryObj?.subcategories?.find(sub => (sub.slug === selectedSubcategory || sub.name.toLowerCase() === selectedSubcategory));
-    const itemObj = subcategoryObj?.items?.find(item => item.slug === selectedItem);
+    // console.log("subcategoryObj:", subcategoryObj);
+    
+
+    const itemObj = subcategoryObj?.items?.find(item => item.slug.replace("/", "") === selectedItem);
+    // console.log("itemObj:", itemObj);
+    
 
     // When subcategory or item changes, load the WebsiteService by the most specific slug
     useEffect(() => {
@@ -50,9 +57,15 @@ const Pages = () => {
 
     const serviceData = serviceState.selected;
 
+
+
     // Tabs for service sections (if any)
     const serviceTabs = serviceData && serviceData.data ? Object.keys(serviceData.data) : [];
     const [activeTab, setActiveTab] = useState(serviceTabs[0] || "");
+    console.log("serviceTabs:", serviceTabs);
+    console.log("activeTab:", activeTab);
+    
+    
 
     useEffect(() => {
         if (serviceTabs.length > 0) setActiveTab(serviceTabs[0]);
@@ -60,6 +73,8 @@ const Pages = () => {
 
     return (
         <div className="flex max-md:flex-col bg-white mt-10 rounded p-6 gap-4">
+
+
             {/* Sidebar Tabs for service sections */}
             <div className="w-full md:w-60 sticky top-10 self-start">
                 <ServiceTabs
@@ -68,6 +83,10 @@ const Pages = () => {
                     setSelectedTab={setActiveTab}
                 />
             </div>
+
+
+
+
 
             {/* Content for selected tab */}
             <div className="flex-1 border border-gray-200 m-2 rounded-lg">
@@ -81,7 +100,7 @@ const Pages = () => {
                             onChange={e => {
                                 setSelectedCategory(e.target.value);
                                 setSelectedSubcategory(null);
-                                setSelectedItem(null);
+                                // setSelectedItem(null);
                             }}
                         >
                             <option value="">Select Category</option>
@@ -92,6 +111,8 @@ const Pages = () => {
                             ))}
                         </select>
                     </div>
+
+                    {/* subcategories dropdown */}
                     {categoryObj?.subcategories?.length > 0 && (
                         <div>
                             <label className="font-semibold block mb-2">Subcategory</label>
@@ -112,6 +133,8 @@ const Pages = () => {
                             </select>
                         </div>
                     )}
+
+                    {/* items dropdown */}
                     {subcategoryObj?.items?.length > 0 && (
                         <div>
                             <label className="font-semibold block mb-2">Item</label>
@@ -141,7 +164,7 @@ const Pages = () => {
                             <span className="font-bold">Selected Subcategory:</span> {subcategoryObj?.name || "-"}
                         </div>
                         <div>
-                            <span className="font-bold">Selected Item:</span> {itemObj?.name || "-"}
+                            <span className="font-bold">Selected Item:</span> {itemObj?.slug.replace("/", "" ) }
                         </div>
                     </div>
                 </div>
