@@ -51,3 +51,21 @@ export async function fetchServiceByAnySlug(slug) {
 //         throw err;
 //     }
 // }
+
+// PATCH WebsiteService by slug
+export async function patchServiceBySlug(slug, payload) {
+    warnIfNoBase();
+    if (!slug || !payload) throw new Error('Missing slug or payload');
+    try {
+        const res = await fetch(`${apiBase}/api/websitenew/service/${slug}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error(`PATCH failed (${res.status})`);
+        return await res.json();
+    } catch (err) {
+        console.error('Failed to PATCH service', slug, err);
+        throw err;
+    }
+}

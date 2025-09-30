@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // import { fetchServicesByCategorySlug, fetchServiceBySlug  } from '../api/api';
 import { fetchServiceByAnySlug } from '../api/api';
 
+import { patchServiceBySlug } from '../api/api';
+
 
 export const loadServiceByAnySlug = createAsyncThunk(
   'service/loadServiceByAnySlug',
@@ -35,6 +37,15 @@ export const loadServiceByAnySlug = createAsyncThunk(
 //   }
 // );
 
+// PATCH WebsiteService by slug
+export const patchService = createAsyncThunk(
+  'service/patchService',
+  async ({ slug, payload }) => {
+    const data = await patchServiceBySlug(slug, payload);
+    return data;
+  }
+);
+
 
 const serviceSlice = createSlice({
   name: 'service',
@@ -55,7 +66,18 @@ const serviceSlice = createSlice({
       // Add case for loadServiceByAnySlug
       .addCase(loadServiceByAnySlug.pending, (state) => { state.loading = true; state.error = null; })
       .addCase(loadServiceByAnySlug.fulfilled, (state, action) => { state.loading = false; state.selected = action.payload; })
-      .addCase(loadServiceByAnySlug.rejected, (state, action) => { state.loading = false; state.error = action.error.message; });
+      .addCase(loadServiceByAnySlug.rejected, (state, action) => { state.loading = false; state.error = action.error.message; })
+
+      // PATCH WebsiteService
+      .addCase(patchService.pending, (state) => { state.loading = true; state.error = null; })
+      .addCase(patchService.fulfilled, (state, action) => {
+        state.loading = false;
+        state.selected = action.payload;
+      })
+      .addCase(patchService.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
   }
 });
 
