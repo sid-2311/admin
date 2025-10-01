@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { loadNavbars } from '../store/navbarSlice';
 import { loadServiceByAnySlug } from '../store/serviceSlice';
-import ServiceInputForm from "../Compoents/ServiceInputForm";
-import ServiceTabs from "../Compoents/ServiceTabs";
-import ServicePatchForm from "../Compoents/ServicePatchForm";
+import ServiceInputForm from "../components/ServiceInputForm";
+import ServiceTabs from "../components/ServiceTabs";
+import ServicePatchForm from "../components/ServicePatchForm";
 
 const Pages = () => {
     const location = useLocation();

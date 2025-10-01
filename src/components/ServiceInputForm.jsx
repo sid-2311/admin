@@ -161,12 +161,12 @@ const ServiceInputForm = ({ serviceData }) => {
             </div>
 
             {/* Add Button */}
-            <button
+            {/* <button
               type="button"
               className="mt-4 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-medium border border-indigo-200 hover:bg-indigo-100 transition"
             >
               + Add New {key.replace(/([A-Z])/g, " $1")}
-            </button>
+            </button> */}
           </div>
         );
       }

@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import SidebarLayout from "./Compoents/SidebarLayout"
+import SidebarLayout from "./components/SidebarLayout"
 import Login from "./pages/Login";
 import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard";

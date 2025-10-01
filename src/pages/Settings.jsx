@@ -1,9 +1,9 @@
 import { useState } from "react";
-import GeneralSettings from "../Compoents/Settings/GeneralSettings";
-import LogoFavicon from "../Compoents/Settings/LogoFavicon";
-import CookieConsent from "../Compoents/Settings/CookieConsent";
-import GoogleAnalyticsForm from "../Compoents/Settings/GoogleAnalytic";
-import FacebookPixel from "../Compoents/Settings/FacebookPixel";
+import GeneralSettings from "../components/Settings/GeneralSettings";
+import LogoFavicon from "../components/Settings/LogoFavicon";
+import CookieConsent from "../components/Settings/CookieConsent";
+import GoogleAnalyticsForm from "../components/Settings/GoogleAnalytic";
+import FacebookPixel from "../components/Settings/FacebookPixel";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("general-setting");

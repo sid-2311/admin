@@ -6,8 +6,8 @@ import { FaHome, FaUserAlt, FaBlog } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { LayoutGrid } from "lucide-react";
 import Header from "./Header";
-import { useDispatch, useSelector } from 'react-redux';
-import { loadNavbars } from '../store/navbarSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { loadNavbars } from "../store/navbarSlice";
 
 const SidebarLayout = () => {
   const location = useLocation();
@@ -16,24 +16,14 @@ const SidebarLayout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState(null);
   const dispatch = useDispatch();
-  const navbarState = useSelector(s => s.navbar);
+  const navbarState = useSelector((s) => s.navbar);
 
-
-
-
-
-  // Fetch navbar categories on mount (redux)
   useEffect(() => {
     if (!navbarState.data.length && !navbarState.loading) {
       dispatch(loadNavbars());
     }
   }, []);
 
-
-
-
-
-// Sidebar menu items
   const menu = [
     { name: "Dashboard", path: "/", icon: <FaHome size={18} /> },
     { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
@@ -48,68 +38,58 @@ const SidebarLayout = () => {
     { name: "Comments", path: "/blogs/comments" },
   ];
 
-
-
-
-
-// Single sidebar item component
+  // Reusable Sidebar Item
   const SidebarItem = ({ item }) => (
-    <li className="mb-3">
+    <li>
       <Link
         to={item.path}
         title={item.name}
-        className={`flex items-center gap-2 px-2 py-2 rounded transition ${
-          location.pathname === item.path
-            ? "bg-gray-200 text-[#6777EF]"
-            : "hover:bg-gray-200 text-gray-600"
-        }`}
+        className={`flex items-center gap-3 px-3 py-2 rounded-md transition ${location.pathname === item.path
+            ? "bg-indigo-50 text-[#6777EF]"
+            : "hover:bg-gray-100 text-gray-600"
+          }`}
+        onClick={() => setMobileMenuOpen(false)}
       >
         <span>{item.icon}</span>
-        <span>{sidebarOpen && item.name}</span>
+        {sidebarOpen && <span>{item.name}</span>}
       </Link>
     </li>
   );
 
-
-
-
-
-
-
-
-  // Only Pages dropdown, no nested dropdowns
+  // Pages Dropdown
   const PagesDropdown = () => (
-    <li className="mb-3">
+    <li>
       <button
-      // open and close pages dropdown
-        onClick={() => setOpenCategory(openCategory === "Pages" ? null : "Pages")}
-        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${
-          location.pathname.startsWith("/pages")
-            ? "bg-gray-200 text-[#6777EF]"
-            : "hover:bg-gray-200"
-        }`}
+        onClick={() =>
+          setOpenCategory(openCategory === "Pages" ? null : "Pages")
+        }
+        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition ${location.pathname.startsWith("/pages")
+            ? "bg-indigo-50 text-[#6777EF]"
+            : "hover:bg-gray-100 text-gray-600"
+          }`}
       >
         <span className="flex items-center gap-2">
           <RiFilePaper2Fill size={18} className="text-gray-600" />
-          <span>Pages</span>
+          {sidebarOpen && <span>Pages</span>}
         </span>
-        {openCategory === "Pages" ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+        {sidebarOpen &&
+          (openCategory === "Pages" ? (
+            <ChevronDown size={16} />
+          ) : (
+            <ChevronRight size={16} />
+          ))}
       </button>
 
-
-      
-      {openCategory === "Pages" && (
-        <ul className="ml-6 mt-2">
+      {sidebarOpen && openCategory === "Pages" && (
+        <ul className="ml-8 mt-2 space-y-1">
           {navbarState.data.map((cat) => (
-            <li key={cat._id} className="mb-2">
+            <li key={cat._id}>
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${
-                  location.pathname === "/pages"
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-100"
-                }`}
+                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === "/pages"
+                    ? "bg-indigo-50 text-[#6777EF]"
+                    : "hover:bg-gray-50 text-gray-600"
+                  }`}
                 onClick={() => {
-                  // Pass selected category via state
                   navigate("/pages", { state: { selectedCategory: cat._id } });
                   setOpenCategory(null);
                   setMobileMenuOpen(false);
@@ -124,37 +104,39 @@ const SidebarLayout = () => {
     </li>
   );
 
-
-
-
-
-// Only Blogs dropdown, no nested dropdowns
+  // Blogs Dropdown
   const BlogsDropdown = () => (
-    <li className="mb-3">
+    <li>
       <button
-        onClick={() => setOpenCategory(openCategory === "Blogs" ? null : "Blogs")}
-        className={`flex items-center justify-between w-full px-2 py-2 rounded transition ${
-          location.pathname.startsWith("/blogs")
-            ? "bg-gray-200 text-[#6777EF]"
-            : "hover:bg-gray-200"
-        }`}
+        onClick={() =>
+          setOpenCategory(openCategory === "Blogs" ? null : "Blogs")
+        }
+        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition ${location.pathname.startsWith("/blogs")
+            ? "bg-indigo-50 text-[#6777EF]"
+            : "hover:bg-gray-100 text-gray-600"
+          }`}
       >
         <span className="flex items-center gap-2">
           <FaBlog size={18} className="text-gray-600" />
-          <span>Blogs</span>
+          {sidebarOpen && <span>Blogs</span>}
         </span>
-        {openCategory === "Blogs" ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+        {sidebarOpen &&
+          (openCategory === "Blogs" ? (
+            <ChevronDown size={16} />
+          ) : (
+            <ChevronRight size={16} />
+          ))}
       </button>
-      {openCategory === "Blogs" && (
-        <ul className="ml-6 mt-2">
+
+      {sidebarOpen && openCategory === "Blogs" && (
+        <ul className="ml-8 mt-2 space-y-1">
           {blogsMenu.map((blog) => (
-            <li key={blog.path} className="mb-2">
+            <li key={blog.path}>
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${
-                  location.pathname === blog.path
-                    ? "bg-gray-200 text-[#6777EF]"
-                    : "hover:bg-gray-100"
-                }`}
+                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === blog.path
+                    ? "bg-indigo-50 text-[#6777EF]"
+                    : "hover:bg-gray-50 text-gray-600"
+                  }`}
                 onClick={() => {
                   navigate(blog.path);
                   setOpenCategory(null);
@@ -170,28 +152,18 @@ const SidebarLayout = () => {
     </li>
   );
 
-
-
-
-
-  // Main return
-
   return (
     <div className="flex h-screen">
-
-
-
-
       {/* Desktop Sidebar */}
       <aside
-        className={`max-md:hidden overflow-y-auto ${sidebarOpen ? "w-64" : "w-16"} 
-        bg-white text-black p-2.5 flex flex-col transition-all duration-400`}
+        className={`hidden md:flex flex-col overflow-y-auto transition-all duration-300 ${sidebarOpen ? "w-64" : "w-16"
+          } bg-white border-r shadow-sm z-40`}
       >
-        <h2 className="text-2xl font-bold mb-6 mx-auto">
+        <h2 className="text-lg font-bold mb-6 text-center text-[#6777EF]">
           {sidebarOpen ? "Admin Panel" : "AP"}
         </h2>
         <nav className="flex-1">
-          <ul>
+          <ul className="space-y-1">
             {menu.map((item, idx) => (
               <SidebarItem key={idx} item={item} />
             ))}
@@ -200,39 +172,31 @@ const SidebarLayout = () => {
           </ul>
         </nav>
       </aside>
-
-
-
-
-
 
       {/* Mobile Sidebar Overlay */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-[45] bg-black bg-opacity-30"
+          className="md:hidden fixed inset-0 z-50 bg-black bg-opacity-40"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
 
-
-
+      {/* Mobile Sidebar */}
       {/* Mobile Sidebar */}
       <aside
-        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white text-black flex flex-col transition-all duration-400 ${
-          mobileMenuOpen ? "w-[80vw] p-2" : "w-0 overflow-hidden"
-        }`}
-        onClick={(e) => e.stopPropagation()}
+        className={`md:hidden fixed top-0 left-0 h-full z-[100] bg-white shadow-lg transform transition-transform duration-300
+    ${mobileMenuOpen ? "translate-x-0 w-[80vw]" : "-translate-x-full w-[80vw]"}`}
       >
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold mx-auto">Admin Panel</h2>
+        <div className="flex justify-between items-center p-4 border-b">
+          <h2 className="text-lg font-bold text-[#6777EF]">Admin Panel</h2>
           <X
-            className="text-black cursor-pointer"
-            size={28}
+            className="text-gray-600 cursor-pointer"
+            size={24}
             onClick={() => setMobileMenuOpen(false)}
           />
         </div>
-        <nav className="flex-1">
-          <ul>
+        <nav className="flex-1 p-2 overflow-y-auto">
+          <ul className="space-y-1">
             {menu.map((item, idx) => (
               <SidebarItem key={idx} item={item} />
             ))}
@@ -243,19 +207,17 @@ const SidebarLayout = () => {
       </aside>
 
 
-
-
-
-
-      {/* Main Content */}
+      {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
+        {/* Header fixed on top */}
         <Header
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
         />
-        <main className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+        {/* Add pt-20 so content doesn't overlap header */}
+        <main className="flex-1 bg-gray-50 p-4 md:p-6 overflow-y-auto pt-20">
           <Outlet />
         </main>
       </div>
