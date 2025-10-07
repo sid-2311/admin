@@ -6,15 +6,17 @@ import { loadServiceByAnySlug } from '../store/serviceSlice';
 import ServiceInputForm from "../components/ServiceInputForm";
 import ServiceTabs from "../components/ServiceTabs";
 import ServicePatchForm from "../components/ServicePatchForm";
+import SeoEditor from "../components/SeoEditor";
+import SeoMetaPatchForm from "../components/SeoMetaPatchForm";
 
 const Pages = () => {
     const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
-    console.log("selectedSubcategory", selectedSubcategory);
+    // console.log("selectedSubcategory", selectedSubcategory);
 
-    console.log("selectedItem", selectedItem);
+    // console.log("selectedItem", selectedItem);
 
 
     const dispatch = useDispatch();
@@ -189,6 +191,8 @@ const Pages = () => {
                     <div className="space-y-8">
                         <ServiceInputForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} />
                         <ServicePatchForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} slug={serviceData.slug} />
+                    
+                      <SeoMetaPatchForm serviceData={serviceData} slug={serviceData.slug} />
                     </div>
                 ) : (
                     <div className="flex flex-col items-center justify-center min-h-[200px] text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">

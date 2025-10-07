@@ -1,0 +1,993 @@
+[{
+  "_id": {
+    "$oid": "687f6557d68d956a6fdc7432"
+  },
+  "name": "Blockchain",
+  "slug": "",
+  "index": 2,
+  "subcategories": [
+    {
+      "name": "BlockChain Development",
+      "slug": "",
+      "index": 29,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "Main Blockchain",
+          "slug": "/blockchain-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7434"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Smart Contract Developemnt",
+          "slug": "/smart-contract-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7435"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Private / Public Blockchain Development",
+          "slug": "/private-public-blockchain-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7436"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "DAO Blockchain Developmnent",
+          "slug": "/dao-blockchain-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7437"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Blockchain in SupplyChain",
+          "slug": "/blockchain-supply",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7438"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Blockchain in Voting",
+          "slug": "/blockchain-voting",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7439"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Blockchain in Live Auction",
+          "slug": "/blockchain-live-auction",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc743a"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Blockchain in Document Verifiction",
+          "slug": "/blockchain-document",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc743b"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        },
+        {
+          "name": "Blockchain in Identity Verifiction",
+          "slug": "/blockchain-identity-verification",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc743c"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.538Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7433"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.539Z"
+      }
+    },
+    {
+      "name": "Launchpad Development",
+      "slug": "",
+      "index": 30,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "GameFi Launchapd Developemnt",
+          "slug": "/gamefi-launchpad",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc743e"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "Lunchpad Development",
+          "slug": "/launchpad-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc743f"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc743d"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.539Z"
+      }
+    },
+    {
+      "name": "Wallet Development",
+      "slug": "",
+      "index": 31,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "Trust Wallet Clone Development",
+          "slug": "/trust-wallet-clone-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7441"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "Wallet Connect Clone Development",
+          "slug": "/wallet-connect-clone",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7442"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "White Paper Writting Services",
+          "slug": "/whitepaper-writing-services",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7443"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7440"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.539Z"
+      }
+    },
+    {
+      "name": "Token Development",
+      "slug": "",
+      "index": 32,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "Semi -Fungible Token Development",
+          "slug": "/semi-fungible-token-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7445"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "Binanace Smart Chain BEP20 Token Development",
+          "slug": "/binance-smart-chain-bep20-token-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7446"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "Ethereum Token Development",
+          "slug": "/ethereum-token-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7447"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7444"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.539Z"
+      }
+    },
+    {
+      "name": "DeFi Development",
+      "slug": "",
+      "index": 33,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "DeFi Staking Platform Development",
+          "slug": "/defi-staking",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7449"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "DeFi Token Development",
+          "slug": "/defi-token-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc744a"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "DeFI Wallet Development",
+          "slug": "/defi-wallet-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc744b"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "DeFi Smart Contract Development",
+          "slug": "/defi-smart-contract-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc744c"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "DeFi DApps Development",
+          "slug": "/defi-dapps-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc744d"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "DeFi Insurance Development",
+          "slug": "/defi-insurance-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc744e"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7448"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.539Z"
+      }
+    },
+    {
+      "name": "NFT Development",
+      "slug": "",
+      "index": 34,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "NFT Token Development",
+          "slug": "/nft-token",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7450"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Marketplace Development",
+          "slug": "/nft-marketplace",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7451"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Crosschain Platform Development",
+          "slug": "/nft-crosschain-platform-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7452"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Minting Development",
+          "slug": "/nft-minting-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7453"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Art Marketplace Development",
+          "slug": "/nft-art-marketplace-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7454"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Music Marketplace Development",
+          "slug": "/nft-music-marketplace-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7455"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Fantasy Sports Platform Development",
+          "slug": "/nft-fantasy-sports-platform-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7456"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "NFT Lending Platform Development",
+          "slug": "/nft-crosschain-platform-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7457"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.539Z"
+          }
+        },
+        {
+          "name": "Binance NFT Marketplace Development",
+          "slug": "/binance-nft-marketplace-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc7458"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.540Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc744f"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.540Z"
+      }
+    },
+    {
+      "name": "DEX Development",
+      "slug": "",
+      "index": 35,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [
+        {
+          "name": "Pancakeswap Exchange Clone Development",
+          "slug": "/pancakeswap-exchange",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc745a"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.540Z"
+          }
+        },
+        {
+          "name": "Uniswap Exchange Clone Development",
+          "slug": "/uniswap-exchange",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc745b"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.540Z"
+          }
+        },
+        {
+          "name": "SushiSwap Exchange Clone Development",
+          "slug": "/sushiswap-exchange",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc745c"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.540Z"
+          }
+        },
+        {
+          "name": "White Label Exchange Development",
+          "slug": "/white-label-exchange-development",
+          "status": true,
+          "deletedAt": null,
+          "dateUpdated": null,
+          "_id": {
+            "$oid": "687f6557d68d956a6fdc745d"
+          },
+          "dateCreated": {
+            "$date": "2025-07-22T10:17:59.540Z"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7459"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.540Z"
+      }
+    }
+  ],
+  "status": true,
+  "deletedAt": null,
+  "dateCreated": {
+    "$date": "2025-07-22T10:17:59.540Z"
+  },
+  "dateUpdated": {
+    "$date": "2025-07-22T10:17:59.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687f6557d68d956a6fdc7418"
+  },
+  "name": "Software",
+  "slug": "",
+  "index": 1,
+  "subcategories": [
+    {
+      "name": "Software Development",
+      "slug": "software-development-services",
+      "index": 4,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7419"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.535Z"
+      }
+    },
+    {
+      "name": "ERP Software",
+      "slug": "erp-software-development-company",
+      "index": 5,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741a"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.535Z"
+      }
+    },
+    {
+      "name": "SAAS Software",
+      "slug": "saas-software",
+      "index": 6,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741b"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.535Z"
+      }
+    },
+    {
+      "name": "Warehouse Managment Software",
+      "slug": "warehouse-management-software",
+      "index": 7,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741c"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.536Z"
+      }
+    },
+    {
+      "name": "HRMS Software",
+      "slug": "hrms-software",
+      "index": 8,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741d"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.536Z"
+      }
+    },
+    {
+      "name": "Inventory Managment Software",
+      "slug": "inventory-management-software-development",
+      "index": 9,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741e"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.536Z"
+      }
+    },
+    {
+      "name": "Accounting & Billing Software",
+      "slug": "account-and-billing-software-development",
+      "index": 10,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc741f"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.536Z"
+      }
+    },
+    {
+      "name": "POS System Software",
+      "slug": "pos-system-software-development",
+      "index": 11,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7420"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Employee Tracking Software",
+      "slug": "employee-monitoring-software-development-company",
+      "index": 12,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7421"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Attendance System Software",
+      "slug": "attendance-system-software",
+      "index": 13,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7422"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Library Managment System",
+      "slug": "library-management-system",
+      "index": 14,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7423"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "LMS With Live Class Software",
+      "slug": "top-lms-software-companies-jaipur",
+      "index": 15,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7424"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "University Managment Software",
+      "slug": "university-management-software",
+      "index": 16,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7425"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Quiz System Software",
+      "slug": "quiz-system-software",
+      "index": 17,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7426"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Astrology Software",
+      "slug": "best-astrology-software-company",
+      "index": 18,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7427"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Travel Booking Software",
+      "slug": "travel-software-development-company",
+      "index": 19,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7428"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Matrimonial Software",
+      "slug": "matrimonial-software",
+      "index": 20,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7429"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Restaurant Managment Software",
+      "slug": "custom-restaurant-software-development",
+      "index": 21,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742a"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Hotel Managment Software",
+      "slug": "hotel-management-software",
+      "index": 22,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742b"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Event management Software",
+      "slug": "event-management-software",
+      "index": 23,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742c"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.537Z"
+      }
+    },
+    {
+      "name": "Hospital Managment Software",
+      "slug": "hospital-management-software",
+      "index": 24,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742d"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.538Z"
+      }
+    },
+    {
+      "name": "Real state Software",
+      "slug": "real-estate-software",
+      "index": 25,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742e"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.538Z"
+      }
+    },
+    {
+      "name": "Clinic Managment Software",
+      "slug": "clinic-management-software",
+      "index": 26,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc742f"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.538Z"
+      }
+    },
+    {
+      "name": "Trading Software",
+      "slug": "trading-software",
+      "index": 27,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7430"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.538Z"
+      }
+    },
+    {
+      "name": "Job Portal Software",
+      "slug": "job-portal-software",
+      "index": 28,
+      "status": true,
+      "deletedAt": null,
+      "dateUpdated": null,
+      "items": [],
+      "_id": {
+        "$oid": "687f6557d68d956a6fdc7431"
+      },
+      "dateCreated": {
+        "$date": "2025-07-22T10:17:59.538Z"
+      }
+    }
+  ],
+  "status": true,
+  "deletedAt": null,
+  "dateCreated": {
+    "$date": "2025-07-22T10:17:59.538Z"
+  },
+  "dateUpdated": {
+    "$date": "2025-07-22T10:17:59.538Z"
+  },
+  "__v": 0
+}]

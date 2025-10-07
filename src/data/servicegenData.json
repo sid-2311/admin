@@ -1,0 +1,3344 @@
+[
+    {
+        "_id": "68845af7bff9262dcea6f5d1",
+        "serviceType": "blockchain",
+        "slug": "blockchain-identity-verification",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-identity-verification",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-identity-verification",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.435Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f26",
+        "serviceType": "insight",
+        "slug": "gallery",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Gallery",
+        "subcategorySlug": "gallery",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "gallery",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "gallery",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.489Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5d3",
+        "serviceType": "blockchain",
+        "slug": "gamefi-launchpad",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Launchpad Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "gamefi-launchpad",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "gamefi-launchpad",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.538Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5cd",
+        "serviceType": "blockchain",
+        "slug": "blockchain-live-auction",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-live-auction",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-live-auction",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.211Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5c9",
+        "serviceType": "blockchain",
+        "slug": "blockchain-supply",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-supply",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-supply",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.025Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5cb",
+        "serviceType": "blockchain",
+        "slug": "blockchain-voting",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-voting",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-voting",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.126Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5cf",
+        "serviceType": "blockchain",
+        "slug": "blockchain-document",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-document",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-document",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.342Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5d7",
+        "serviceType": "blockchain",
+        "slug": "trust-wallet-clone-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Wallet Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "trust-wallet-clone-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "trust-wallet-clone-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.636Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f28",
+        "serviceType": "insight",
+        "slug": "video",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Video",
+        "subcategorySlug": "video",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "video",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "video",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.550Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af6bff9262dcea6f5c5",
+        "serviceType": "blockchain",
+        "slug": "private-public-blockchain-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "private-public-blockchain-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "private-public-blockchain-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:02.821Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f2a",
+        "serviceType": "insight",
+        "slug": "portfolio",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Portfolio",
+        "subcategorySlug": "portfolio",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "portfolio",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "portfolio",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.610Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f30",
+        "serviceType": "insight",
+        "slug": "privacy-policy",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Privacy Policy",
+        "subcategorySlug": "privacy-policy",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "privacy-policy",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "privacy-policy",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.793Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af6bff9262dcea6f5c7",
+        "serviceType": "blockchain",
+        "slug": "dao-blockchain-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "dao-blockchain-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "dao-blockchain-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:02.923Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5d5",
+        "serviceType": "blockchain",
+        "slug": "launchpad-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Launchpad Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "launchpad-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "launchpad-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.590Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f2c",
+        "serviceType": "insight",
+        "slug": "insights-faq",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "FAQ",
+        "subcategorySlug": "insights-faq",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "insights-faq",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "insights-faq",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.674Z",
+        "dateUpdated": "2025-10-03T07:04:34.549Z"
+    },
+    {
+        "_id": "688220cebd42caa0e8481f2e",
+        "serviceType": "insight",
+        "slug": "terms-and-condition",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Terms and Conditions",
+        "subcategorySlug": "terms-and-condition",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "terms-and-condition",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "terms-and-condition",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.732Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f32",
+        "serviceType": "insight",
+        "slug": "refund-policy",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Refund Policy",
+        "subcategorySlug": "refund-policy",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "refund-policy",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "refund-policy",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.852Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cdbd42caa0e8481ea3",
+        "serviceType": "homepage",
+        "slug": "homepage",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7413",
+            "name": "Website",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "/",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "/",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:21.470Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f22",
+        "serviceType": "insight",
+        "slug": "about-us",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "About Us",
+        "subcategorySlug": "about-us",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "about-us",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "about-us",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.284Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cebd42caa0e8481f24",
+        "serviceType": "insight",
+        "slug": "our-team",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Our Team",
+        "subcategorySlug": "our-team",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "our-team",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "our-team",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.385Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af6bff9262dcea6f5c1",
+        "serviceType": "blockchain",
+        "slug": "blockchain-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blockchain-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blockchain-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:02.635Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af6bff9262dcea6f5c3",
+        "serviceType": "blockchain",
+        "slug": "smart-contract-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "BlockChain Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "smart-contract-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "smart-contract-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:02.719Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5f7",
+        "serviceType": "blockchain",
+        "slug": "nft-art-marketplace-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-art-marketplace-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-art-marketplace-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.362Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5d9",
+        "serviceType": "blockchain",
+        "slug": "wallet-connect-clone",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Wallet Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "wallet-connect-clone",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "wallet-connect-clone",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.691Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5dd",
+        "serviceType": "blockchain",
+        "slug": "semi-fungible-token-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Token Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "semi-fungible-token-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "semi-fungible-token-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.778Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5ed",
+        "serviceType": "blockchain",
+        "slug": "defi-insurance-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-insurance-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-insurance-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.132Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5f5",
+        "serviceType": "blockchain",
+        "slug": "nft-minting-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-minting-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-minting-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.317Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5fb",
+        "serviceType": "blockchain",
+        "slug": "nft-fantasy-sports-platform-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-fantasy-sports-platform-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-fantasy-sports-platform-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.449Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5e7",
+        "serviceType": "blockchain",
+        "slug": "defi-wallet-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-wallet-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-wallet-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.998Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5fd",
+        "serviceType": "blockchain",
+        "slug": "nft-lending-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-lending-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-lending-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.494Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5eb",
+        "serviceType": "blockchain",
+        "slug": "defi-dapps-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-dapps-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-dapps-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.088Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5ff",
+        "serviceType": "blockchain",
+        "slug": "binance-nft-marketplace-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "binance-nft-marketplace-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "binance-nft-marketplace-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.538Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5db",
+        "serviceType": "blockchain",
+        "slug": "whitepaper-writing-services",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Wallet Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "whitepaper-writing-services",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "whitepaper-writing-services",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.733Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5e1",
+        "serviceType": "blockchain",
+        "slug": "ethereum-token-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Token Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "ethereum-token-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "ethereum-token-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.866Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5df",
+        "serviceType": "blockchain",
+        "slug": "binance-smart-chain-bep20-token-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Token Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "binance-smart-chain-bep20-token-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "binance-smart-chain-bep20-token-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.822Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5e3",
+        "serviceType": "blockchain",
+        "slug": "defi-staking",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-staking",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-staking",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.910Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f601",
+        "serviceType": "blockchain",
+        "slug": "pancakeswap-exchange",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DEX Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "pancakeswap-exchange",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "pancakeswap-exchange",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.582Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5f1",
+        "serviceType": "blockchain",
+        "slug": "nft-marketplace",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-marketplace",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-marketplace",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.221Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5ef",
+        "serviceType": "blockchain",
+        "slug": "nft-token",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-token",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-token",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.177Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5e9",
+        "serviceType": "blockchain",
+        "slug": "defi-smart-contract-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-smart-contract-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-smart-contract-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.042Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af7bff9262dcea6f5e5",
+        "serviceType": "blockchain",
+        "slug": "defi-token-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DeFi Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "defi-token-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "defi-token-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:03.954Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5f3",
+        "serviceType": "blockchain",
+        "slug": "nft-crosschain-platform-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-crosschain-platform-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-crosschain-platform-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.268Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f5f9",
+        "serviceType": "blockchain",
+        "slug": "nft-music-marketplace-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "NFT Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "nft-music-marketplace-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "nft-music-marketplace-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.407Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845f2",
+        "serviceType": "software",
+        "slug": "account-and-billing-software-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Accounting & Billing Software",
+        "subcategorySlug": "account-and-billing-software-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "account-and-billing-software-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "account-and-billing-software-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.018Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5a7",
+        "serviceType": "game",
+        "slug": "teenpatti-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "teenpatti-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "teenpatti-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "teenpatti-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.677Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845f4",
+        "serviceType": "software",
+        "slug": "pos-system-software-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "POS System Software",
+        "subcategorySlug": "pos-system-software-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "pos-system-software-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "pos-system-software-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.120Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845f8",
+        "serviceType": "software",
+        "slug": "attendance-system-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Attendance System Software",
+        "subcategorySlug": "attendance-system-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "attendance-system-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "attendance-system-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.326Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845fe",
+        "serviceType": "software",
+        "slug": "university-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "University Managment Software",
+        "subcategorySlug": "university-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "university-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "university-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.631Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845f6",
+        "serviceType": "software",
+        "slug": "employee-monitoring-software-development-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Employee Tracking Software",
+        "subcategorySlug": "employee-monitoring-software-development-company",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "employee-monitoring-software-development-company",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "employee-monitoring-software-development-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.222Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845ec",
+        "serviceType": "software",
+        "slug": "warehouse-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Warehouse Managment Software",
+        "subcategorySlug": "warehouse-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "warehouse-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "warehouse-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.711Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845f0",
+        "serviceType": "software",
+        "slug": "inventory-management-software-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Inventory Managment Software",
+        "subcategorySlug": "inventory-management-software-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "inventory-management-software-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "inventory-management-software-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.915Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f605",
+        "serviceType": "blockchain",
+        "slug": "sushiswap-exchange",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DEX Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "sushiswap-exchange",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "sushiswap-exchange",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.670Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5ab",
+        "serviceType": "game",
+        "slug": "tournament-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "tournament-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "tournament-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "tournament-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.883Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5a1",
+        "serviceType": "game",
+        "slug": "game-development-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Game Development",
+        "subcategorySlug": "game-development-company",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Gaming Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "game-development-company",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "game-development-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.380Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845ee",
+        "serviceType": "software",
+        "slug": "hrms-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "HRMS Software",
+        "subcategorySlug": "hrms-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "hrms-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "hrms-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.812Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5a3",
+        "serviceType": "game",
+        "slug": "ludo-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "ludo-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "ludo-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "ludo-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.441Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5a5",
+        "serviceType": "game",
+        "slug": "rummy-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "rummy-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "rummy-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "rummy-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.576Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5a9",
+        "serviceType": "game",
+        "slug": "poker-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "poker-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "poker-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "poker-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.780Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845e6",
+        "serviceType": "software",
+        "slug": "software-development-services",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Software Development",
+        "subcategorySlug": "software-development-services",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "software-development-services",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "software-development-services",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.415Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884941e8593037459e1f5ad",
+        "serviceType": "game",
+        "slug": "fantasy-cricket-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7478",
+            "name": "Game",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Skill Games Development",
+        "subcategorySlug": "fantasy-cricket-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "fantasy-cricket-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "fantasy-cricket-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T08:38:54.984Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f603",
+        "serviceType": "blockchain",
+        "slug": "uniswap-exchange",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DEX Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "uniswap-exchange",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "uniswap-exchange",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.626Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845ea",
+        "serviceType": "software",
+        "slug": "saas-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "SAAS Software",
+        "subcategorySlug": "saas-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "saas-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "saas-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.607Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d184600",
+        "serviceType": "software",
+        "slug": "quiz-system-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Quiz System Software",
+        "subcategorySlug": "quiz-system-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "quiz-system-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "quiz-system-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.734Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68896233fb73d1845e8",
+        "serviceType": "software",
+        "slug": "erp-software-development-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "ERP Software",
+        "subcategorySlug": "erp-software-development-company",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "erp-software-development-company",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "erp-software-development-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:44.508Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845fa",
+        "serviceType": "software",
+        "slug": "library-management-system",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Library Managment System",
+        "subcategorySlug": "library-management-system",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "library-management-system",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "library-management-system",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.427Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "68845af8bff9262dcea6f607",
+        "serviceType": "blockchain",
+        "slug": "white-label-exchange-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7432",
+            "name": "Blockchain",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "DEX Development",
+        "subcategorySlug": "",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "white-label-exchange-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "white-label-exchange-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T04:35:04.710Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d1845fc",
+        "serviceType": "software",
+        "slug": "top-lms-software-companies-jaipur",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "LMS With Live Class Software",
+        "subcategorySlug": "top-lms-software-companies-jaipur",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "top-lms-software-companies-jaipur",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "top-lms-software-companies-jaipur",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.529Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d18460c",
+        "serviceType": "software",
+        "slug": "event-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Event management Software",
+        "subcategorySlug": "event-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "event-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "event-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.309Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230cdfc",
+        "serviceType": "metaverse",
+        "slug": "metaverse-virtual-showroom-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Virtual Showroom Development",
+        "subcategorySlug": "metaverse-virtual-showroom-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-virtual-showroom-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-virtual-showroom-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.437Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230cdfe",
+        "serviceType": "metaverse",
+        "slug": "metaverse-event-platform-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Event Platform Development",
+        "subcategorySlug": "metaverse-event-platform-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-event-platform-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-event-platform-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.517Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bcfa5a4d62b230ce08",
+        "serviceType": "metaverse",
+        "slug": "metaverse-launchpad-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Launchpad Development",
+        "subcategorySlug": "metaverse-launchpad-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-launchpad-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-launchpad-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:52.052Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230ce00",
+        "serviceType": "metaverse",
+        "slug": "metaverse-avatar-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Avatar Development",
+        "subcategorySlug": "metaverse-avatar-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-avatar-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-avatar-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.642Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184614",
+        "serviceType": "software",
+        "slug": "trading-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Trading Software",
+        "subcategorySlug": "trading-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "trading-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "trading-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.849Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d18460e",
+        "serviceType": "software",
+        "slug": "hospital-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Hospital Managment Software",
+        "subcategorySlug": "hospital-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "hospital-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "hospital-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.453Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184610",
+        "serviceType": "software",
+        "slug": "real-estate-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Real state Software",
+        "subcategorySlug": "real-estate-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "real-estate-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "real-estate-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.656Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184616",
+        "serviceType": "software",
+        "slug": "job-portal-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Job Portal Software",
+        "subcategorySlug": "job-portal-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "job-portal-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "job-portal-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.962Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230ce02",
+        "serviceType": "metaverse",
+        "slug": "metaverse-social-media-platform-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Social Media Platform Development",
+        "subcategorySlug": "metaverse-social-media-platform-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-social-media-platform-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-social-media-platform-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.747Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230cdf6",
+        "serviceType": "metaverse",
+        "slug": "metaverse-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Development",
+        "subcategorySlug": "metaverse-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.140Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230cdf8",
+        "serviceType": "metaverse",
+        "slug": "metaverse-game-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Game Development",
+        "subcategorySlug": "metaverse-game-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-game-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-game-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.199Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d18460a",
+        "serviceType": "software",
+        "slug": "hotel-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Hotel Managment Software",
+        "subcategorySlug": "hotel-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "hotel-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "hotel-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.247Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d184602",
+        "serviceType": "software",
+        "slug": "best-astrology-software-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Astrology Software",
+        "subcategorySlug": "best-astrology-software-company",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "best-astrology-software-company",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "best-astrology-software-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.831Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184612",
+        "serviceType": "software",
+        "slug": "clinic-management-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Clinic Managment Software",
+        "subcategorySlug": "clinic-management-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "clinic-management-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "clinic-management-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.768Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230ce04",
+        "serviceType": "metaverse",
+        "slug": "metaverse-real-estate-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Real Estate Development",
+        "subcategorySlug": "metaverse-real-estate-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-real-estate-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-real-estate-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.847Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230ce06",
+        "serviceType": "metaverse",
+        "slug": "metaverse-virtual-land-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse Virtual Land Development",
+        "subcategorySlug": "metaverse-virtual-land-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-virtual-land-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-virtual-land-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.949Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184608",
+        "serviceType": "software",
+        "slug": "custom-restaurant-software-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Restaurant Managment Software",
+        "subcategorySlug": "custom-restaurant-software-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "custom-restaurant-software-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "custom-restaurant-software-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.153Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688853f00db9e830ce4a0542",
+        "serviceType": "insight",
+        "slug": "blog",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7481",
+            "name": "Insights",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Blog",
+        "subcategorySlug": "blog",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "blog",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "blog",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T04:54:08.465Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68a96233fb73d184606",
+        "serviceType": "software",
+        "slug": "matrimonial-software",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Matrimonial Software",
+        "subcategorySlug": "matrimonial-software",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "matrimonial-software",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "matrimonial-software",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:46.041Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6888a4bbfa5a4d62b230cdfa",
+        "serviceType": "metaverse",
+        "slug": "metaverse-nft-marketplace-development",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc746d",
+            "name": "Metaverse",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Metaverse NFT Marketplace Development",
+        "subcategorySlug": "metaverse-nft-marketplace-development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "metaverse-nft-marketplace-development",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "metaverse-nft-marketplace-development",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-29T10:38:51.335Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "6884b68996233fb73d184604",
+        "serviceType": "software",
+        "slug": "travel-software-development-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7418",
+            "name": "Software",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Travel Booking Software",
+        "subcategorySlug": "travel-software-development-company",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "travel-software-development-company",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "travel-software-development-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-26T11:05:45.936Z",
+        "dateUpdated": null
+    },
+    {
+        "_id": "688220cdbd42caa0e8481eaa",
+        "serviceType": "website",
+        "slug": "web-development-company",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7413",
+            "name": "Website",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Website Development",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "web-development-company new",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "web-development-company",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:21.790Z",
+        "dateUpdated": "2025-10-01T09:29:47.635Z"
+    },
+    {
+        "_id": "688220cebd42caa0e8481efb",
+        "serviceType": "website",
+        "slug": "ecommerce-website-development-services",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7413",
+            "name": "Website",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "E-Commerce Website Single & Multi Wendor",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "ecommerce-website-development-services",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "ecommerce-website-development-services",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:22.080Z",
+        "dateUpdated": "2025-07-24T12:02:22.080Z"
+    },
+    {
+        "_id": "688220cdbd42caa0e8481ee0",
+        "serviceType": "website",
+        "slug": "dynamic-website-services",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7413",
+            "name": "Website",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Dynamic Website",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "dynamic-website-services",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "dynamic-website-services",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:21.980Z",
+        "dateUpdated": "2025-07-24T12:02:21.980Z"
+    },
+    {
+        "_id": "68c2b4f462de12134f985a73",
+        "serviceType": "website",
+        "slug": "static-website-development-services",
+        "status": true,
+        "deletedAt": null,
+        "navbarCategory": {
+            "_id": "687f6557d68d956a6fdc7413",
+            "name": "Website",
+            "slug": ""
+        },
+        "navbarSubCategory": null,
+        "subcategoryName": "Static Website",
+        "seo": {
+            "title": "MetaBlock Technologies | Best Web & Static Website Development Company",
+            "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+            "canonical": "static-website-development-services",
+            "openGraph": {
+                "title": "MetaBlock Technologies | Best Web & Blockchain Development Company",
+                "description": "MetaBlock provides top-notch web and blockchain development services for startups and enterprises.",
+                "url": "static-website-development-services",
+                "images": [
+                    {
+                        "url": "/assets/home-og-image.jpg",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": "MetaBlock Technologies"
+                    }
+                ],
+                "type": "website"
+            }
+        },
+        "dateCreated": "2025-07-24T12:02:21.878Z",
+        "dateUpdated": "2025-07-24T12:02:21.878Z"
+    }
+]

@@ -48,7 +48,11 @@ const BlogCategory = () => {
   // Pagination
   const totalPages = Math.ceil(filteredData.length / entries);
   const startIndex = (currentPage - 1) * entries;
+  console.log("startIndex", startIndex);
+  
   const paginatedData = filteredData.slice(startIndex, startIndex + entries);
+  console.log("paginatedData", paginatedData);
+  
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
@@ -90,6 +94,7 @@ const BlogCategory = () => {
             <input
               type="number"
               min="1"
+              max="20"
               value={entries}
               onChange={(e) => {
                 const val = Number(e.target.value);

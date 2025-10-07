@@ -5,6 +5,7 @@ function warnIfNoBase() {
 }
 
 
+// Get WebsiteService by slug
 
 export async function fetchServiceByAnySlug(slug) {
     warnIfNoBase();
@@ -20,37 +21,20 @@ export async function fetchServiceByAnySlug(slug) {
     }
 }
 
+// Get all WebsiteServices (with populated category/subcategory)
+export async function fetchAllServices() {
+  warnIfNoBase();
+  try {
+    const res = await fetch(`${apiBase}/api/websitenew/services`);
+    if (!res.ok) throw new Error(`Failed to fetch services (${res.status})`);
+    return await res.json();
+  } catch (err) {
+    console.error("Failed to fetch all services", err);
+    throw err;
+  }
+}
 
 
-
-
-// export async function fetchServicesByCategorySlug(slug) {
-//     warnIfNoBase();
-//     if (!slug) return [];
-//     try {
-//         const res = await fetch(`${apiBase}/api/websitenew/category/${slug}/services`);
-//         if (!res.ok) throw new Error(`Network response was not ok (${res.status})`);
-//         const data = await res.json();
-//         return data?.data || data || [];
-//     } catch (err) {
-//         console.error('Failed to fetch services for category', slug, err);
-//         throw err;
-//     }
-// }
-
-// export async function fetchServiceBySlug(slug, serviceType = 'website') {
-//     warnIfNoBase();
-//     if (!slug) return null;
-//     try {
-//         const res = await fetch(`${apiBase}/api/websitenew/service/${slug}?serviceType=${serviceType}`);
-//         if (!res.ok) throw new Error(`Network response was not ok (${res.status})`);
-//         const data = await res.json();
-//         return data?.data || data || null;
-//     } catch (err) {
-//         console.error('Failed to fetch service by slug', slug, err);
-//         throw err;
-//     }
-// }
 
 // PATCH WebsiteService by slug
 export async function patchServiceBySlug(slug, payload) {
@@ -68,4 +52,55 @@ export async function patchServiceBySlug(slug, payload) {
         console.error('Failed to PATCH service', slug, err);
         throw err;
     }
+}
+
+
+// New API for  WebsiteService  General fields update (edit page)
+export async function updateWebsiteService(slug, payload) {
+  if (!slug || !payload) throw new Error('Missing slug or payload');
+  try {
+    const res = await fetch(`${apiBase}/api/websitenew/updatewebsitegeneralinfo/${slug}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(`PUT failed (${res.status})`);
+    return await res.json();
+  } catch (err) {
+    console.error('Failed to update WebsiteService', slug, err);
+    throw err;
+  }
+}
+
+
+
+
+// 🟢 Create New Service
+export async function createService(payload) {
+  try {
+    const res = await fetch(`${apiBase}/api/websitenew/service`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(`Failed to create service (${res.status})`);
+    return await res.json();
+  } catch (err) {
+    console.error("❌ Failed to create service", err);
+    throw err;
+  }
+}
+
+// 🟢 Delete Service by Slug
+export async function deleteService(slug) {
+  try {
+    const res = await fetch(`${apiBase}/api/websitenew/delete/${slug}`, {
+      method: "DELETE",
+    });
+    if (!res.ok) throw new Error(`Failed to delete service (${res.status})`);
+    return await res.json();
+  } catch (err) {
+    console.error("❌ Failed to delete service", err);
+    throw err;
+  }
 }

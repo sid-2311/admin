@@ -21,10 +21,13 @@ import PopularBlog from "./pages/PopularBlog";
 import BlogComment from "./pages/BlogComment";
 import ProfileForm from "./pages/Profile";
 import Category from "./pages/Category";
+import ServiceGeneralForm from "./pages/ServiceGeneralForm";
+import EditWebsiteService from "./pages/EditWebsiteService";
+import RecycleBin from "./pages/RecycleBin";
 // import SoftwarePage from "./Compoents/Software/SoftwarePage";
 
 
-function App(){
+function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem("isAuthenticated") === "true"
   );
@@ -34,34 +37,37 @@ function App(){
     localStorage.setItem("isAuthenticated", isAuthenticated ? "true" : "false");
   }, [isAuthenticated]);
 
-  return(
+  return (
     <Routes>
       <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
 
-        {isAuthenticated ? (
+      {isAuthenticated ? (
         <Route path="/" element={<SidebarLayout />}>
-          <Route index element={<Dashboard/>}/>
-           <Route path="users" element={<Users />} />
-            <Route path="settings" element={<Settings />}/>
-            <Route path="pages" element={<Pages />} />
-            {/* <Route path="pages/about-us" element={<AboutusPagess/>}/> */}
-              {/* <Route path="/pages/software" element={<SoftwarePage/>}/> */}
+          <Route index element={<Dashboard />} />
+          <Route path="users" element={<Users />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="pages" element={<Pages />} />
+          {/* <Route path="pages/about-us" element={<AboutusPagess/>}/> */}
+          {/* <Route path="/pages/software" element={<SoftwarePage/>}/> */}
 
-              {/* <Route path="pages/contact-us" element={<ContactUs/>}/> */}
-              {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
-            {/* </Route> */}
+          {/* <Route path="pages/contact-us" element={<ContactUs/>}/> */}
+          {/* <Route path="/pages/about-us/why-choose-us" element={<Whytochoose/>}/> */}
+          {/* </Route> */}
           {/* <Route index element={<Dashboard />} /> */}
-         <Route path="/blogs/categories" element={<BlogCategory/>}/>
-         <Route path="/createBlog" element={<BlogCategoryForm/>}/>
-         <Route path="/editblog" element={<BlogEditPage/>}/>
-         <Route path="/blogs/create" element={<Blogs/>}/>
-          <Route path="/BlogCreate" element={<BlogForm/>}/>
-          <Route path="/BlogEdit" element={<BlogEditForm/>}/>
-          <Route path="/blogs/popular" element={<PopularBlog/>}/>
-          <Route path="/blogs/comments" element={<BlogComment/>}/>
-          <Route path="/profile" element={<ProfileForm/>}/>
-          <Route path ="/Categories" element={<Category/>}/>
+          <Route path="/blogs/categories" element={<BlogCategory />} />
+          <Route path="/createBlog" element={<BlogCategoryForm />} />
+          <Route path="/editblog" element={<BlogEditPage />} />
+          <Route path="/blogs/create" element={<Blogs />} />
+          <Route path="/BlogCreate" element={<BlogForm />} />
+          <Route path="/BlogEdit" element={<BlogEditForm />} />
+          <Route path="/blogs/popular" element={<PopularBlog />} />
+          <Route path="/blogs/comments" element={<BlogComment />} />
+          <Route path="/profile" element={<ProfileForm />} />
+          <Route path="/Categories" element={<Category />} />
+          <Route path="/services/general" element={<ServiceGeneralForm />} />
+          <Route path="/services/edit" element={<EditWebsiteService />} />
+          <Route path="/recycle-bin" element={<RecycleBin />} />
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />

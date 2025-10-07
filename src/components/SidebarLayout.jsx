@@ -5,6 +5,7 @@ import { RiFilePaper2Fill } from "react-icons/ri";
 import { FaHome, FaUserAlt, FaBlog } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { LayoutGrid } from "lucide-react";
+import { ClipboardList } from "lucide-react";
 import Header from "./Header";
 import { useDispatch, useSelector } from "react-redux";
 import { loadNavbars } from "../store/navbarSlice";
@@ -29,6 +30,7 @@ const SidebarLayout = () => {
     { name: "Users", path: "/users", icon: <FaUserAlt size={18} /> },
     { name: "Setting", path: "/settings", icon: <IoSettingsSharp size={18} /> },
     { name: "Categories", path: "/categories", icon: <LayoutGrid size={18} /> },
+    { name: "Services ", path: "/services/general", icon: <ClipboardList size={18} /> },
   ];
 
   const blogsMenu = [
