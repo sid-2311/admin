@@ -191,8 +191,8 @@ const Pages = () => {
                     <div className="space-y-8">
                         <ServiceInputForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} />
                         <ServicePatchForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} slug={serviceData.slug} />
-                    
-                      <SeoMetaPatchForm serviceData={serviceData} slug={serviceData.slug} />
+
+                        <SeoMetaPatchForm serviceData={serviceData} slug={serviceData.slug} />
                     </div>
                 ) : (
                     <div className="flex flex-col items-center justify-center min-h-[200px] text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">
@@ -204,116 +204,7 @@ const Pages = () => {
         </div>
     );
 
-    //     return (
-    //         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 bg-white mt-10 rounded-xl p-2 md:p-6 shadow-lg min-h-[60vh]">
-    //             {/* Sidebar Tabs for service sections */}
-    //            {(selectedSubcategory !== null || selectedItem !== null) && (
-    //              <aside className="md:sticky md:top-10 self-start max-h-[32rem] overflow-y-auto bg-gradient-to-b from-blue-50 to-white rounded-xl shadow-md p-4 mb-4 md:mb-0 min-h-[300px] flex flex-col">
-    //                 <ServiceTabs
-    //                     tabs={serviceTabs}
-    //                     selectedTab={activeTab}
-    //                     setSelectedTab={setActiveTab}
-    //                 />
-    //             </aside>
-    //            )}
-
-    //             {/* Content for selected tab */}
-    //             <main className="flex-1 border border-gray-100 rounded-xl bg-white p-4 md:p-6 shadow-sm min-h-[300px] flex flex-col justify-start">
-    //                 {/* Top Level Dropdowns */}
-    //                 <div className="flex flex-wrap gap-4 items-start mb-6">
-    //                     <div className="min-w-[180px]">
-    //                         <label className="font-semibold block mb-2 text-gray-700">Main Category</label>
-    //                         <select
-    //                             className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
-    //                             value={selectedCategory || ""}
-    //                             onChange={e => {
-    //                                 setSelectedCategory(e.target.value);
-    //                                 setSelectedSubcategory(null);
-    //                                 // setSelectedItem(null);
-    //                             }}
-    //                         >
-    //                             <option value="">Select Category</option>
-    //                             {navbarState.data.map(cat => (
-    //                                 <option key={cat._id} value={cat._id}>
-    //                                     {cat.name}
-    //                                 </option>
-    //                             ))}
-    //                         </select>
-    //                     </div>
-
-    //                     {/* subcategories dropdown */}
-    //                     {categoryObj?.subcategories?.length > 0 && (
-    //                         <div className="min-w-[180px]">
-    //                             <label className="font-semibold block mb-2 text-gray-700">Subcategory</label>
-    //                             <select
-    //                                 className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
-    //                                 value={selectedSubcategory || ""}
-    //                                 onChange={e => {
-    //                                     setSelectedSubcategory(e.target.value);
-    //                                     setSelectedItem(null);
-    //                                 }}
-    //                             >
-    //                                 <option value="">Select Subcategory</option>
-    //                                 {categoryObj.subcategories.map(sub => (
-    //                                     <option key={sub._id} value={sub.slug || sub.name.toLowerCase()}>
-    //                                         {sub.name}
-    //                                     </option>
-    //                                 ))}
-    //                             </select>
-    //                         </div>
-    //                     )}
-
-    //                     {/* items dropdown */}
-    //                     {subcategoryObj?.items?.length > 0 && (
-    //                         <div className="min-w-[180px]">
-    //                             <label className="font-semibold block mb-2 text-gray-700">Item</label>
-    //                             <select
-    //                                 className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
-    //                                 value={selectedItem || ""}
-    //                                 onChange={e => setSelectedItem(e.target.value)}
-    //                             >
-    //                                 <option value="">Select Item</option>
-    //                                 {subcategoryObj.items.map(item => (
-    //                                     <option key={item._id} value={item.slug.replace("/", "")}> 
-    //                                         {item.name}
-    //                                     </option>
-    //                                 ))}
-    //                             </select>
-    //                         </div>
-    //                     )}
-    //                 </div>
-
-    //                 {/* Show selected category/subcategory/item */}
-    //                 <div className="flex flex-wrap gap-8 mt-4 mb-6">
-    //                     <div className="flex flex-col gap-2 text-gray-700">
-    //                         <div>
-    //                             <span className="font-bold text-[#6777EF]">Selected Category:</span> {categoryObj?.name || "-"}
-    //                         </div>
-    //                         <div>
-    //                             <span className="font-bold text-[#6777EF]">Selected Subcategory:</span> {subcategoryObj?.name || "-"}
-    //                         </div>
-    //                         <div>
-    //                             <span className="font-bold text-[#6777EF]">Selected Item:</span> {itemObj?.slug?.replace("/", "") || "-"}
-    //                         </div>
-    //                     </div>
-    //                 </div>
-
-    //                 {/* Input Fields for selected tab */}
-    //                 {serviceData && activeTab ? (
-    //                     <div className="space-y-8">
-    //                         <ServiceInputForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} />
-    //                         {/* PATCH form for the same tab */}
-    //                         <ServicePatchForm serviceData={{ data: { [activeTab]: serviceData.data[activeTab] } }} slug={serviceData.slug} />
-    //                     </div>
-    //                 ) : (
-    //                     <div className="flex flex-col items-center justify-center min-h-[200px] text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-    //                         <span className="text-lg font-semibold mb-2">No service data found for this tab.</span>
-    //                         <span className="text-sm">Select a category, subcategory, and item to view details.</span>
-    //                     </div>
-    //                 )}
-    //             </main>
-    //         </div>
-    // );
+ 
 };
 
 export default Pages;

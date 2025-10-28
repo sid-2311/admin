@@ -10,6 +10,7 @@ const ToggleButton = ({ enabled, onToggle }) => {
     <button
       onClick={() => onToggle(!enabled)}
       className="relative flex items-center w-20 h-8 rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg"
+      title="Toggle Status to enable or disable service"
     >
       <motion.div
         animate={{ backgroundColor: enabled ? "#22c55e" : "#ef4444" }}

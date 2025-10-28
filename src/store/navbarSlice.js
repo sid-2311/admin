@@ -8,7 +8,7 @@ function warnIfNoBase() {
 async function fetchNavbarData() {
     warnIfNoBase();
     try {
-        const res = await fetch(`${apiBase}/api/navbar/`);
+        const res = await fetch(`${apiBase}/api/navbar/getallforadmin`);
         if (!res.ok) throw new Error(`Network response was not ok (${res.status})`);
         const data = await res.json();
         return Array.isArray(data) ? data.sort((a, b) => (a.index || 0) - (b.index || 0)) : [];

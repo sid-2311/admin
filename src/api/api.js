@@ -75,21 +75,44 @@ export async function updateWebsiteService(slug, payload) {
 
 
 
-// 🟢 Create New Service
-export async function createService(payload) {
+// 🟢 Check if Slug Exists
+// Returns true if exists, false otherwise
+export async function checkSlugExists(slug) {
+  warnIfNoBase();
+  if (!slug) return false;
   try {
-    const res = await fetch(`${apiBase}/api/websitenew/service`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) throw new Error(`Failed to create service (${res.status})`);
-    return await res.json();
+    const res = await fetch(`${apiBase}/api/websitenew/service/check-slug/${slug}`);
+    if (!res.ok) throw new Error("Failed to check slug");
+    const data = await res.json();
+    return data.exists;
   } catch (err) {
-    console.error("❌ Failed to create service", err);
-    throw err;
+    console.error("Slug check failed", err);
+    return false;
   }
 }
+
+
+
+
+
+
+
+export async function createService(payload) {
+  warnIfNoBase();
+  const res = await fetch(`${apiBase}/api/websitenew/createnewservice`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error("Failed to create service");
+  return await res.json();
+}
+
+
+
+
+
+
 
 // 🟢 Delete Service by Slug
 export async function deleteService(slug) {

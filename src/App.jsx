@@ -24,6 +24,7 @@ import Category from "./pages/Category";
 import ServiceGeneralForm from "./pages/ServiceGeneralForm";
 import EditWebsiteService from "./pages/EditWebsiteService";
 import RecycleBin from "./pages/RecycleBin";
+import ServiceCreateForm from "./pages/ServiceCreateForm";
 // import SoftwarePage from "./Compoents/Software/SoftwarePage";
 
 
@@ -68,6 +69,7 @@ function App() {
           <Route path="/services/general" element={<ServiceGeneralForm />} />
           <Route path="/services/edit" element={<EditWebsiteService />} />
           <Route path="/recycle-bin" element={<RecycleBin />} />
+          <Route path="create-new-service" element={<ServiceCreateForm />} />
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/login" />} />

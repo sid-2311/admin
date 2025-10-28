@@ -1,30 +1,38 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { fetchServiceByAnySlug } from "../api/api";
+import { useEffect, useState, useRef } from "react";
+import { fetchServiceByAnySlug, checkSlugExists } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
 import { updateServiceThunk } from "../store/serviceSlice";
 
 export default function EditWebsiteService() {
+  // 🧭 Navigation & Redux setup
   const location = useLocation();
   const navigate = useNavigate();
-  const editData = location.state?.editData;
-
-  
   const dispatch = useDispatch();
-  const { loading, selected, error } = useSelector(state => state.service);
-  
+
+  // 🔄 Get data from location state (if editing existing service)
+  const editData = location.state?.editData;
+  const { loading, error } = useSelector((state) => state.service);
+
+  // ⚙️ Component-level states
   const [localLoading, setLocalLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  const [slugError, setSlugError] = useState("");
+
+  // 📝 Form data state
   const [formData, setFormData] = useState({
     slug: "",
     serviceType: "",
-
     subcategoryName: "",
     subcategorySlug: "",
     status: true,
     deletedAt: null,
   });
 
+  // ⏱️ useRef for debounce timeout (to prevent re-declaration every render)
+  const slugTimeoutRef = useRef(null);
+
+  // 🧩 Load existing data when page opens or slug changes
   useEffect(() => {
     if (editData) {
       setFormData({
@@ -48,241 +56,248 @@ export default function EditWebsiteService() {
             deletedAt: data.deletedAt || null,
           });
         })
-        .catch(() => setSuccess("Failed to fetch service"))
+        .catch(() => setSuccess("⚠️ Failed to fetch service data"))
         .finally(() => setLocalLoading(false));
     }
   }, [editData, location.state]);
 
+  // ----------------------------------------------------------------------
+  // 🧠 Function: Handle Input Changes + Slug Debounce Check
+  // (Slug change hone par 500ms delay ke baad API se check karega)
+  // ----------------------------------------------------------------------
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (name === "status") {
+
+    if (name === "slug") {
+      const newSlug = value.trim(); // Remove extra spaces
+      setFormData((prev) => ({ ...prev, slug: newSlug }));
+
+      // ❌ If empty, clear error
+      if (!newSlug) {
+        setSlugError("");
+        return;
+      }
+
+      // ⚙️ If editing and slug is unchanged → skip check
+      if (editData && newSlug === editData.slug) {
+        setSlugError("");
+        return;
+      }
+
+      // ✅ Debounce Logic (500ms delay)
+      if (slugTimeoutRef.current) clearTimeout(slugTimeoutRef.current);
+      slugTimeoutRef.current = setTimeout(async () => {
+        try {
+          const exists = await checkSlugExists(newSlug.toLowerCase());
+          if (exists) {
+            setSlugError("⚠️ This slug already exists. Please choose another.");
+          } else {
+            setSlugError("");
+          }
+        } catch (error) {
+          console.error("Slug check failed:", error);
+          setSlugError("❌ Error checking slug availability.");
+        }
+      }, 500);
+    }
+
+    // 🔄 Status Dropdown Change
+    else if (name === "status") {
       setFormData((prev) => ({ ...prev, status: value === "Active" }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+    }
+
+    // 🧾 General Field Change
+    else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
     }
   };
 
-  // For nested data fields
-  const handleDataChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      data: { ...prev.data, [name]: value },
-    }));
+  // ----------------------------------------------------------------------
+  // ✏️ Function: Handle Update Button Click
+  // (Validates slug, dispatches Redux thunk, navigates back on success)
+  // ----------------------------------------------------------------------
+  const handleUpdate = async () => {
+    if (slugError) return; // Stop if slug invalid
+    setLocalLoading(true);
+    setSuccess("");
+
+    try {
+      const payload = { ...formData, slug: formData.slug };
+      await dispatch(updateServiceThunk({ slug: editData.slug, payload }));
+      setSuccess("✅ Service updated successfully!");
+      setTimeout(() => navigate(-1), 1000); // Navigate after short delay
+    } catch (err) {
+      console.error("Update failed:", err);
+      setSuccess("");
+    } finally {
+      setLocalLoading(false);
+    }
   };
 
-  console.log("Form Data:", formData);
-  
-
-const handleUpdate = async () => {
-  setLocalLoading(true);
-  setSuccess("");
-  try {
-    const payload = {
-      ...formData,
-      status: formData.status,
-      slug: formData.slug,
-    };
-    await dispatch(updateServiceThunk({ slug: editData.slug, payload }));
-    setSuccess("Service updated successfully!");
-    navigate(-1);
-  } catch (err) {
-    setSuccess("");
-  } finally {
-    setLocalLoading(false);
-  }
-};
-
-console.log("editData:", editData);
-
-
+  // ----------------------------------------------------------------------
+  // ⛔ Function: Cancel Button → Go Back
+  // ----------------------------------------------------------------------
   const handleCancel = () => {
     navigate(-1);
   };
 
+  // ----------------------------------------------------------------------
+  // 🖼️ UI Rendering Section
+  // ----------------------------------------------------------------------
   return (
-    <div className="min-h-screen bg-[#F4F6F9] p-6 ">
+    <div className="min-h-screen bg-[#F4F6F9] p-6">
       <div className="mx-auto">
-        {/* Header */}
+        {/* 🔹 Header Section */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
-            <div className="inline-flex items-center bg-blue-600 text-white my-4 px-4 py-2 rounded-md font-medium text-sm cursor-pointer" onClick={handleCancel}>
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <div
+              className="inline-flex items-center bg-blue-600 text-white my-4 px-4 py-2 rounded-md font-medium text-sm cursor-pointer"
+              onClick={handleCancel}
+            >
+              <svg
+                className="w-4 h-4 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
               Website Service List
             </div>
           </div>
         </div>
 
-        {/* Form Container */}
-        <div className="bg-white shadow-sm p-8">
+        {/* 🧾 Main Form Section */}
+        <div className="bg-white shadow-sm p-8 rounded-lg">
           <div className="space-y-6">
-            {(localLoading || loading) && <div className="text-blue-500 mb-2">Loading...</div>}
+            {(localLoading || loading) && (
+              <div className="text-blue-500 mb-2">Loading...</div>
+            )}
             {error && <div className="text-red-500 mb-2">{error}</div>}
             {success && <div className="text-green-500 mb-2">{success}</div>}
 
-            {/* Slug Field */}
+            {/* 🔖 Slug Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Slug</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Slug
+              </label>
               <input
                 type="text"
                 name="slug"
                 value={formData.slug}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md 
+                focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
               />
+              {slugError && (
+                <div className="text-red-500 text-xs mt-1">{slugError}</div>
+              )}
             </div>
 
-            {/* Service Type Field */}
+            {/* 🧱 Service Type Field */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Service Type
+              </label>
               <input
                 type="text"
                 name="serviceType"
                 value={formData.serviceType}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md 
+                focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
               />
             </div>
 
-            {/* Category Field */}
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
-              <input
-                type="text"
-                name="navbarCategory"
-                value={formData.navbarCategory?.name || formData.navbarCategory}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-              />
-            </div> */}
-
-            {/* Subcategory Field */}
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Subcategory</label>
-              <input
-                type="text"
-                name="navbarSubCategory"
-                value={formData.navbarSubCategory?.name || formData.navbarSubCategory}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-              />
-            </div> */}
-
-            {/* Subcategory Name Field */}
+            {/* 🗂️ Subcategory Fields */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Subcategory Name</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Subcategory Name
+              </label>
               <input
                 type="text"
                 name="subcategoryName"
                 value={formData.subcategoryName}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md 
+                focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
               />
             </div>
 
-            {/* Subcategory Slug Field */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Subcategory Slug</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Subcategory Slug
+              </label>
               <input
                 type="text"
                 name="subcategorySlug"
                 value={formData.subcategorySlug}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
+                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md 
+                focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
               />
             </div>
 
-            {/* Status Field */}
+            {/* ⚙️ Status Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Status
+              </label>
               <div className="relative">
                 <select
                   name="status"
                   value={formData.status ? "Active" : "Inactive"}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900 appearance-none pr-8"
+                  className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md 
+                  focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900 appearance-none pr-8"
                   required
                 >
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="w-5 h-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </div>
               </div>
             </div>
 
-            {/* Deleted At Field */}
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Deleted At</label>
-              <input
-                type="text"
-                name="deletedAt"
-                value={formData.deletedAt || ""}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-                disabled
-              />
-            </div> */}
+            <span className="text-blue-500 text-xs mt-1"> Note:- ⚠️this will update all the fields to both navbar and website collections as per there names</span>
 
-            {/* Dynamic Data Fields */}
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Data (Dynamic)</label>
-              {formData.data && Object.keys(formData.data).length > 0 ? (
-                Object.entries(formData.data).map(([key, val]) => (
-                  <div key={key} className="mb-2">
-                    <label className="text-xs text-gray-500">{key}</label>
-                    <input
-                      type="text"
-                      name={key}
-                      value={val}
-                      onChange={handleDataChange}
-                      className="w-full px-2 py-1 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-                    />
-                  </div>
-                ))
-              ) : (
-                <div className="text-xs text-gray-400">No dynamic data fields</div>
-              )}
-            </div> */}
-
-            {/* SEO Fields (optional) */}
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">SEO (optional)</label>
-              <input
-                type="text"
-                name="seo"
-                value={formData.seo?.title || ""}
-                onChange={e => setFormData(prev => ({ ...prev, seo: { ...prev.seo, title: e.target.value } }))}
-                className="w-full px-3 py-2 mb-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-                placeholder="SEO Title"
-              />
-              <input
-                type="text"
-                name="seoDesc"
-                value={formData.seo?.description || ""}
-                onChange={e => setFormData(prev => ({ ...prev, seo: { ...prev.seo, description: e.target.value } }))}
-                className="w-full px-3 py-2 bg-[#FDFDFF] border border-gray-300 rounded-md focus:outline-none focus:ring-0.5 focus:ring-[#BBC2F8] focus:border-[#BBC2F8] text-gray-900"
-                placeholder="SEO Description"
-              />
-            </div> */}
-
-            {/* Action Buttons */}
+            {/* 🔘 Action Buttons */}
             <div className="flex gap-4 pt-4">
               <button
                 onClick={handleUpdate}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md 
+                transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
                 disabled={loading}
               >
-                Update
+                {loading ? "Updating..." : "Update"}
               </button>
+
               <button
                 onClick={handleCancel}
-                className="bg-gray-400 hover:bg-gray-500 text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                className="bg-gray-400 hover:bg-gray-500 text-white font-medium py-2 px-6 rounded-md 
+                transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 cursor-pointer"
                 disabled={loading}
               >
                 Cancel

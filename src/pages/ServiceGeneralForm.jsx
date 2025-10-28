@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { patchServiceBySlug, fetchAllServices } from "../api/api";
 import { loadServiceByAnySlug } from "../store/serviceSlice";
 import ToggleButton from "../ui/ToggleButton";
-import { Pencil, Trash, LoaderCircle  } from "lucide-react";
+import { Pencil, Trash, LoaderCircle } from "lucide-react";
+import ReactPaginate from "react-paginate";
 
 // EN: General Info Management for Website Services
 // HI: Website Services ke general info ko manage karne ka form
@@ -36,12 +37,12 @@ const ServiceGeneralForm = () => {
   }, [showDeleteModal]);
 
   useEffect(() => {
-  if (showDeleteModal) {
-    setModalVisible(true);
-  } else {
-    setTimeout(() => setModalVisible(false), 300);
-  }
-}, [showDeleteModal]);
+    if (showDeleteModal) {
+      setModalVisible(true);
+    } else {
+      setTimeout(() => setModalVisible(false), 300);
+    }
+  }, [showDeleteModal]);
   // console.log("Search:", search);
 
 
@@ -96,12 +97,19 @@ const ServiceGeneralForm = () => {
       srv.navbarSubCategory?.name?.toLowerCase().includes(search.toLowerCase())
   );
 
-  console.log("Filtered Services:", filtered);
+  // console.log("Filtered Services:", filtered);
 
   const totalPages = Math.ceil(filtered.length / entries);
   const startIndex = (currentPage - 1) * entries;
   const paginatedData = filtered.slice(startIndex, startIndex + entries);
   // console.log("totalPages", totalPages, "startIndex", startIndex, "paginatedData", paginatedData);
+
+  const pageCount = totalPages;
+
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected + 1); // react-paginate is zero-indexed, your logic is 1-indexed
+  };
+
 
 
 
@@ -137,13 +145,25 @@ const ServiceGeneralForm = () => {
           <span className="text-sm text-gray-600 ">Show</span>
           <input
             type="number"
-            min="1"
-            max="20"
+            min={10}
+            max={20}
             value={entries}
             onChange={(e) => {
-              const val = Number(e.target.value);
-              setEntries(val > 0 ? val : 1);
+              let val = Number(e.target.value);
+              if (val > 20) val = 20;
+              if (val < 10) val = 10;
+              setEntries(val);
               setCurrentPage(1);
+            }}
+            onKeyDown={(e) => {
+              // Prevent typing e, +, -, ., etc.
+              if (
+                ["e", "E", "+", "-", ".", ","].includes(e.key) ||
+                (entries >= 20 && e.key === "ArrowUp") ||
+                (entries <= 10 && e.key === "ArrowDown")
+              ) {
+                e.preventDefault();
+              }
             }}
             className="border text-gray-600 border-gray-400 rounded bg-[#FDFDFF] p-2 w-16 text-center focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm mx-1"
           />
@@ -152,7 +172,7 @@ const ServiceGeneralForm = () => {
         <div>
           <button
             onClick={() => navigate("/recycle-bin")}
-            className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 my-2 rounded-lg shadow hover:from-red-600 hover:to-pink-600 transition font-semibold cursor-pointer"
+            className="flex items-center gap-2 bg-gradient-to-r bg-red-500 hover:bg-red-600 text-white px-4 py-2 my-2 rounded-lg shadow  transition font-semibold cursor-pointer"
             title="View deleted services"
           >
             <Trash size={18} className="opacity-80" />
@@ -180,7 +200,7 @@ const ServiceGeneralForm = () => {
               <tr>
                 <td colSpan={7} className="py-16 text-center">
                   <span className="flex flex-col items-center justify-center">
-                    <LoaderCircle  className="animate-spin text-blue-500" size={40} />
+                    <LoaderCircle className="animate-spin text-blue-500" size={40} />
                     <span className="mt-2 text-blue-500 font-medium">Loading services...</span>
                   </span>
                 </td>
@@ -223,12 +243,11 @@ const ServiceGeneralForm = () => {
 
                   {/* Status Toggle */}
                   <td className="px-4 py-2">
-                   <button title="Toggle Status to enable or disable service">
-                     <ToggleButton
+
+                    <ToggleButton
                       enabled={srv.status}
                       onToggle={(val) => handlePatch(srv.slug, "status", val)}
                     />
-                   </button>
                   </td>
 
                   {/* Deleted At */}
@@ -265,7 +284,7 @@ const ServiceGeneralForm = () => {
                         setDeleteSlug(srv.slug);
                         setShowDeleteModal(true);
                       }}
-                      title="Delete Temporarily"
+                      title="Delete Temporarily this service"
                     >
                       <Trash size={16} />
                     </button>
@@ -283,52 +302,36 @@ const ServiceGeneralForm = () => {
         </table>
         {/* Pagination Controls */}
         <div className="flex justify-center sm:justify-between mt-4">
-            <div>
+          <div>
             <span className="text-sm text-gray-600 ml-4 border-b-1 border-gray-400 pb-1">
               Showing {startIndex + 1} to{" "}
               {Math.min(startIndex + entries, filtered.length)} of{" "}
               {filtered.length} entries
             </span>
           </div>
-         <div>
-           <nav className="flex flex-wrap items-center space-x-1">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className={`px-3 py-1 border rounded text-sm ${currentPage === 1
-                ? "text-gray-400 border-gray-300"
-                : "text-blue-600 border-blue-400 hover:bg-blue-50"
-                }`}
-            >
-              Previous
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i + 1}
-                onClick={() => handlePageChange(i + 1)}
-                className={`px-3 py-1 border rounded text-sm ${currentPage === i + 1
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "text-blue-600 border-blue-400 hover:bg-blue-50"
-                  }`}
-              >
-                {i + 1}
-              </button>
-            ))}
-
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className={`px-3 py-1 border rounded text-sm ${currentPage === totalPages
-                ? "text-gray-400 border-gray-300"
-                : "text-blue-600 border-blue-400 hover:bg-blue-50"
-                }`}
-            >
-              Next
-            </button>
-          </nav>
-         </div>
-        
+          <div>
+            <ReactPaginate
+              previousLabel={<span>Previous</span>}
+              nextLabel={<span>Next</span>}
+              breakLabel={<span>...</span>}
+              breakClassName="flex items-center justify-center text-gray-400"
+              pageCount={pageCount}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={3}
+              onPageChange={handlePageClick}
+              containerClassName="flex flex-wrap gap-1 justify-center items-center mt-2"
+              pageClassName="rounded border border-gray-300 bg-white text-blue-600 transition cursor-pointer text-xs font-medium"
+              pageLinkClassName="flex items-center justify-center w-full h-full px-2 py-1 hover:bg-blue-500 hover:text-white rounded transition cursor-pointer"
+              previousClassName="rounded border border-gray-300 bg-white text-gray-600 transition cursor-pointer text-xs font-semibold"
+              previousLinkClassName="flex items-center justify-center w-full h-full px-2 py-1 hover:bg-blue-500 hover:text-white rounded transition cursor-pointer"
+              nextClassName="rounded border border-gray-300 bg-white text-gray-600 transition cursor-pointer text-xs font-semibold"
+              nextLinkClassName="flex items-center justify-center w-full h-full px-2 py-1 hover:bg-blue-500 hover:text-white rounded transition cursor-pointer"
+              activeClassName="bg-blue-600 text-black text-bold border-amber-700"
+               activeLinkClassName="bg-blue-600 text-white"
+              disabledClassName="opacity-50 cursor-not-allowed"
+              breakLinkClassName="flex items-center justify-center w-full h-full px-2 py-1"
+            />
+          </div>
         </div>
       </div>
 
@@ -338,7 +341,7 @@ const ServiceGeneralForm = () => {
       {/* Delete Confirmation Modal - Professional Modern Design */}
       {(showDeleteModal || modalVisible) && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-60 transition-opacity duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-60 transition-opacity duration-300 "
           style={{
             opacity: showDeleteModal ? 1 : 0,
             pointerEvents: showDeleteModal ? 'auto' : 'none',
@@ -352,7 +355,7 @@ const ServiceGeneralForm = () => {
             }}
           >
             <div className="w-full flex flex-col items-center justify-center pt-12 pb-8 px-10">
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-red-500 to-pink-500 rounded-full shadow-lg border-4 border-white mb-4">
+              <div className="flex items-center justify-center w-20 h-20 bg-red-500 hover:bg-red-600 rounded-full shadow-lg border-4 border-white mb-4">
                 <Trash size={36} className="text-white" />
               </div>
               <h4 className="text-2xl font-extrabold mb-2 text-gray-900 text-center tracking-tight">Delete Service?</h4>

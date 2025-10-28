@@ -10,7 +10,7 @@ const RecycleBin = () => {
     const { loading, selected, error } = useSelector(state => state.service);
 
    const deletedServices = Array.isArray(selected) ? selected : [];
-    console.log("Deleted Services:", deletedServices);
+    // console.log("Deleted Services:", deletedServices);
 
     const [search, setSearch] = useState("");
     const [entries, setEntries] = useState(10);
@@ -79,7 +79,7 @@ const RecycleBin = () => {
                     <span className="text-sm text-gray-600">Show</span>
                     <input
                         type="number"
-                        min="1"
+                        min="10"
                         max="20"
                         value={entries}
                         onChange={(e) => {
