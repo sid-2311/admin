@@ -65,7 +65,7 @@ const SidebarLayout = () => {
         onClick={() =>
           setOpenCategory(openCategory === "Pages" ? null : "Pages")
         }
-        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition ${location.pathname.startsWith("/pages")
+        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition cursor-pointer ${location.pathname.startsWith("/pages")
             ? "bg-indigo-50 text-[#6777EF]"
             : "hover:bg-gray-100 text-gray-600"
           }`}
@@ -87,7 +87,7 @@ const SidebarLayout = () => {
           {navbarState.data.map((cat) => (
             <li key={cat._id}>
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === "/pages"
+                className={`w-full text-left px-2 py-1 rounded transition cursor-pointer ${location.pathname === "/pages "
                     ? "bg-indigo-50 text-[#6777EF]"
                     : "hover:bg-gray-50 text-gray-600"
                   }`}
@@ -113,7 +113,7 @@ const SidebarLayout = () => {
         onClick={() =>
           setOpenCategory(openCategory === "Blogs" ? null : "Blogs")
         }
-        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition ${location.pathname.startsWith("/blogs")
+        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition cursor-pointer ${location.pathname.startsWith("/blogs")
             ? "bg-indigo-50 text-[#6777EF]"
             : "hover:bg-gray-100 text-gray-600"
           }`}
@@ -135,7 +135,7 @@ const SidebarLayout = () => {
           {blogsMenu.map((blog) => (
             <li key={blog.path}>
               <button
-                className={`w-full text-left px-2 py-1 rounded transition ${location.pathname === blog.path
+                className={`w-full text-left px-2 py-1 rounded transition cursor-pointer ${location.pathname === blog.path
                     ? "bg-indigo-50 text-[#6777EF]"
                     : "hover:bg-gray-50 text-gray-600"
                   }`}

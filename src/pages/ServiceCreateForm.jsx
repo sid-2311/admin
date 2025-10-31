@@ -138,6 +138,9 @@ const ServiceCreateForm = () => {
     setLoading(false);
   };
 
+  console.log("formdata", formData);
+  
+
   return (
     <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-md border">
       <h2 className="text-xl font-bold mb-4 text-indigo-600">Create New Service</h2>

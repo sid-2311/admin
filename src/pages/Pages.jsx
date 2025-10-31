@@ -20,6 +20,7 @@ const Pages = () => {
 
 
     const dispatch = useDispatch();
+
     const navbarState = useSelector(s => s.navbar);
     const serviceState = useSelector(s => s.service);
 
@@ -112,7 +113,7 @@ const Pages = () => {
                     <div className="min-w-[180px]">
                         <label className="font-semibold block mb-2 text-gray-700">Main Category</label>
                         <select
-                            className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
+                            className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700 cursor-pointer"
                             value={selectedCategory || ""}
                             onChange={e => {
                                 setSelectedCategory(e.target.value);
@@ -122,7 +123,7 @@ const Pages = () => {
                         >
                             <option value="">Select Category</option>
                             {navbarState.data.map(cat => (
-                                <option key={cat._id} value={cat._id}>
+                                <option className="cursor-pointer" key={cat._id} value={cat._id}>
                                     {cat.name}
                                 </option>
                             ))}
@@ -134,7 +135,7 @@ const Pages = () => {
                         <div className="min-w-[180px]">
                             <label className="font-semibold block mb-2 text-gray-700">Subcategory</label>
                             <select
-                                className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
+                                className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700 cursor-pointer"
                                 value={selectedSubcategory || ""}
                                 onChange={e => {
                                     setSelectedSubcategory(e.target.value);
@@ -143,7 +144,7 @@ const Pages = () => {
                             >
                                 <option value="">Select Subcategory</option>
                                 {categoryObj.subcategories.map(sub => (
-                                    <option key={sub._id} value={sub.slug}>
+                                    <option className="cursor-pointer" key={sub._id} value={sub.slug}>
                                         {sub.name}
                                     </option>
                                 ))}
@@ -156,13 +157,13 @@ const Pages = () => {
                         <div className="min-w-[180px]">
                             <label className="font-semibold block mb-2 text-gray-700">Item</label>
                             <select
-                                className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700"
+                                className="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6777EF] bg-gray-50 text-gray-700 cursor-pointer"
                                 value={selectedItem || ""}
                                 onChange={e => setSelectedItem(e.target.value)}
                             >
                                 <option value="">Select Item</option>
                                 {subcategoryObj.items.map(item => (
-                                    <option key={item._id} value={item.slug.replace("/", "")}>
+                                    <option className="cursor-pointer" key={item._id} value={item.slug.replace("/", "")}>
                                         {item.name}
                                     </option>
                                 ))}
@@ -204,7 +205,7 @@ const Pages = () => {
         </div>
     );
 
- 
+
 };
 
 export default Pages;

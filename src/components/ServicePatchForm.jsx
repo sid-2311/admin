@@ -87,7 +87,7 @@ const ServicePatchForm = ({ serviceData, slug, onPatched }) => {
     <div className="border rounded-xl p-6 mt-6 bg-white shadow-md">
       {/* Heading */}
       <h3 className="font-bold text-lg mb-4 text-indigo-600">
-        Quick PATCH Editor
+        Update Data Editor
       </h3>
 
       <form onSubmit={handlePatch} className="flex flex-col gap-4">

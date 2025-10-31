@@ -15,7 +15,6 @@ const Login = ({ setIsAuthenticated }) => {
       navigate("/"); // already logged in
     }
   }, [setIsAuthenticated, navigate]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -23,6 +22,7 @@ const Login = ({ setIsAuthenticated }) => {
     if (email === "admin@example.com" && password === "123456") {
       setIsAuthenticated(true);
       localStorage.setItem("isAuthenticated", "true"); // save state
+      localStorage.setItem("role", "admin"); // save role
       navigate("/");
     } else {
       setError("Invalid email or password");
